@@ -1,26 +1,32 @@
 const GoldMasterModel = require("../model/goldMaster");
 const { statusCode, message } = require("../../../../utils/api.response");
+const { logger } = require("../../../../service/logger.service");
 
-// Create a new gold information
+//====================== ADD GOLD MASTER  ======================//
+
 const goldMasterInfoRegister = async (req, res) => {
   try {
     const { goldRate22KPerGram, goldRate24KPerGram } = req.body;
 
-    // Check if any gold master record exists
+    logger.info("Checking if gold master information already exists...");
+
     const masterGoldInfoExists = await GoldMasterModel.findOne();
 
     if (masterGoldInfoExists) {
+      logger.warn("Gold master information already exists");
       return res
         .status(statusCode.BAD_REQUEST)
         .json({ statusCode: statusCode.CONFLICT, message: message.goldExists });
     }
 
+    logger.info("Creating new gold master information...");
     const newGoldMasterInfo = new GoldMasterModel({
       goldRate22KPerGram,
       goldRate24KPerGram,
     });
 
     const saveGoldMasterInfo = await newGoldMasterInfo.save();
+    logger.info("Gold master information created successfully");
 
     return res.status(statusCode.CREATED).json({
       statusCode: statusCode.CREATED,
@@ -28,7 +34,7 @@ const goldMasterInfoRegister = async (req, res) => {
       data: saveGoldMasterInfo,
     });
   } catch (error) {
-    console.error("Error while creating gold information:", error);
+    logger.error(`Error while creating gold information: ${error.message}`);
     return res.status(statusCode.INTERNAL_SERVER_ERROR).json({
       statusCode: statusCode.INTERNAL_SERVER_ERROR,
       message: message.goldRegisterError,
@@ -37,35 +43,37 @@ const goldMasterInfoRegister = async (req, res) => {
   }
 };
 
-// Update gold information
+//====================== UPDATE GOLD MASTER  ======================//
+
 const updateGoldMasterInfo = async (req, res) => {
   try {
-    const { id } = req.params; // Using 'id' from req.params
+    const { id } = req.params;
     const { goldRate22KPerGram, goldRate24KPerGram } = req.body;
 
+    logger.info(`Updating gold master information with ID: ${id}`);
+
     const updateGoldInfo = await GoldMasterModel.findByIdAndUpdate(
-      id, // Using 'id' here
+      id,
       { goldRate22KPerGram, goldRate24KPerGram },
       { new: true }
     );
 
     if (!updateGoldInfo) {
-      console.error("No record found with id:", id); // Debug log
-      return res
-        .status(statusCode.NOT_FOUND)
-        .json({
-          statusCode: statusCode.NOT_FOUND,
-          message: message.errorFetchingGoldInfo,
-        });
+      logger.warn(`No record found with ID: ${id}`);
+      return res.status(statusCode.NOT_FOUND).json({
+        statusCode: statusCode.NOT_FOUND,
+        message: message.errorFetchingGoldInfo,
+      });
     }
 
+    logger.info("Gold master information updated successfully");
     return res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
       message: message.goldInfoUpdate,
       data: updateGoldInfo,
     });
   } catch (error) {
-    console.error("Error while updating gold information:", error);
+    logger.error(`Error while updating gold information: ${error.message}`);
     return res.status(statusCode.INTERNAL_SERVER_ERROR).json({
       statusCode: statusCode.INTERNAL_SERVER_ERROR,
       message: message.errorUpdatingGoldInfo,
@@ -74,27 +82,30 @@ const updateGoldMasterInfo = async (req, res) => {
   }
 };
 
-// Delete gold information
+//====================== DELETE GOLD MASTER  ======================//
+
 const deleteGoldMasterInfo = async (req, res) => {
   try {
     const { id } = req.params;
 
+    logger.info(`Deleting gold master information with ID: ${id}`);
+
     const deleteGoldMasterInfo = await GoldMasterModel.findByIdAndDelete(id);
 
     if (!deleteGoldMasterInfo) {
-      return res
-        .status(statusCode.NOT_FOUND)
-        .json({
-          statusCode: statusCode.NOT_FOUND,
-          message: message.errorFetchingGoldInfo,
-        });
+      logger.warn(`No record found with ID: ${id}`);
+      return res.status(statusCode.NOT_FOUND).json({
+        statusCode: statusCode.NOT_FOUND,
+        message: message.errorFetchingGoldInfo,
+      });
     }
 
+    logger.info("Gold master information deleted successfully");
     return res
       .status(statusCode.OK)
       .json({ statusCode: statusCode.OK, message: message.goldInfoDelete });
   } catch (error) {
-    console.error("Error while deleting gold information:", error);
+    logger.error(`Error while deleting gold information: ${error.message}`);
     return res.status(statusCode.INTERNAL_SERVER_ERROR).json({
       statusCode: statusCode.INTERNAL_SERVER_ERROR,
       message: message.errorDeletingGoldInfo,
@@ -103,9 +114,12 @@ const deleteGoldMasterInfo = async (req, res) => {
   }
 };
 
-// Get gold master information
+//====================== VIEW GOLD MASTER INFO ======================//
+
 const getGoldMasterInfo = async (req, res) => {
   try {
+    logger.info("Fetching gold master information...");
+
     const goldMasterInformation = await GoldMasterModel.find();
 
     const goldMasterWithSrNo = goldMasterInformation.map((record, index) => ({
@@ -113,11 +127,14 @@ const getGoldMasterInfo = async (req, res) => {
       ...record.toObject(),
     }));
 
+    logger.info("Gold master information fetched successfully");
     return res
       .status(statusCode.OK)
       .json({ statusCode: statusCode.OK, data: goldMasterWithSrNo });
   } catch (error) {
-    console.error("Error while fetching gold master information:", error);
+    logger.error(
+      `Error while fetching gold master information: ${error.message}`
+    );
     return res.status(statusCode.INTERNAL_SERVER_ERROR).json({
       statusCode: statusCode.INTERNAL_SERVER_ERROR,
       message: message.errorFetchingGoldInfo,

@@ -1,9 +1,9 @@
 {
-  "name": "auth",
+  "name": "deskledger",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",
@@ -39,14 +39,9 @@
     "puppeteer-extra-plugin-stealth": "^2.11.2",
     "react-router-dom": "^6.24.1",
     "router": "^1.3.8",
-    "socket.io": "^4.7.5"
+    "socket.io": "^4.7.5",
+    "winston": "^3.17.0"
   },
-  "_moduleAliases": {
-    "@model": "src/modules",
-    "@controllers": "src/modules",
-    "@routes": "src/modules",
-    "@utils": "src/utils",
-    "@validation": "src/validation"
-  },
+  "keywords": [],
   "description": ""
 }

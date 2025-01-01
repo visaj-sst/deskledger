@@ -1,19 +1,23 @@
 const CityModel = require("../model/city");
 const { statusCode, message } = require("../../../../utils/api.response");
+const { logger } = require("../../../../service/logger.service");
 
-// Create a new city
+//====================== ADD CITY ======================//
 const cityRegister = async (req, res) => {
   try {
     const { city, stateId } = req.body;
 
+    logger.info(`Checking if city ${city} already exists...`);
     const cityExists = await CityModel.findOne({ city });
     if (cityExists) {
+      logger.warn(`City already exists: ${city}`);
       return res.status(statusCode.CONFLICT).json({
         statusCode: statusCode.CONFLICT,
         message: message.cityAlreadyExists,
       });
     }
 
+    logger.info(`Adding new city: ${city}`);
     const newCity = new CityModel({
       city,
       stateId,
@@ -21,7 +25,8 @@ const cityRegister = async (req, res) => {
 
     const savedCity = await newCity.save();
 
-    // Use aggregation to fetch state details with the newly created city
+    logger.info(`City ${city} added successfully`);
+
     const registeredCity = await CityModel.aggregate([
       {
         $match: { _id: savedCity._id },
@@ -56,7 +61,7 @@ const cityRegister = async (req, res) => {
       data: registeredCity[0],
     });
   } catch (error) {
-    console.error("Error while adding city", error);
+    logger.error(`Error while adding city: ${error.message}`);
     res.status(statusCode.INTERNAL_SERVER_ERROR).json({
       statusCode: statusCode.INTERNAL_SERVER_ERROR,
       message: message.errorCreatingCity,
@@ -64,10 +69,13 @@ const cityRegister = async (req, res) => {
   }
 };
 
+//====================== UPDATE CITY ======================//
 const updateCity = async (req, res) => {
   try {
     const { id } = req.params;
     const { city, stateId } = req.body;
+
+    logger.info(`Updating city with ID: ${id} to name: ${city}`);
 
     const updatedCity = await CityModel.findByIdAndUpdate(
       id,
@@ -76,13 +84,15 @@ const updateCity = async (req, res) => {
     );
 
     if (!updatedCity) {
+      logger.warn(`City with ID: ${id} not found`);
       return res.status(statusCode.NOT_FOUND).json({
         statusCode: statusCode.NOT_FOUND,
         message: message.cityNotFound,
       });
     }
 
-    // Use aggregation to fetch state details with the updated city
+    logger.info(`Successfully updated city: ${updatedCity.city}`);
+
     const updatedCityWithState = await CityModel.aggregate([
       {
         $match: { _id: updatedCity._id },
@@ -117,7 +127,7 @@ const updateCity = async (req, res) => {
       data: updatedCityWithState[0],
     });
   } catch (error) {
-    console.error("Error while updating bank", error);
+    logger.error(`Error while updating city: ${error.message}`);
     res.status(statusCode.INTERNAL_SERVER_ERROR).json({
       statusCode: statusCode.INTERNAL_SERVER_ERROR,
       message: message.errorUpdatingCity,
@@ -125,18 +135,24 @@ const updateCity = async (req, res) => {
   }
 };
 
+//====================== DELETE CITY ======================//
+
 const deleteCity = async (req, res) => {
   try {
     const { id } = req.params;
+
+    logger.info(`Deleting city with ID: ${id}`);
+
     const deletedCity = await CityModel.findByIdAndDelete(id);
     if (!deletedCity) {
+      logger.warn(`City with ID: ${id} not found`);
       return res.status(statusCode.NOT_FOUND).json({
         statusCode: statusCode.NOT_FOUND,
         message: message.cityNotFound,
       });
     }
 
-    // Perform the state lookup for the deleted city
+    logger.info(`Successfully deleted city: ${deletedCity.city}`);
     const deletedCityWithState = await CityModel.aggregate([
       {
         $match: { _id: deletedCity._id },
@@ -171,7 +187,7 @@ const deleteCity = async (req, res) => {
       data: deletedCityWithState[0],
     });
   } catch (error) {
-    console.error("Error while deleting bank", error);
+    logger.error(`Error while deleting city: ${error.message}`);
     res.status(statusCode.INTERNAL_SERVER_ERROR).json({
       statusCode: statusCode.INTERNAL_SERVER_ERROR,
       message: message.errorDeletingCity,
@@ -179,8 +195,12 @@ const deleteCity = async (req, res) => {
   }
 };
 
+//====================== VIEW CITY ======================//
+
 const getCity = async (req, res) => {
   try {
+    logger.info("Fetching cities with state data...");
+
     const cities = await CityModel.aggregate([
       {
         $lookup: {
@@ -211,13 +231,15 @@ const getCity = async (req, res) => {
       city,
     }));
 
+    logger.info(`Fetched ${citiesWithSrNo.length} cities successfully`);
+
     res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
       message: message.citiesView,
       data: citiesWithSrNo,
     });
   } catch (error) {
-    console.error("Error while fetching city");
+    logger.error(`Error while fetching cities: ${error.message}`);
     res.status(statusCode.INTERNAL_SERVER_ERROR).json({
       statusCode: statusCode.INTERNAL_SERVER_ERROR,
       message: message.errorFetchingCities,
@@ -225,19 +247,25 @@ const getCity = async (req, res) => {
   }
 };
 
-// Delete multiple cities
+//====================== DELETE MULTIPLE CITIES ======================//
+
 const deleteMultipleCities = async (req, res) => {
   try {
-    const { ids } = req.body; // Pass an array of ids
+    const { ids } = req.body;
+
+    logger.info(`Deleting multiple cities with IDs: ${ids}`);
 
     const deletedCities = await CityModel.deleteMany({ _id: { $in: ids } });
 
     if (deletedCities.deletedCount === 0) {
+      logger.warn("No cities found for deletion");
       return res.status(statusCode.NOT_FOUND).json({
         statusCode: statusCode.NOT_FOUND,
         message: message.cityNotFound,
       });
     }
+
+    logger.info(`Successfully deleted ${deletedCities.deletedCount} cities`);
 
     res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
@@ -245,7 +273,7 @@ const deleteMultipleCities = async (req, res) => {
       deletedCount: deletedCities.deletedCount,
     });
   } catch (error) {
-    console.error("Error while deleting multiple cities", error);
+    logger.error(`Error while deleting multiple cities: ${error.message}`);
     res.status(statusCode.INTERNAL_SERVER_ERROR).json({
       statusCode: statusCode.INTERNAL_SERVER_ERROR,
       message: message.errorDeletingCity,

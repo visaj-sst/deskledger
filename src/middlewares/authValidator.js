@@ -1,9 +1,9 @@
 //authValidator.js
 
-const jwt = require("jsonwebtoken"); // to verify jwt tokens
-const TokenModel = require("@model/user/model/tokenModel"); // a mongodb model to find tokens in db
-const { statusCode, message } = require("@utils/api.response"); // import status code and messages
-const UserModel = require("@model/user/model/userModel");
+const jwt = require("jsonwebtoken");
+const TokenModel = require("../modules/user/model/tokenModel");
+const { statusCode, message } = require("../utils/api.response");
+const UserModel = require("../modules/user/model/userModel");
 
 const ensureAuthenticated = async (req, res, next) => {
   try {
@@ -13,24 +13,23 @@ const ensureAuthenticated = async (req, res, next) => {
         statusCode: statusCode.UNAUTHORIZED,
         message: message.expiredToken,
       });
-    } // authorization header check
+    }
 
-    const token = bearheader.split(" ")[1]; // token extraction
+    const token = bearheader.split(" ")[1];
 
     const is_user = await TokenModel.findOne({ token });
     if (!is_user) {
-      // token existence check in db
       return res.status(statusCode.UNAUTHORIZED).json({
         statusCode: statusCode.UNAUTHORIZED,
         message: message.tokenNotFound,
       });
-    } // token verification
+    }
 
     try {
       const decoded = jwt.verify(token, process.env.SECRET);
       req.user = { id: decoded.id };
-      // Ensure req.user is set with the correct property
-      next(); // Error handling
+
+      next();
     } catch (err) {
       console.error("Token verification failed:", err);
       return res.status(statusCode.UNAUTHORIZED).json({

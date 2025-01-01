@@ -1,5 +1,3 @@
-require("module-alias/register");
-
 const express = require("express");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
@@ -7,64 +5,54 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const fs = require("fs");
 const path = require("path");
-const MainRoutes = require("./routes/routeManager");
 const cron = require("node-cron");
+const logger = require("./src/service/logger.service"); // For logging
+const MainRoutes = require("./src/routes/routeManager");
 const {
   updateFdData,
-} = require("./src/modules/fixed-deposit/controller/fdcontroller");
-const {
   updateGoldData,
-} = require("./src/modules/gold/controller/goldController");
-const {
   updateRealEstateData,
-} = require("./src/modules/real-estate/controller/realEstateController");
+} = require("./src/cronJobs/cron");
+const seedDatabase = require("./src/seeder/seeds"); // Import the seeder script
 
 dotenv.config();
 
+// Initialize Express app
 const app = express();
-const PORT = parseInt(process.env.PORT, 10) || 3500;
-const HOST = process.env.HOST ? process.env.HOST.trim() : "192.168.1.87";
+const PORT = parseInt(process.env.PORT, 10) || 3000;
+const HOST = process.env.HOST || "localhost";
 const DB_CONNECTION = process.env.CONNECTION;
+console.log("DB_CONNECTION:", process.env.CONNECTION);
 
+// Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 const corsOptions = {
-  origin: "http://localhost:3001",
+  origin: "http://localhost:3000",
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization", "ids"],
 };
-
 app.use(cors(corsOptions));
 app.options("*", cors(corsOptions));
 
-cron.schedule("0 0 * * *", async () => {
-  try {
-    console.log("Cron job running at 12 AM");
-
-    await updateFdData();
-    await updateGoldData();
-    await updateRealEstateData();
-
-    console.log("Cron job completed successfully.");
-  } catch (error) {
-    console.error("Error in cron job:", error);
-  }
-});
-
+// Static files
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
+// Routes
 MainRoutes.forEach((route) => {
   app.use("/", route);
 });
 
+// Image endpoint
 app.get("/image/:filename", (req, res) => {
   const filename = req.params.filename;
   const filepath = path.join(__dirname, "uploads", filename);
 
   fs.access(filepath, fs.constants.F_OK, (err) => {
     if (err) {
+      logger.error(`File not found: ${filename}`);
       return res.status(404).send("File not found");
     }
     res.sendFile(filepath);
@@ -74,17 +62,45 @@ app.get("/image/:filename", (req, res) => {
 // Database connection
 const databaseConnection = async () => {
   try {
-    await mongoose.connect(DB_CONNECTION);
-    console.log("Connected to database");
+    await mongoose.connect(DB_CONNECTION, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      serverSelectionTimeoutMS: 5000, // Timeout after 5 seconds
+    });
+    logger.info("Connected to the database.");
   } catch (error) {
-    console.error("Error while connecting to database:", error);
-    process.exit(1);
+    logger.error(`Database connection failed: ${error.message}`);
+    process.exit(1); // Exit process if DB connection fails
   }
 };
 
-databaseConnection();
+// Run Seeder on Startup
+const runSeeder = async () => {
+  try {
+    logger.info("Starting database seeding...");
+    await seedDatabase(); // Run the seeder script
+    logger.info("Database seeding completed.");
+  } catch (error) {
+    logger.error(`Error during seeding: ${error.message}`);
+  }
+};
 
-// Start the server
-app.listen(PORT, HOST, () => {
-  console.log(`App listening at http://${HOST}:${PORT}`);
+// Cron job
+cron.schedule("0 0 * * *", async () => {
+  try {
+    logger.info("Cron job running at 12 AM...");
+    await updateFdData();
+    await updateGoldData();
+    await updateRealEstateData();
+    logger.info("Cron job completed successfully.");
+  } catch (error) {
+    logger.error(`Error in cron job: ${error.message}`);
+  }
+});
+
+// Server startup
+app.listen(PORT, HOST, async () => {
+  logger.info(`App listening at http://${HOST}:${PORT}`);
+  await databaseConnection();
+  await runSeeder(); // Run the seeder script after DB connection
 });

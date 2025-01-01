@@ -1,18 +1,26 @@
 const SubPropertyTypeModel = require("../model/subPropertyType");
 const { statusCode, message } = require("../../../../utils/api.response");
+const { logger } = require("../../../../service/logger.service");
 
-// Create a new sub-property type
+//====================== ADD SUB PROPERTY TYPE  ======================//
+
 const subPropertyTypeRegister = async (req, res) => {
   try {
     const { subPropertyType, propertyTypeId } = req.body;
 
-    // Check if the sub-property type already exists
+    logger.info(
+      `Attempting to register a new Sub Property Type: ${subPropertyType}`
+    );
+
     const subPropertyTypeExists = await SubPropertyTypeModel.findOne({
       subPropertyType,
       propertyTypeId,
     });
 
     if (subPropertyTypeExists) {
+      logger.warn(
+        `Sub Property Type ${subPropertyType} already exists for property type ID ${propertyTypeId}`
+      );
       return res.status(statusCode.CONFLICT).json({
         statusCode: statusCode.CONFLICT,
         message: message.subPropertyTypeAlreadyExists,
@@ -52,13 +60,16 @@ const subPropertyTypeRegister = async (req, res) => {
       },
     ]);
 
+    logger.info(
+      `Sub Property Type ${subPropertyType} successfully registered with ID: ${savedSubPropertyType._id}`
+    );
     res.status(statusCode.CREATED).json({
       statusCode: statusCode.CREATED,
       message: message.subPropertyTypeAdded,
       data: registeredSubProperty[0],
     });
   } catch (error) {
-    console.error("Error while registering Sub Property Type:", error);
+    logger.error(`Error while registering Sub Property Type: ${error.message}`);
     res.status(statusCode.INTERNAL_SERVER_ERROR).json({
       statusCode: statusCode.INTERNAL_SERVER_ERROR,
       message: message.errorAddingSubPropertyType,
@@ -67,11 +78,14 @@ const subPropertyTypeRegister = async (req, res) => {
   }
 };
 
-// Update a sub-property type
+//====================== UPDATE SUB PROPERTY TYPE  ======================//
+
 const updateSubPropertyType = async (req, res) => {
   try {
     const { id } = req.params;
     const { subPropertyType } = req.body;
+
+    logger.info(`Attempting to update Sub Property Type with ID: ${id}`);
 
     const updatedSubPropertyType = await SubPropertyTypeModel.findByIdAndUpdate(
       id,
@@ -80,6 +94,7 @@ const updateSubPropertyType = async (req, res) => {
     );
 
     if (!updatedSubPropertyType) {
+      logger.warn(`Sub Property Type with ID ${id} not found`);
       return res.status(statusCode.NOT_FOUND).json({
         statusCode: statusCode.NOT_FOUND,
         message: message.subPropertyTypeNotFound,
@@ -113,13 +128,14 @@ const updateSubPropertyType = async (req, res) => {
         },
       ]);
 
+    logger.info(`Sub Property Type with ID ${id} successfully updated`);
     res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
       message: message.subPropertyTypeUpdated,
       data: updatedSubPropertyTypeWithPropertyType[0],
     });
   } catch (error) {
-    console.error("Error while updating Sub Property Type:", error);
+    logger.error(`Error while updating Sub Property Type: ${error.message}`);
     res.status(statusCode.INTERNAL_SERVER_ERROR).json({
       statusCode: statusCode.INTERNAL_SERVER_ERROR,
       message: message.errorUpdatingSubPropType,
@@ -128,29 +144,34 @@ const updateSubPropertyType = async (req, res) => {
   }
 };
 
-// Delete a sub-property type
+//====================== DELETE SUB PROPERTY TYPE  ======================//
+
 const deleteSubPropertyType = async (req, res) => {
   try {
     const { id } = req.params;
+
+    logger.info(`Attempting to delete Sub Property Type with ID: ${id}`);
 
     const deletedSubPropertyType = await SubPropertyTypeModel.findByIdAndDelete(
       id
     );
 
     if (!deletedSubPropertyType) {
+      logger.warn(`Sub Property Type with ID ${id} not found`);
       return res.status(statusCode.NOT_FOUND).json({
         statusCode: statusCode.NOT_FOUND,
         message: message.subPropertyTypeNotFound,
       });
     }
 
+    logger.info(`Sub Property Type with ID ${id} successfully deleted`);
     res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
       message: message.subPropertyTypeDeleted,
       data: deletedSubPropertyType,
     });
   } catch (error) {
-    console.error("Error while deleting Sub Property Type:", error);
+    logger.error(`Error while deleting Sub Property Type: ${error.message}`);
     res.status(statusCode.INTERNAL_SERVER_ERROR).json({
       statusCode: statusCode.INTERNAL_SERVER_ERROR,
       message: message.errorDeletingSubPropType,
@@ -159,9 +180,12 @@ const deleteSubPropertyType = async (req, res) => {
   }
 };
 
-// Get all sub-property types with their property types
+//====================== VIEW SUB PROPERTY TYPE  ======================//
+
 const getSubPropertyType = async (req, res) => {
   try {
+    logger.info("Fetching sub property types");
+
     const subpropertytypes = await SubPropertyTypeModel.aggregate([
       {
         $lookup: {
@@ -199,12 +223,17 @@ const getSubPropertyType = async (req, res) => {
       })
     );
 
+    logger.info(
+      `Successfully retrieved ${subPropertyTypesWithSrNo.length} sub property types`
+    );
+
     res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
       message: message.subPropertyTypeRetrieved,
       data: subPropertyTypesWithSrNo,
     });
   } catch (error) {
+    logger.error(`Error while fetching sub property types: ${error.message}`);
     res.status(statusCode.INTERNAL_SERVER_ERROR).json({
       statusCode: statusCode.INTERNAL_SERVER_ERROR,
       message: message.errorFetchingSubPropTypes,
@@ -213,20 +242,38 @@ const getSubPropertyType = async (req, res) => {
   }
 };
 
-// Delete multiple sub-property types
+//====================== DELETE MULTIPLE SUB PROPERTY TYPE  ======================//
+
 const deleteMultipleSubPropertyTypes = async (req, res) => {
   try {
-    const { ids } = req.body; // Pass an array of IDs
+    const { ids } = req.body;
+
+    logger.info(
+      `Attempting to delete multiple sub property types with IDs: ${ids.join(
+        ", "
+      )}`
+    );
 
     const deletedMultipleSubPropertyTypes =
-      await SubPropertyTypeModel.deleteMany({ _id: { $in: ids } });
+      await SubPropertyTypeModel.deleteMany({
+        _id: { $in: ids },
+      });
 
     if (deletedMultipleSubPropertyTypes.deletedCount === 0) {
+      logger.warn(
+        `No sub property types found for deletion with the given IDs: ${ids.join(
+          ", "
+        )}`
+      );
       return res.status(statusCode.NOT_FOUND).json({
         statusCode: statusCode.NOT_FOUND,
         message: message.errorFetchingSubPropTypes,
       });
     }
+
+    logger.info(
+      `Successfully deleted ${deletedMultipleSubPropertyTypes.deletedCount} sub property types`
+    );
 
     res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
@@ -234,6 +281,9 @@ const deleteMultipleSubPropertyTypes = async (req, res) => {
       deletedCount: deletedMultipleSubPropertyTypes.deletedCount,
     });
   } catch (error) {
+    logger.error(
+      `Error while deleting multiple sub property types: ${error.message}`
+    );
     res.status(statusCode.INTERNAL_SERVER_ERROR).json({
       statusCode: statusCode.INTERNAL_SERVER_ERROR,
       message: message.errorDeletingSubPropertyTypes,
