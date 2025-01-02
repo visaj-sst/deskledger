@@ -1,6 +1,6 @@
 //fixedDeposit.js
 
-const mongoose = require("mongoose");
+import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const FixedDepositSchema = new Schema(
@@ -76,4 +76,4 @@ const FixedDepositSchema = new Schema(
 );
 
 const FixedDepositModel = mongoose.model("FixedDeposit", FixedDepositSchema);
-module.exports = FixedDepositModel;
+export default FixedDepositModel;

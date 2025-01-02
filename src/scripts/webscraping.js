@@ -1,13 +1,13 @@
-const puppeteer = require("puppeteer-extra");
-const StealthPlugin = require("puppeteer-extra-plugin-stealth");
-const mongoose = require("mongoose");
-const AreaPriceModel = require("../modules/admin/area-price/model/areaPrice.js");
+import puppeteer from "puppeteer-extra";
+import StealthPlugin from "puppeteer-extra-plugin-stealth";
+import mongoose from "mongoose";
+import AreaPriceModel from "../modules/admin/area-price/model/areaPrice.js";
 
 puppeteer.use(StealthPlugin());
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-const scrapeWebsite = async (url) => {
+export const scrapeWebsite = async (url) => {
   const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
 

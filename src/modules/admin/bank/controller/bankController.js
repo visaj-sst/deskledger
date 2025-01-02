@@ -1,10 +1,10 @@
-const BankModel = require("../model/bank");
-const { statusCode, message } = require("../../../../utils/api.response.js");
-const logger = require("../../../../service/logger.service.js");
+import BankModel from "../model/bank.js";
+import { statusCode, message } from "../../../../utils/api.response.js";
+import logger from "../../../../service/logger.service.js";
 
 //====================== ADD BANK ======================//
 
-const createBank = async (req, res) => {
+export const createBank = async (req, res) => {
   try {
     const { bankName } = req.body;
 
@@ -38,7 +38,7 @@ const createBank = async (req, res) => {
 
 //====================== UPDATE BANK ======================//
 
-const updateBank = async (req, res) => {
+export const updateBank = async (req, res) => {
   try {
     const { id } = req.params;
     const { bankName } = req.body;
@@ -76,7 +76,7 @@ const updateBank = async (req, res) => {
 
 //====================== DELETE BANK ======================//
 
-const deleteBank = async (req, res) => {
+export const deleteBank = async (req, res) => {
   try {
     const { id } = req.params;
 
@@ -108,7 +108,7 @@ const deleteBank = async (req, res) => {
 
 //====================== VIEW BANKS ======================//
 
-const getBanks = async (req, res) => {
+export const getBanks = async (req, res) => {
   try {
     logger.info("Fetching list of banks...");
 
@@ -136,7 +136,7 @@ const getBanks = async (req, res) => {
 
 //====================== DELETE MULTIPLE BANKS ======================//
 
-const deleteMultipleBanks = async (req, res) => {
+export const deleteMultipleBanks = async (req, res) => {
   try {
     const { ids } = req.body;
 
@@ -165,12 +165,4 @@ const deleteMultipleBanks = async (req, res) => {
       message: message.errorDeletingBanks,
     });
   }
-};
-
-module.exports = {
-  createBank,
-  updateBank,
-  deleteBank,
-  getBanks,
-  deleteMultipleBanks,
 };

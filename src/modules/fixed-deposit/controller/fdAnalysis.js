@@ -1,5 +1,5 @@
 const { statusCode, message } = require("../../../utils/api.response.js");
-const mongoose = require("mongoose");
+import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const FdAnalysisSchema = new Schema(
@@ -25,4 +25,4 @@ const FdAnalysisSchema = new Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model("fdAnalysis", FdAnalysisSchema);
+export default mongoose.model("fdAnalysis", FdAnalysisSchema);

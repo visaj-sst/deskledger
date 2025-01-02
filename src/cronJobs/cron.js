@@ -1,11 +1,10 @@
-const FixedDepositModel = require("../modules/user/model/userModel");
-const GoldMasterModel = require("../modules/admin/gold-master/model/goldMaster");
-const AreaPriceModel = require("../modules/admin/area-price/model/areaPrice");
-const RealEstateModel = require("../modules/real-estate/model/realEstate");
+import FixedDepositModel from "../modules/user/model/userModel.js";
+import GoldMasterModel from "../modules/admin/gold-master/model/goldMaster.js";
+import AreaPriceModel from "../modules/admin/area-price/model/areaPrice.js";
+import RealEstateModel from "../modules/real-estate/model/realEstate.js";
 
 //====================== FIXED DEPOSIT CRON  ======================//
-
-exports.updateFdData = async () => {
+export const updateFdData = async () => {
   try {
     const fixedDeposits = await FixedDepositModel.find();
 
@@ -46,8 +45,7 @@ exports.updateFdData = async () => {
 };
 
 //====================== GOLD CRON  ======================//
-
-exports.updateGoldData = async () => {
+export const updateGoldData = async () => {
   try {
     const goldMaster = await GoldMasterModel.findOne();
     if (!goldMaster) {
@@ -99,8 +97,7 @@ exports.updateGoldData = async () => {
 };
 
 //====================== REAL ESTATE CRON  ======================//
-
-exports.updateRealEstateData = async () => {
+export const updateRealEstateData = async () => {
   try {
     const realEstates = await RealEstateModel.find({});
 

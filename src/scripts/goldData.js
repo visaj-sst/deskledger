@@ -1,4 +1,4 @@
-const GoldModel = require('../models/goldModel'); // Adjust the path as needed
+import GoldModel from '../models/goldModel.js'; // Adjust the path as needed
 
 const goldData = [
     {

@@ -1,4 +1,4 @@
-const formatDate = (date) => {
+export const formatDate = (date) => {
   const d = new Date(date);
   let month = "" + (d.getMonth() + 1);
   let day = "" + d.getDate();
@@ -9,5 +9,3 @@ const formatDate = (date) => {
 
   return [year, month, day].join("-");
 };
-
-module.exports = { formatDate };

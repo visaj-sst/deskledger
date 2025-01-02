@@ -1,9 +1,9 @@
-const CityModel = require("../model/city");
-const { statusCode, message } = require("../../../../utils/api.response.js");
-const logger = require("../../../../service/logger.service.js");
+import CityModel from "../model/city.js";
+import { statusCode, message } from "../../../../utils/api.response.js";
+import logger from "../../../../service/logger.service.js";
 
 //====================== ADD CITY ======================//
-const cityRegister = async (req, res) => {
+export const cityRegister = async (req, res) => {
   try {
     const { city, stateId } = req.body;
 
@@ -70,7 +70,7 @@ const cityRegister = async (req, res) => {
 };
 
 //====================== UPDATE CITY ======================//
-const updateCity = async (req, res) => {
+export const updateCity = async (req, res) => {
   try {
     const { id } = req.params;
     const { city, stateId } = req.body;
@@ -137,7 +137,7 @@ const updateCity = async (req, res) => {
 
 //====================== DELETE CITY ======================//
 
-const deleteCity = async (req, res) => {
+export const deleteCity = async (req, res) => {
   try {
     const { id } = req.params;
 
@@ -197,7 +197,7 @@ const deleteCity = async (req, res) => {
 
 //====================== VIEW CITY ======================//
 
-const getCity = async (req, res) => {
+export const getCity = async (req, res) => {
   try {
     logger.info("Fetching cities with state data...");
 
@@ -249,7 +249,7 @@ const getCity = async (req, res) => {
 
 //====================== DELETE MULTIPLE CITIES ======================//
 
-const deleteMultipleCities = async (req, res) => {
+export const deleteMultipleCities = async (req, res) => {
   try {
     const { ids } = req.body;
 
@@ -280,12 +280,4 @@ const deleteMultipleCities = async (req, res) => {
       error: error.message,
     });
   }
-};
-
-module.exports = {
-  cityRegister,
-  getCity,
-  updateCity,
-  deleteCity,
-  deleteMultipleCities,
 };

@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const goldAnalysisSchema = new Schema(
@@ -21,4 +21,4 @@ const goldAnalysisSchema = new Schema(
 );
 
 const GoldAnalysisModel = mongoose.model("GoldAnalysis", goldAnalysisSchema);
-module.exports = GoldAnalysisModel;
+export default GoldAnalysisModel;

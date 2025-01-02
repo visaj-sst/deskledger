@@ -1,5 +1,5 @@
 // city.js
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const CitySchema = new mongoose.Schema({
     city: {
@@ -11,6 +11,6 @@ const CitySchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('City', CitySchema);
+export default mongoose.model('City', CitySchema);
 
 

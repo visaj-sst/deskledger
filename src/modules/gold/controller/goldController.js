@@ -1,13 +1,13 @@
-const GoldModel = require("../model/goldModel.js");
-const GoldMasterModel = require("../../admin/gold-master/model/goldMaster.js");
-const GoldAnalysisModel = require("../model/goldAnalysis.js");
-const { statusCode, message } = require("../../../utils/api.response.js");
-const mongoose = require("mongoose");
-const logger = require("../../../service/logger.service.js");
+import GoldModel from "../model/goldModel.js";
+import GoldMasterModel from "../../admin/gold-master/model/goldMaster.js";
+import GoldAnalysisModel from "../model/goldAnalysis.js";
+import { statusCode, message } from "../../../utils/api.response.js";
+import mongoose from "mongoose";
+import logger from "../../../service/logger.service.js";
 
 //====================== REGISTER GOLD INFO ======================//
 
-exports.createGoldRecord = async (req, res) => {
+export const createGoldRecord = async (req, res) => {
   try {
     const userId = req.user.id;
     const {
@@ -92,7 +92,7 @@ exports.createGoldRecord = async (req, res) => {
 
 //====================== UPDATING GOLD INFO ======================//
 
-exports.updateGoldRecord = async (req, res) => {
+export const updateGoldRecord = async (req, res) => {
   try {
     const { id } = req.params;
     const {
@@ -208,7 +208,7 @@ exports.updateGoldRecord = async (req, res) => {
 
 //====================== DELETE GOLD INFO ======================//
 
-exports.deleteGoldRecord = async (req, res) => {
+export const deleteGoldRecord = async (req, res) => {
   try {
     const { id } = req.params;
     const userId = req.user.id;
@@ -243,7 +243,7 @@ exports.deleteGoldRecord = async (req, res) => {
 };
 
 //====================== DELETE MULTIPLE GOLD INFO ======================//
-exports.deleteMultipleGoldRecords = async (req, res) => {
+export const deleteMultipleGoldRecords = async (req, res) => {
   try {
     const { ids } = req.body;
     const userId = req.user.id;
@@ -291,7 +291,7 @@ exports.deleteMultipleGoldRecords = async (req, res) => {
 };
 
 //====================== VIEW GOLD ANALYSIS ======================//
-exports.getGoldAnalysis = async (req, res) => {
+export const getGoldAnalysis = async (req, res) => {
   try {
     const userId = req.user.id;
     logger.info(`Fetching gold analysis for user: ${userId}`);
@@ -364,7 +364,7 @@ exports.getGoldAnalysis = async (req, res) => {
 };
 
 //====================== VIEW GOLD INFO ======================//
-exports.getAllGoldRecords = async (req, res) => {
+export const getAllGoldRecords = async (req, res) => {
   try {
     const userId = req.user.id;
     const { id } = req.params;

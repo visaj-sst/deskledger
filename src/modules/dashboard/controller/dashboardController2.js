@@ -1,12 +1,12 @@
-const mongoose = require("mongoose");
-const FixedDepositModel = require("../../fixed-deposit/model/fixedDeposit.js");
-const GoldModel = require("../../gold/model/goldModel.js");
-const RealEstateModel = require("../../real-estate/model/realEstate.js");
-const { formatAmount } = require("../../../utils/formatAmount.js");
-const { statusCode, message } = require("../../../utils/api.response.js");
+import mongoose from "mongoose";
+import FixedDepositModel from "../../fixed-deposit/model/fixedDeposit.js";
+import GoldModel from "../../gold/model/goldModel.js";
+import RealEstateModel from "../../real-estate/model/realEstate.js";
+import { formatAmount } from "../../../utils/formatAmount.js";
+import { statusCode, message } from "../../../utils/api.response.js";
 
 // Utility function to get date filters
-const getDateFilters = (startDate, endDate) => {
+export const getDateFilters = (startDate, endDate) => {
   const filters = {};
   if (startDate) {
     filters["$gte"] = new Date(new Date(startDate).setHours(0, 0, 0, 0));
@@ -18,7 +18,7 @@ const getDateFilters = (startDate, endDate) => {
 };
 
 // Dashboard Analysis
-const dashboardAnalysis = async (req, res) => {
+export const dashboardAnalysis = async (req, res) => {
   try {
     const userId = req.user.id;
     const { startDate, endDate } = req.query;
@@ -302,7 +302,7 @@ const dashboardAnalysis = async (req, res) => {
 };
 
 // HIGHEST GROWTH PIE CHART
-const getHighestGrowthInSector = async (req, res) => {
+export const getHighestGrowthInSector = async (req, res) => {
   const { sector } = req.params;
   const { startDate, endDate } = req.query;
   const dateFilters = getDateFilters(startDate, endDate);
@@ -478,7 +478,7 @@ const getHighestGrowthInSector = async (req, res) => {
 };
 
 // INVESTMENT IN SECTOR
-const getInvestmentsBySector = async (req, res) => {
+export const getInvestmentsBySector = async (req, res) => {
   const { sector } = req.params;
   const { startDate, endDate } = req.query;
   const dateFilters = getDateFilters(startDate, endDate);
@@ -649,10 +649,4 @@ const getInvestmentsBySector = async (req, res) => {
       message: message.errorFetchingInvBySector,
     });
   }
-};
-
-module.exports = {
-  dashboardAnalysis,
-  getHighestGrowthInSector,
-  getInvestmentsBySector,
 };

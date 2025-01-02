@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const AreaPriceSchema = new Schema(
@@ -24,4 +24,4 @@ const AreaPriceSchema = new Schema(
 );
 
 const AreaPriceModel = mongoose.model("AreaPrice", AreaPriceSchema);
-module.exports = AreaPriceModel;
+export default AreaPriceModel;

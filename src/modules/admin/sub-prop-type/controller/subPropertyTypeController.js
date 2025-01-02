@@ -1,10 +1,10 @@
-const SubPropertyTypeModel = require("../model/subPropertyType.js");
-const { statusCode, message } = require("../../../../utils/api.response.js");
-const logger = require("../../../../service/logger.service.js");
+import SubPropertyTypeModel from "../model/subPropertyType.js";
+import { statusCode, message } from "../../../../utils/api.response.js";
+import logger from "../../../../service/logger.service.js";
 
 //====================== ADD SUB PROPERTY TYPE  ======================//
 
-const subPropertyTypeRegister = async (req, res) => {
+export const subPropertyTypeRegister = async (req, res) => {
   try {
     const { subPropertyType, propertyTypeId } = req.body;
 
@@ -80,7 +80,7 @@ const subPropertyTypeRegister = async (req, res) => {
 
 //====================== UPDATE SUB PROPERTY TYPE  ======================//
 
-const updateSubPropertyType = async (req, res) => {
+export const updateSubPropertyType = async (req, res) => {
   try {
     const { id } = req.params;
     const { subPropertyType } = req.body;
@@ -146,7 +146,7 @@ const updateSubPropertyType = async (req, res) => {
 
 //====================== DELETE SUB PROPERTY TYPE  ======================//
 
-const deleteSubPropertyType = async (req, res) => {
+export const deleteSubPropertyType = async (req, res) => {
   try {
     const { id } = req.params;
 
@@ -182,7 +182,7 @@ const deleteSubPropertyType = async (req, res) => {
 
 //====================== VIEW SUB PROPERTY TYPE  ======================//
 
-const getSubPropertyType = async (req, res) => {
+export const getSubPropertyType = async (req, res) => {
   try {
     logger.info("Fetching sub property types");
 
@@ -244,7 +244,7 @@ const getSubPropertyType = async (req, res) => {
 
 //====================== DELETE MULTIPLE SUB PROPERTY TYPE  ======================//
 
-const deleteMultipleSubPropertyTypes = async (req, res) => {
+export const deleteMultipleSubPropertyTypes = async (req, res) => {
   try {
     const { ids } = req.body;
 
@@ -289,12 +289,4 @@ const deleteMultipleSubPropertyTypes = async (req, res) => {
       message: message.errorDeletingSubPropertyTypes,
     });
   }
-};
-
-module.exports = {
-  subPropertyTypeRegister,
-  getSubPropertyType,
-  updateSubPropertyType,
-  deleteSubPropertyType,
-  deleteMultipleSubPropertyTypes,
 };

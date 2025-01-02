@@ -1,23 +1,22 @@
 //fdcontroller.js
 
-const FixedDepositModel = require("../model/fixedDeposit.js");
-const mongoose = require("mongoose");
-const moment = require("moment");
-const FdAnalysisModel = require("../model/fixedDeposit.js");
-const { statusCode, message } = require("../../../utils/api.response.js");
-const { formatAmount } = require("../../../utils/formatAmount.js");
-const {
+import FixedDepositModel from "../model/fixedDeposit.js";
+import mongoose from "mongoose";
+import moment from "moment";
+import FdAnalysisModel from "../model/fixedDeposit.js";
+import { statusCode, message } from "../../../utils/api.response.js";
+import {
   registerFdAggregation,
   updateFdAggregation,
-} = require("../../../helpers/aggregation.js");
-const { formatDate } = require("../../../helpers/formatDate.js");
-const { calculateTotalYears } = require("../../../helpers/calculateYears.js");
-const { updateFdData } = require("../../../cronJobs/cron.js");
-const logger = require("../../../service/logger.service.js");
+} from "../../../helpers/aggregation.js";
+import { formatDate } from "../../../helpers/formatDate.js";
+import { updateFdData } from "../../../cronJobs/cron.js";
+import { calculateTotalYears } from "../../../helpers/calculateYears.js";
+import logger from "../../../service/logger.service.js";
 
 //====================== REGISTER FIXED DEPOSIT ======================//
 
-const fixedDepositRegister = async (req, res) => {
+export const fixedDepositRegister = async (req, res) => {
   try {
     const {
       firstName,
@@ -148,7 +147,7 @@ const fixedDepositRegister = async (req, res) => {
 
 //====================== UPDATE FIXED DEPOSIT ======================//
 
-const updateFixedDeposit = async (req, res) => {
+export const updateFixedDeposit = async (req, res) => {
   try {
     const { id } = req.params;
     const userId = req.user.id;
@@ -256,7 +255,7 @@ const updateFixedDeposit = async (req, res) => {
 
 //====================== DELETE FIXED DEPOSIT ======================//
 
-const fixedDepositDelete = async (req, res) => {
+export const fixedDepositDelete = async (req, res) => {
   try {
     const { id } = req.params;
     const userId = req.user.id;
@@ -309,7 +308,7 @@ const fixedDepositDelete = async (req, res) => {
 };
 
 //====================== VIEW FIXED DEPOSIT ======================//
-const getFdDetails = async (req, res) => {
+export const getFdDetails = async (req, res) => {
   try {
     const userId = req.user.id;
     const { id } = req.params;
@@ -399,7 +398,7 @@ const getFdDetails = async (req, res) => {
 
 //====================== DELETE MULTIPLE FIXED DEPOSITS ======================//
 
-const deleteMultipleFDs = async (req, res) => {
+export const deleteMultipleFDs = async (req, res) => {
   try {
     const { ids } = req.body;
     const userId = req.user.id;
@@ -458,7 +457,7 @@ const deleteMultipleFDs = async (req, res) => {
 
 //====================== FIXED DEPOSIT ANALYSIS BY NUMBER ======================//
 
-const getFdAnalysisbyNumber = async (req, res) => {
+export const getFdAnalysisbyNumber = async (req, res) => {
   try {
     const userId = req.user.id;
 
@@ -581,14 +580,4 @@ const getFdAnalysisbyNumber = async (req, res) => {
       error: error.message,
     });
   }
-};
-
-module.exports = {
-  fixedDepositRegister,
-  updateFixedDeposit,
-  fixedDepositDelete,
-  getFdDetails,
-  deleteMultipleFDs,
-  getFdAnalysisbyNumber,
-  updateFdData,
 };

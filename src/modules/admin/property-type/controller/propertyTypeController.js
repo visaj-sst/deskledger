@@ -1,10 +1,10 @@
-const PropertyTypeModel = require("../model/propertyType.js");
-const { statusCode, message } = require("../../../../utils/api.response.js");
-const logger = require("../../../../service/logger.service.js");
+import PropertyTypeModel from "../model/propertyType.js";
+import { statusCode, message } from "../../../../utils/api.response.js";
+import logger from "../../../../service/logger.service.js";
 
 //====================== ADD PROPERTY TYPE  ======================//
 
-const propertyTypeRegister = async (req, res) => {
+export const propertyTypeRegister = async (req, res) => {
   try {
     const { propertyType } = req.body;
 
@@ -43,7 +43,7 @@ const propertyTypeRegister = async (req, res) => {
 
 //====================== UPDATE PROPERTY TYPE  ======================//
 
-const updatePropertyType = async (req, res) => {
+export const updatePropertyType = async (req, res) => {
   try {
     const id = req.params.id;
     const { propertyType } = req.body;
@@ -82,7 +82,7 @@ const updatePropertyType = async (req, res) => {
 
 //====================== DELETE PROPERTY TYPE  ======================//
 
-const deletePropertyType = async (req, res) => {
+export const deletePropertyType = async (req, res) => {
   try {
     const id = req.params.id;
 
@@ -115,7 +115,7 @@ const deletePropertyType = async (req, res) => {
 
 //====================== VIEW PROPERTY TYPE  ======================//
 
-const getPropertyType = async (req, res) => {
+export const getPropertyType = async (req, res) => {
   try {
     logger.info("Fetching all property types...");
 
@@ -144,7 +144,7 @@ const getPropertyType = async (req, res) => {
 
 //====================== DELETE MULTIPLE PROPERTY TYPES  ======================//
 
-const deleteMultiplePropertyTypes = async (req, res) => {
+export const deleteMultiplePropertyTypes = async (req, res) => {
   try {
     const { ids } = req.body;
 
@@ -180,12 +180,4 @@ const deleteMultiplePropertyTypes = async (req, res) => {
       error: error.message,
     });
   }
-};
-
-module.exports = {
-  propertyTypeRegister,
-  updatePropertyType,
-  deletePropertyType,
-  getPropertyType,
-  deleteMultiplePropertyTypes,
 };

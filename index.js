@@ -1,21 +1,29 @@
-const express = require("express");
-const dotenv = require("dotenv");
-const mongoose = require("mongoose");
-const cors = require("cors");
-const cookieParser = require("cookie-parser");
-const fs = require("fs");
-const path = require("path");
-const cron = require("node-cron");
-const logger = require("./src/service/logger.service.js");
-const MainRoutes = require("./src/routes/routeManager.js");
-const {
+import express from "express";
+import dotenv from "dotenv";
+import mongoose from "mongoose";
+import cors from "cors";
+import cookieParser from "cookie-parser";
+import fs from "fs";
+import path from "path";
+import cron from "node-cron";
+import logger from "./src/service/logger.service.js";
+import { routes } from "./src/routes/routeManager.js";
+import seedDatabase from "./src/seeder/seeds.js";
+import {
   updateFdData,
   updateGoldData,
   updateRealEstateData,
-} = require("./src/cronJobs/cron.js");
-const seedDatabase = require("./src/seeder/seeds.js");
+} from "./src/cronJobs/cron.js";
+
+// Import necessary methods to resolve __dirname in ES modules
+import { fileURLToPath } from "url";
+import { dirname } from "path";
 
 dotenv.config();
+
+// Resolve __dirname using import.meta.url
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 // Initialize Express app
 const app = express();
@@ -28,7 +36,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 const corsOptions = {
-  origin: "http://148.72.246.221:81/deskledger/app",
+  origin: "*",
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization", "ids"],
@@ -40,9 +48,7 @@ app.options("*", cors(corsOptions));
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // Routes
-MainRoutes.forEach((route) => {
-  app.use("/", route);
-});
+app.use("/", routes);
 
 // Image endpoint
 app.get("/image/:filename", (req, res) => {

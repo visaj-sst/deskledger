@@ -1,6 +1,6 @@
 //bank.js
 
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const BankSchema = new Schema({
@@ -11,4 +11,4 @@ const BankSchema = new Schema({
 }, { timestamps: true });
 
 const BankModel = mongoose.model('Bank', BankSchema);
-module.exports = BankModel;
+export default BankModel;

@@ -1,41 +1,38 @@
-const express = require("express");
+import express from "express";
 
 const router = express.Router();
 
-const realEstateController = require("../controller/realEstateController.js");
-const {
-  ensureAuthenticated,
-} = require("../../../middlewares/authValidator.js");
+import { ensureAuthenticated } from "../../../middlewares/authValidator.js";
+import {
+  createRealEstate,
+  deleteMultipleRealEstates,
+  deleteRealEstate,
+  getAllRealEstate,
+  getRealEstateAnalysis,
+  updateRealEstate,
+} from "../controller/realEstateController.js";
+
+import { validateRealEstate } from "../validation/realEstateValidate.js";
 
 router.post(
   "/real-estate/register",
   ensureAuthenticated,
-  realEstateController.createRealEstate
+  validateRealEstate,
+  createRealEstate
 );
-router.get(
-  "/real-estate/view",
-  ensureAuthenticated,
-  realEstateController.getAllRealEstate
-);
+router.get("/real-estate/view", ensureAuthenticated, getAllRealEstate);
 router.put(
   "/real-estate/update/:id",
   ensureAuthenticated,
-  realEstateController.updateRealEstate
+  validateRealEstate,
+  updateRealEstate
 );
-router.delete(
-  "/real-estate/delete/:id",
-  ensureAuthenticated,
-  realEstateController.deleteRealEstate
-);
+router.delete("/real-estate/delete/:id", ensureAuthenticated, deleteRealEstate);
 router.delete(
   "/real-estate/multiple-delete",
   ensureAuthenticated,
-  realEstateController.deleteMultipleRealEstates
+  deleteMultipleRealEstates
 );
-router.get(
-  "/real-estate-analysis",
-  ensureAuthenticated,
-  realEstateController.getRealEstateAnalysis
-);
+router.get("/real-estate-analysis", ensureAuthenticated, getRealEstateAnalysis);
 
-module.exports = router;
+export default router;

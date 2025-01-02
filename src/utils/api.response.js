@@ -1,6 +1,6 @@
 //  utils/api.response.js
 
-const statusCode = {
+export const statusCode = {
   OK: 200,
   CREATED: 201,
   NO_CONTENT: 204,
@@ -11,7 +11,7 @@ const statusCode = {
   CONFLICT: 409,
   INTERNAL_SERVER_ERROR: 500,
 };
-const message = {
+export const message = {
   //Real Estate
   PropertyAdded: "Property Added Successfully",
   propertyNotFound: "Property Not Found",
@@ -203,9 +203,4 @@ const message = {
   tokenNotMatch: "Unauthorized. Token does not match user",
   tokenVerifyFail: "Token verification failed",
   updateUserError: "An error occurred while updating the profile",
-};
-
-module.exports = {
-  statusCode,
-  message,
 };

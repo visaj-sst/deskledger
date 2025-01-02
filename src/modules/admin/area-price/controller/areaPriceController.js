@@ -1,10 +1,10 @@
-const AreaPriceModel = require("../model/areaPrice.js");
-const { statusCode, message } = require("../../../../utils/api.response.js");
-const logger = require("../../../../service/logger.service.js");
+import AreaPriceModel from "../model/areaPrice.js";
+import { statusCode, message } from "../../../../utils/api.response.js";
+import logger from "../../../../service/logger.service.js";
 
 //====================== ADD AREA PRICE ======================//
 
-const createAreaPrice = async (req, res) => {
+export const createAreaPrice = async (req, res) => {
   try {
     const { cityId, stateId, areaName, pricePerSquareFoot } = req.body;
 
@@ -52,7 +52,7 @@ const createAreaPrice = async (req, res) => {
 
 //====================== UPDATE AREA PRICE ======================//
 
-const updateAreaPrice = async (req, res) => {
+export const updateAreaPrice = async (req, res) => {
   try {
     const { id } = req.params;
     const { cityId, stateId, areaName, pricePerSquareFoot } = req.body;
@@ -91,7 +91,7 @@ const updateAreaPrice = async (req, res) => {
 
 //====================== DELETE AREA PRICE ======================//
 
-const deleteAreaPrice = async (req, res) => {
+export const deleteAreaPrice = async (req, res) => {
   try {
     const { id } = req.params;
 
@@ -123,7 +123,7 @@ const deleteAreaPrice = async (req, res) => {
 
 //====================== VIEW AREA PRICE ======================//
 
-const getAreaPrices = async (req, res) => {
+export const getAreaPrices = async (req, res) => {
   try {
     logger.info("Fetching area prices with details...");
 
@@ -192,7 +192,7 @@ const getAreaPrices = async (req, res) => {
 
 //====================== DELETE MULTIPLE AREA PRICE ======================//
 
-const deleteMultipleAreaPrices = async (req, res) => {
+export const deleteMultipleAreaPrices = async (req, res) => {
   try {
     const { ids } = req.body;
     logger.info(`Deleting multiple area prices with IDs: ${ids.join(", ")}`);
@@ -227,12 +227,4 @@ const deleteMultipleAreaPrices = async (req, res) => {
       message: message.errorDeletingAreaPrice,
     });
   }
-};
-
-module.exports = {
-  createAreaPrice,
-  updateAreaPrice,
-  deleteAreaPrice,
-  getAreaPrices,
-  deleteMultipleAreaPrices,
 };

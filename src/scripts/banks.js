@@ -1,4 +1,4 @@
-const BankModel = require("../models/bank"); // Adjust the path
+import BankModel from '../models/bank.js'; // Adjust the path
 
 const indianBanks = [
   "State Bank of India",
@@ -60,4 +60,4 @@ async function insertIndianBanks() {
   }
 }
 
-module.exports = insertIndianBanks;
+export default insertIndianBanks;

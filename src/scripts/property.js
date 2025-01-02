@@ -1,6 +1,6 @@
-const mongoose = require("mongoose");
-const PropertyType = require("./models/PropertyType");
-const SubPropertyType = require("./models/SubPropertyType");
+import mongoose from 'mongoose';
+import PropertyType from './models/PropertyType.js';
+import SubPropertyType from './models/SubPropertyType.js';
 
 // Property types and their sub-types
 const propertyTypes = [

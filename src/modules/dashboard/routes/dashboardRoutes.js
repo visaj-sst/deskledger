@@ -1,27 +1,27 @@
-const express = require("express");
-const {
+import express from "express";
+import {
+  ensureAdmin,
   ensureAuthenticated,
-} = require("../../../middlewares/authValidator.js");
+} from "../../../middlewares/authValidator.js";
+import {
+  dashboardAnalysis,
+  getHighestGrowthInSector,
+  getInvestmentsBySector,
+} from "../controller/dashboardController2.js";
+
 const router = express.Router();
-const dashboardController = require("../controller/dashboardController2.js");
 
 // Dashboard routes
-router.get(
-  "/overall-investment",
-  ensureAuthenticated,
-  dashboardController.dashboardAnalysis
-);
-// router.get("/combined-num-analysis", ensureAuthenticated, dashboardController.getCombinedNumAnalysis);
+router.get("/overall-investment", ensureAuthenticated, dashboardAnalysis);
 router.get(
   "/investments/highest-growth/:sector",
   ensureAuthenticated,
-  dashboardController.getHighestGrowthInSector
+  getHighestGrowthInSector
 );
-// router.get("/top-gainers", ensureAuthenticated, dashboardController.getTopGainers);
 router.get(
   "/investments-by-sector/:sector",
   ensureAuthenticated,
-  dashboardController.getInvestmentsBySector
+  getInvestmentsBySector
 );
 
-module.exports = router;
+export default router;

@@ -1,46 +1,53 @@
-const express = require("express");
+import express from "express";
 const router = express.Router();
-const subPropertyTypeController = require("../controller/subPropertyTypeController");
-const {
+import {
   ensureAuthenticated,
   ensureAdmin,
-} = require("../../../../middlewares/authValidator");
+} from "../../../../middlewares/authValidator.js";
+
+import {
+  deleteMultipleSubPropertyTypes,
+  deleteSubPropertyType,
+  getSubPropertyType,
+  subPropertyTypeRegister,
+  updateSubPropertyType,
+} from "../controller/subPropertyTypeController.js";
 
 // Sub Property Type Routes
 router.post(
   "/subpropertytype",
   ensureAuthenticated,
   ensureAdmin,
-  subPropertyTypeController.subPropertyTypeRegister
+  subPropertyTypeRegister
 );
 router.put(
   "/subpropertytype/update/:id",
   ensureAuthenticated,
   ensureAdmin,
-  subPropertyTypeController.updateSubPropertyType
+  updateSubPropertyType
 );
 router.delete(
   "/subpropertytype/delete/:id",
   ensureAuthenticated,
   ensureAdmin,
-  subPropertyTypeController.deleteSubPropertyType
+  deleteSubPropertyType
 );
 router.get(
   "/subpropertytypes",
   ensureAuthenticated,
   ensureAdmin,
-  subPropertyTypeController.getSubPropertyType
+  getSubPropertyType
 );
 router.get(
   "/subpropertytypes-for-user",
   ensureAuthenticated,
-  subPropertyTypeController.getSubPropertyType
+  getSubPropertyType
 );
 router.delete(
   "/subpropertytypes/multiple-delete",
   ensureAuthenticated,
   ensureAdmin,
-  subPropertyTypeController.deleteMultipleSubPropertyTypes
+  deleteMultipleSubPropertyTypes
 );
 
-module.exports = router;
+export default router;

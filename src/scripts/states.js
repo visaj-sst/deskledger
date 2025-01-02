@@ -1,4 +1,4 @@
-const StateModel = require("../models/state"); // Adjust the path
+import StateModel from '../models/state.js'; // Adjust the path
 
 const states = [
   "Andhra Pradesh",
@@ -56,4 +56,4 @@ async function insertStates() {
   }
 }
 
-module.exports = insertStates;
+export default insertStates;

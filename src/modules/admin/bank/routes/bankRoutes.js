@@ -1,47 +1,29 @@
-const express = require("express");
-const router = express.Router();
-const bankController = require("../controller/bankController.js");
-const {
-  ensureAuthenticated,
+import express from "express";
+import {
+  createBank,
+  deleteBank,
+  deleteMultipleBanks,
+  getBanks,
+  updateBank,
+} from "../controller/bankController.js";
+import {
   ensureAdmin,
-} = require("../../../../middlewares/authValidator.js");
+  ensureAuthenticated,
+} from "../../../../middlewares/authValidator.js";
+
+const router = express.Router();
 
 //Bank Master routes
-router.post(
-  "/bank-register",
-  ensureAuthenticated,
-  ensureAdmin,
-  bankController.createBank
-);
-router.put(
-  "/bank-update/:id",
-  ensureAuthenticated,
-  ensureAdmin,
-  bankController.updateBank
-);
-router.delete(
-  "/bank-delete/:id",
-  ensureAuthenticated,
-  ensureAdmin,
-  bankController.deleteBank
-);
-router.put(
-  "/bank-update/:id",
-  ensureAuthenticated,
-  ensureAdmin,
-  bankController.updateBank
-);
-router.get("/banks", ensureAuthenticated, ensureAdmin, bankController.getBanks);
-router.get(
-  "/banks-dropdown-user",
-  ensureAuthenticated,
-  bankController.getBanks
-);
+router.post("/bank-register", ensureAuthenticated, ensureAdmin, createBank);
+router.put("/bank-update/:id", ensureAuthenticated, ensureAdmin, updateBank);
+router.delete("/bank-delete/:id", ensureAuthenticated, ensureAdmin, deleteBank);
+router.get("/banks", ensureAuthenticated, ensureAdmin, getBanks);
+router.get("/banks-dropdown-user", ensureAuthenticated, getBanks);
 router.delete(
   "/banks/multiple-delete",
   ensureAuthenticated,
   ensureAdmin,
-  bankController.deleteMultipleBanks
+  deleteMultipleBanks
 );
 
-module.exports = router;
+export default router;

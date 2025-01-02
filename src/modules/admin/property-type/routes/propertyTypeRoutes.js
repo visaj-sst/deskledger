@@ -1,47 +1,44 @@
-const express = require("express");
+import express from "express";
 const router = express.Router();
-const {
+import {
   ensureAuthenticated,
   ensureAdmin,
-} = require("../../../../middlewares/authValidator.js");
+} from "../../../../middlewares/authValidator.js";
 
-const propertyTypeController = require("../controller/propertyTypeController.js");
+import {
+  deleteMultiplePropertyTypes,
+  deletePropertyType,
+  getPropertyType,
+  propertyTypeRegister,
+  updatePropertyType,
+} from "../controller/propertyTypeController.js";
 
 // Property type routes
 router.post(
   "/propertytype",
   ensureAuthenticated,
   ensureAdmin,
-  propertyTypeController.propertyTypeRegister
+  propertyTypeRegister
 );
 router.put(
   "/propertytype/update/:id",
   ensureAuthenticated,
   ensureAdmin,
-  propertyTypeController.updatePropertyType
+  updatePropertyType
 );
 router.delete(
   "/propertytype/delete/:id",
   ensureAuthenticated,
   ensureAdmin,
-  propertyTypeController.deletePropertyType
+  deletePropertyType
 );
-router.get(
-  "/propertytypes",
-  ensureAuthenticated,
-  ensureAdmin,
-  propertyTypeController.getPropertyType
-);
-router.get(
-  "/propertytypes-for-user",
-  ensureAuthenticated,
-  propertyTypeController.getPropertyType
-);
+router.get("/propertytypes", ensureAuthenticated, ensureAdmin, getPropertyType);
+router.get("/propertytypes-for-user", ensureAuthenticated, getPropertyType);
 router.delete(
   "/propertytypes/multiple-delete",
   ensureAuthenticated,
   ensureAdmin,
-  propertyTypeController.deleteMultiplePropertyTypes
+  deleteMultiplePropertyTypes
 );
 
-module.exports = router;
+export default router;

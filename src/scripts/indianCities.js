@@ -1,6 +1,6 @@
-const mongoose = require("mongoose");
-const StateModel = require("../models/state"); // Adjust the path to your State model
-const CityModel = require("../models/city"); // Adjust the path to your City model
+import mongoose from 'mongoose';
+import StateModel from '../models/state.js'; // Adjust the path to your State model
+import CityModel from '../models/city.js'; // Adjust the path to your City model
 
 const indianCities = [
   { state: "Andaman and Nicobar Islands", cities: ["Port Blair"] },
@@ -1364,4 +1364,4 @@ async function insertCities() {
   }
 }
 
-module.exports = insertCities;
+export default insertCities;

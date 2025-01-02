@@ -1,55 +1,57 @@
-const userController = require("../controller/usercontroller.js");
-const {
-  ensureAuthenticated,
+import express from "express";
+
+import {
   ensureAdmin,
-} = require("../../../middlewares/authValidator.js");
-const {
+  ensureAuthenticated,
+} from "../../../middlewares/authValidator.js";
+
+import {
+  changePassword,
+  deleteUser,
+  forgotPassword,
+  getUser,
+  getUsers,
+  loginUser,
+  logoutUser,
+  newPassword,
+  registerUser,
+  resetPassword,
+  updateUser,
+} from "../controller/usercontroller.js";
+import {
   userLoginValidate,
   userRegisterValidate,
-} = require("../validation/userValidator.js");
-const {
-  upload,
-  multerErrorHandling,
-} = require("../../../middlewares/upload.js");
-const Router = require("express").Router();
+} from "../validation/userValidator.js";
+
+import { upload, multerErrorHandling } from "../../../middlewares/upload.js";
+
+const Router = express.Router();
 
 // User Authentication Routes
-Router.post("/user/login", userLoginValidate, userController.loginUser);
-Router.post("/user/logout", ensureAuthenticated, userController.logoutUser);
-Router.post(
-  "/user/register",
-  userRegisterValidate,
-  userController.registerUser
-);
+Router.post("/user/login", userLoginValidate, loginUser);
+Router.post("/user/logout", ensureAuthenticated, logoutUser);
+Router.post("/user/register", userRegisterValidate, registerUser);
 
 // User Profile Routes
-Router.get("/user-profile/:id", ensureAuthenticated, userController.getUser);
+Router.get("/user-profile/:id", ensureAuthenticated, getUser);
 Router.put(
   "/user-profile/update/:id",
   ensureAuthenticated,
   upload.single("profileImage"),
   multerErrorHandling,
-  userController.updateUser
+  updateUser
 );
 
 // User Management Routes
-Router.delete(
-  "/user/delete/:id",
-  ensureAuthenticated,
-  userController.deleteUser
-);
-Router.post(
-  "/user/changepassword",
-  ensureAuthenticated,
-  userController.changePassword
-);
+Router.delete("/user/delete/:id", ensureAuthenticated, deleteUser);
+Router.post("/user/changepassword", ensureAuthenticated, changePassword);
 
 // Password Recovery Routes
-Router.post("/forgot-password", userController.forgotPassword);
-Router.post("/reset-password", userController.resetPassword);
-Router.post("/newpassword", userController.newPassword);
+Router.post("/forgot-password", forgotPassword);
+Router.post("/reset-password", resetPassword);
+Router.post("/newpassword", newPassword);
 
 // Admin Routes
-Router.get("/users", ensureAuthenticated, ensureAdmin, userController.getUsers);
+Router.get("/users", ensureAuthenticated, ensureAdmin, getUsers);
 
-module.exports = Router;
+export default Router;

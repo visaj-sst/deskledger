@@ -1,6 +1,6 @@
-const Joi = require("joi");
+import Joi from "joi";
 
-const validateGold = (req, res, next) => {
+export const validateGold = (req, res, next) => {
   const isUpdating = req.method === "PUT";
 
   const schema = Joi.object({
@@ -87,5 +87,3 @@ const validateGold = (req, res, next) => {
 
   next();
 };
-
-module.exports = { validateGold };

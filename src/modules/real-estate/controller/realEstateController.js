@@ -1,12 +1,12 @@
-const AreaPriceModel = require("../../admin/area-price/model/areaPrice.js");
-const RealEstateModel = require("../model/realEstate.js");
-const RealEstateAnalysisModel = require("../model/realEstateAnalysis.js");
-const { statusCode, message } = require("../../../utils/api.response.js");
-const mongoose = require("mongoose");
-const logger = require("../../../service/logger.service.js");
+import AreaPriceModel from "../../admin/area-price/model/areaPrice.js";
+import RealEstateModel from "../model/realEstate.js";
+import RealEstateAnalysisModel from "../model/realEstateAnalysis.js";
+import { statusCode, message } from "../../../utils/api.response.js";
+import mongoose from "mongoose";
+import logger from "../../../service/logger.service.js";
 
 //====================== REGISTER REAL ESTATE INFO ======================//
-exports.createRealEstate = async (req, res) => {
+export const createRealEstate = async (req, res) => {
   try {
     const userId = req.user ? req.user.id : null;
 
@@ -141,7 +141,7 @@ exports.createRealEstate = async (req, res) => {
 };
 
 //====================== UPDATE REAL ESTATE INFO ======================//
-exports.updateRealEstate = async (req, res) => {
+export const updateRealEstate = async (req, res) => {
   try {
     const { id } = req.params;
     const {
@@ -257,7 +257,7 @@ exports.updateRealEstate = async (req, res) => {
 };
 
 //====================== DELETE REAL ESTATE INFO ======================//
-exports.deleteRealEstate = async (req, res) => {
+export const deleteRealEstate = async (req, res) => {
   try {
     const { id } = req.params;
     const userId = req.user.id;
@@ -298,7 +298,7 @@ exports.deleteRealEstate = async (req, res) => {
 
 //====================== VIEW REAL ESTATE INFO ======================//
 
-exports.getAllRealEstate = async (req, res) => {
+export const getAllRealEstate = async (req, res) => {
   try {
     const userId = req.user.id;
     const realestates = await RealEstateModel.aggregate([
@@ -409,7 +409,7 @@ exports.getAllRealEstate = async (req, res) => {
 
 //====================== DELETE MULTIPLE REAL ESTATES ======================//
 
-exports.deleteMultipleRealEstates = async (req, res) => {
+export const deleteMultipleRealEstates = async (req, res) => {
   try {
     const { ids } = req.body;
     const userId = req.user.id;
@@ -456,7 +456,7 @@ exports.deleteMultipleRealEstates = async (req, res) => {
 
 //====================== VIEW REAL ESTATE ANALYSIS ======================//
 
-exports.getRealEstateAnalysis = async (req, res) => {
+export const getRealEstateAnalysis = async (req, res) => {
   try {
     const userId = req.user.id;
 

@@ -1,49 +1,46 @@
-const express = require("express");
+import express from "express";
 
 const router = express.Router();
 
-const areaPriceController = require("../controller/areaPriceController.js");
+import {
+  createAreaPrice,
+  deleteAreaPrice,
+  deleteMultipleAreaPrices,
+  getAreaPrices,
+  updateAreaPrice,
+} from "../controller/areaPriceController.js";
 
-const {
-  ensureAuthenticated,
+import {
   ensureAdmin,
-} = require("../../../../middlewares/authValidator.js");
+  ensureAuthenticated,
+} from "../../../../middlewares/authValidator.js";
 
 // Area Price routes
 router.post(
   "/area-price/register",
   ensureAuthenticated,
   ensureAdmin,
-  areaPriceController.createAreaPrice
+  createAreaPrice
 );
 router.put(
   "/area-price/update/:id",
   ensureAuthenticated,
   ensureAdmin,
-  areaPriceController.updateAreaPrice
+  updateAreaPrice
 );
 router.delete(
   "/area-price/delete/:id",
   ensureAuthenticated,
   ensureAdmin,
-  areaPriceController.deleteAreaPrice
+  deleteAreaPrice
 );
-router.get(
-  "/area-prices",
-  ensureAuthenticated,
-  ensureAdmin,
-  areaPriceController.getAreaPrices
-);
-router.get(
-  "/area-prices-for-user",
-  ensureAuthenticated,
-  areaPriceController.getAreaPrices
-);
+router.get("/area-prices", ensureAuthenticated, ensureAdmin, getAreaPrices);
+router.get("/area-prices-for-user", ensureAuthenticated, getAreaPrices);
 router.delete(
   "/area-price/multiple-delete",
   ensureAuthenticated,
   ensureAdmin,
-  areaPriceController.deleteMultipleAreaPrices
+  deleteMultipleAreaPrices
 );
 
-module.exports = router;
+export default router;

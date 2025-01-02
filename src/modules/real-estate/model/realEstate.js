@@ -1,5 +1,5 @@
 //realestate.js
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const RealEstateSchema = new Schema({
@@ -71,4 +71,4 @@ const RealEstateSchema = new Schema({
 }, { timestamps: true });
 
 const RealEstateModel = mongoose.model('RealEstate', RealEstateSchema);
-module.exports = RealEstateModel;
+export default RealEstateModel;

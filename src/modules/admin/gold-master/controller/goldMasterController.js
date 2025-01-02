@@ -1,10 +1,10 @@
-const GoldMasterModel = require("../model/goldMaster");
-const { statusCode, message } = require("../../../../utils/api.response");
-const logger = require("../../../../service/logger.service");
+import GoldMasterModel from "../model/goldMaster.js";
+import { statusCode, message } from "../../../../utils/api.response.js";
+import logger from "../../../../service/logger.service.js";
 
 //====================== ADD GOLD MASTER  ======================//
 
-const goldMasterInfoRegister = async (req, res) => {
+export const goldMasterInfoRegister = async (req, res) => {
   try {
     const { goldRate22KPerGram, goldRate24KPerGram } = req.body;
 
@@ -45,7 +45,7 @@ const goldMasterInfoRegister = async (req, res) => {
 
 //====================== UPDATE GOLD MASTER  ======================//
 
-const updateGoldMasterInfo = async (req, res) => {
+export const updateGoldMasterInfo = async (req, res) => {
   try {
     const { id } = req.params;
     const { goldRate22KPerGram, goldRate24KPerGram } = req.body;
@@ -84,7 +84,7 @@ const updateGoldMasterInfo = async (req, res) => {
 
 //====================== DELETE GOLD MASTER  ======================//
 
-const deleteGoldMasterInfo = async (req, res) => {
+export const deleteGoldMasterInfo = async (req, res) => {
   try {
     const { id } = req.params;
 
@@ -116,7 +116,7 @@ const deleteGoldMasterInfo = async (req, res) => {
 
 //====================== VIEW GOLD MASTER INFO ======================//
 
-const getGoldMasterInfo = async (req, res) => {
+export const getGoldMasterInfo = async (req, res) => {
   try {
     logger.info("Fetching gold master information...");
 
@@ -141,11 +141,4 @@ const getGoldMasterInfo = async (req, res) => {
       error: error.message,
     });
   }
-};
-
-module.exports = {
-  goldMasterInfoRegister,
-  updateGoldMasterInfo,
-  deleteGoldMasterInfo,
-  getGoldMasterInfo,
 };

@@ -1,4 +1,4 @@
-function calculateTotalYears(startDate, maturityDate) {
+export function calculateTotalYears(startDate, maturityDate) {
   const start = new Date(startDate);
   const maturity = new Date(maturityDate);
 
@@ -17,5 +17,3 @@ function calculateTotalYears(startDate, maturityDate) {
     return "0M";
   }
 }
-
-module.exports = { calculateTotalYears };

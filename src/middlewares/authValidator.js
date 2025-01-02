@@ -1,11 +1,11 @@
 //authValidator.js
 
-const jwt = require("jsonwebtoken");
-const TokenModel = require("../modules/user/model/tokenModel");
-const { statusCode, message } = require("../utils/api.response");
-const UserModel = require("../modules/user/model/userModel");
+import jwt from "jsonwebtoken";
+import TokenModel from "../modules/user/model/tokenModel.js";
+import { statusCode, message } from "../utils/api.response.js";
+import UserModel from "../modules/user/model/userModel.js";
 
-const ensureAuthenticated = async (req, res, next) => {
+export const ensureAuthenticated = async (req, res, next) => {
   try {
     const bearheader = req.headers["authorization"];
     if (!bearheader) {
@@ -46,7 +46,7 @@ const ensureAuthenticated = async (req, res, next) => {
   }
 };
 
-const ensureAdmin = async (req, res, next) => {
+export const ensureAdmin = async (req, res, next) => {
   try {
     const userId = req.user.id;
     const user = await UserModel.findById(userId);
@@ -67,5 +67,3 @@ const ensureAdmin = async (req, res, next) => {
     });
   }
 };
-
-module.exports = { ensureAuthenticated, ensureAdmin };

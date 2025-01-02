@@ -1,42 +1,34 @@
-const express = require("express");
-const router = express.Router();
-const stateController = require("../controller/stateController.js");
-const {
+import express from "express";
+import {
   ensureAuthenticated,
   ensureAdmin,
-} = require("../../../../middlewares/authValidator.js");
+} from "../../../../middlewares/authValidator.js";
+import {
+  deleteMultipleStates,
+  deleteState,
+  getState,
+  stateRegister,
+  updateState,
+} from "../controller/stateController.js";
+
+const router = express.Router();
 
 // State Routes
-router.post(
-  "/state",
-  ensureAuthenticated,
-  ensureAdmin,
-  stateController.stateRegister
-);
-router.put(
-  "/state/update/:id",
-  ensureAuthenticated,
-  ensureAdmin,
-  stateController.updateState
-);
-router.get(
-  "/states",
-  ensureAuthenticated,
-  ensureAdmin,
-  stateController.getState
-);
-router.get("/states-for-user", ensureAuthenticated, stateController.getState);
+router.post("/state", ensureAuthenticated, ensureAdmin, stateRegister);
+router.put("/state/update/:id", ensureAuthenticated, ensureAdmin, updateState);
+router.get("/states", ensureAuthenticated, ensureAdmin, getState);
+router.get("/states-for-user", ensureAuthenticated, getState);
 router.delete(
   "/state/delete/:id",
   ensureAuthenticated,
   ensureAdmin,
-  stateController.deleteState
+  deleteState
 );
 router.delete(
   "/states/multiple-delete",
   ensureAuthenticated,
   ensureAdmin,
-  stateController.deleteMultipleStates
+  deleteMultipleStates
 );
 
-module.exports = router;
+export default router;

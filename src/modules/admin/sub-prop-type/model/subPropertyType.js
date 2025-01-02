@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const SubPropertyTypeSchema = new Schema({
@@ -12,4 +12,4 @@ const SubPropertyTypeSchema = new Schema({
 }, { timestamps: true });
 
 const SubPropertyTypeModel = mongoose.model('SubPropertyType', SubPropertyTypeSchema);
-module.exports = SubPropertyTypeModel;
+export default SubPropertyTypeModel;

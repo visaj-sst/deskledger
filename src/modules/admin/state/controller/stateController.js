@@ -1,10 +1,10 @@
-const StateModel = require("../model/state");
-const { statusCode, message } = require("../../../../utils/api.response.js");
-const logger = require("../../../../service/logger.service.js");
+import StateModel from "../model/state.js";
+import { statusCode, message } from "../../../../utils/api.response.js";
+import logger from "../../../../service/logger.service.js";
 
 //====================== ADD STATE  ======================//
 
-const stateRegister = async (req, res) => {
+export const stateRegister = async (req, res) => {
   try {
     const { state } = req.body;
 
@@ -41,7 +41,7 @@ const stateRegister = async (req, res) => {
 
 //====================== UPDATE STATE  ======================//
 
-const updateState = async (req, res) => {
+export const updateState = async (req, res) => {
   try {
     const { id } = req.params;
     const { state } = req.body;
@@ -80,7 +80,7 @@ const updateState = async (req, res) => {
 
 //====================== DELETE STATE  ======================//
 
-const deleteState = async (req, res) => {
+export const deleteState = async (req, res) => {
   try {
     const { id } = req.params;
 
@@ -112,7 +112,7 @@ const deleteState = async (req, res) => {
 
 //====================== VIEW STATE  ======================//
 
-const getState = async (req, res) => {
+export const getState = async (req, res) => {
   try {
     logger.info("Attempting to fetch all states");
 
@@ -149,7 +149,7 @@ const getState = async (req, res) => {
 
 //====================== DELETE MULTIPLE STATES  ======================//
 
-const deleteMultipleStates = async (req, res) => {
+export const deleteMultipleStates = async (req, res) => {
   try {
     const { ids } = req.body;
 
@@ -179,12 +179,4 @@ const deleteMultipleStates = async (req, res) => {
       error: error.message,
     });
   }
-};
-
-module.exports = {
-  stateRegister,
-  getState,
-  updateState,
-  deleteState,
-  deleteMultipleStates,
 };

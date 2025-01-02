@@ -1,10 +1,9 @@
-const mongoose = require("mongoose");
-const logger = require("../service/logger.service");
-const BankModel = require("../../src/modules/admin/bank/model/bank");
-const PropertyType = require("../../src/modules/admin/property-type/model/propertyType");
-const SubPropertyType = require("../../src/modules/admin/sub-prop-type/model/subPropertyType");
-const StateModel = require("../../src/modules/admin/state/model/state");
-const CityModel = require("../../src/modules/admin/city/model/city");
+import logger from "../service/logger.service.js";
+import BankModel from "../../src/modules/admin/bank/model/bank.js";
+import PropertyType from "../../src/modules/admin/property-type/model/propertyType.js";
+import SubPropertyType from "../../src/modules/admin/sub-prop-type/model/subPropertyType.js";
+import StateModel from "../../src/modules/admin/state/model/state.js";
+import CityModel from "../../src/modules/admin/city/model/city.js";
 
 // Data arrays (populate with actual data)
 const indianBanks = [
@@ -1522,7 +1521,7 @@ const indianCities = [
 ];
 
 // Seed functions
-const insertBanks = async () => {
+export const insertBanks = async () => {
   try {
     const existingBanks = await BankModel.countDocuments();
     if (existingBanks > 0) {
@@ -1538,7 +1537,7 @@ const insertBanks = async () => {
   }
 };
 
-const insertPropertyTypes = async () => {
+export const insertPropertyTypes = async () => {
   try {
     const existingPropertyTypes = await PropertyType.countDocuments();
     if (existingPropertyTypes > 0) {
@@ -1564,7 +1563,7 @@ const insertPropertyTypes = async () => {
   }
 };
 
-const insertStates = async () => {
+export const insertStates = async () => {
   try {
     const existingStates = await StateModel.countDocuments();
     if (existingStates > 0) {
@@ -1580,7 +1579,7 @@ const insertStates = async () => {
   }
 };
 
-const insertCities = async () => {
+export const insertCities = async () => {
   try {
     const existingCities = await CityModel.countDocuments();
     if (existingCities > 0) {
@@ -1609,7 +1608,7 @@ const insertCities = async () => {
   }
 };
 
-const seedDatabase = async () => {
+export const seedDatabase = async () => {
   try {
     logger.info("Starting database seeding...");
     await insertBanks();
@@ -1622,4 +1621,4 @@ const seedDatabase = async () => {
   }
 };
 
-module.exports = seedDatabase;
+export default seedDatabase;

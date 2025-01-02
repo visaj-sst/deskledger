@@ -1,17 +1,17 @@
-const UserModel = require("../model/userModel");
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
-const TokenModel = require("../model/tokenModel.js");
-const nodemailer = require("nodemailer");
-const PasswordResetTokenModel = require("../model/passwordResetTokenModel.js");
-const { statusCode, message } = require("../../../utils/api.response.js");
-const FixedDepositModel = require("../../fixed-deposit/model/fixedDeposit.js");
-const { generateOtp } = require("../../../helpers/aggregation.js");
-const logger = require("../../../service/logger.service.js");
+import UserModel from "../model/userModel.js";
+import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
+import TokenModel from "../model/tokenModel.js";
+import nodemailer from "nodemailer";
+import PasswordResetTokenModel from "../model/passwordResetTokenModel.js";
+import { statusCode, message } from "../../../utils/api.response.js";
+import FixedDepositModel from "../../fixed-deposit/model/fixedDeposit.js";
+import generateOtp from "../../../helpers/otp.js";
+import logger from "../../../service/logger.service.js";
 
 //====================== REGISTER USER ======================//
 
-const registerUser = async (req, res) => {
+export const registerUser = async (req, res) => {
   try {
     const { firstName, lastName, phoneNo, email, password } = req.body;
 
@@ -59,7 +59,7 @@ const registerUser = async (req, res) => {
 
 //====================== LOGIN USER ======================//
 
-const loginUser = async (req, res) => {
+export const loginUser = async (req, res) => {
   const { email, password } = req.body;
 
   try {
@@ -113,7 +113,7 @@ const loginUser = async (req, res) => {
 
 //====================== VIEW USER ======================//
 
-const getUser = async (req, res) => {
+export const getUser = async (req, res) => {
   try {
     const id = req.params.id;
     const user = await UserModel.findById(id, { password: 0 });
@@ -142,7 +142,7 @@ const getUser = async (req, res) => {
 
 //====================== UPDATE USER ======================//
 
-const updateUser = async (req, res) => {
+export const updateUser = async (req, res) => {
   try {
     if (req.fileValidationError) {
       logger.warn("Invalid image file uploaded.");
@@ -205,7 +205,7 @@ const updateUser = async (req, res) => {
 };
 //====================== DELETE USER ======================//
 
-const deleteUser = async (req, res) => {
+export const deleteUser = async (req, res) => {
   try {
     const userId = req.params.id;
 
@@ -245,7 +245,7 @@ const deleteUser = async (req, res) => {
 };
 
 //====================== CHANGE PASSWORD ======================//
-const changePassword = async (req, res) => {
+export const changePassword = async (req, res) => {
   try {
     const { oldPassword, newPassword, confirmPassword } = req.body;
     const userId = req.user.id;
@@ -305,7 +305,7 @@ const changePassword = async (req, res) => {
 
 //====================== FORGOT PASSWORD ======================//
 
-const forgotPassword = async (req, res) => {
+export const forgotPassword = async (req, res) => {
   const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
     auth: {
@@ -362,7 +362,7 @@ const forgotPassword = async (req, res) => {
 
 //====================== RESET PASSWORD ======================//
 
-const resetPassword = async (req, res) => {
+export const resetPassword = async (req, res) => {
   try {
     const { otp } = req.body;
 
@@ -411,7 +411,7 @@ const resetPassword = async (req, res) => {
 
 //====================== NEW PASSWORD ======================//
 
-const newPassword = async (req, res) => {
+export const newPassword = async (req, res) => {
   try {
     const { userId, newPassword, confirmPassword } = req.body;
 
@@ -461,7 +461,7 @@ const newPassword = async (req, res) => {
 
 //====================== LOGOUT USER ======================//
 
-const logoutUser = async (req, res) => {
+export const logoutUser = async (req, res) => {
   try {
     const authorizationHeader = req.headers["authorization"];
     if (!authorizationHeader) {
@@ -508,7 +508,7 @@ const logoutUser = async (req, res) => {
 
 //====================== VIEW ALL USERS ======================//
 
-const getUsers = async (req, res) => {
+export const getUsers = async (req, res) => {
   try {
     let page = req.query.page || 1;
     let limit = req.query.limit || 10;
@@ -543,18 +543,4 @@ const getUsers = async (req, res) => {
       error: error.message || error,
     });
   }
-};
-
-module.exports = {
-  registerUser,
-  loginUser,
-  getUsers,
-  getUser,
-  updateUser,
-  deleteUser,
-  changePassword,
-  forgotPassword,
-  resetPassword,
-  newPassword,
-  logoutUser,
 };

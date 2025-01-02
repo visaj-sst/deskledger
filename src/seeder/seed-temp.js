@@ -1,9 +1,9 @@
-const mongoose = require("mongoose");
-const BankModel = require("../modules/admin/bank/model/bank");
-const StateModel = require("../modules/admin/state/model/state");
-const CityModel = require("../modules/admin/city/model/city");
-const PropertyTypeModel = require("../modules/admin/property-type");
-const SubPropertyTypeModel = require("../modules/admin/sub-prop-type/model/subPropertyType");
+import mongoose from "mongoose";
+import BankModel from "../modules/admin/bank/model/bank.js";
+import StateModel from "../modules/admin/state/model/state.js";
+import CityModel from "../modules/admin/city/model/city.js";
+import PropertyTypeModel from "../modules/admin/property-type.js";
+import SubPropertyTypeModel from "../modules/admin/sub-prop-type/model/subPropertyType.js";
 
 // Database Connection
 mongoose.connect("mongodb://localhost:27017/deskledger", {
@@ -22,7 +22,7 @@ mongoose.connection.on("error", (err) => {
 });
 
 // Seeder Data
-const indianBanks = [
+export const indianBanks = [
   "State Bank of India",
   "HDFC Bank",
   "ICICI Bank",
@@ -31,7 +31,7 @@ const indianBanks = [
   // Add more banks as needed
 ];
 
-const states = [
+export const states = [
   "Andhra Pradesh",
   "Arunachal Pradesh",
   "Assam",
@@ -41,14 +41,14 @@ const states = [
   // Add more states as needed
 ];
 
-const indianCities = [
+export const indianCities = [
   { city: "Visakhapatnam", state: "Andhra Pradesh" },
   { city: "Vijayawada", state: "Andhra Pradesh" },
   { city: "Port Blair", state: "Andaman and Nicobar Islands" },
   // Add more cities with their corresponding states
 ];
 
-const propertyTypes = [
+export const propertyTypes = [
   "Residential",
   "Commercial",
   "Industrial",
@@ -56,14 +56,14 @@ const propertyTypes = [
   "Mixed-Use",
 ];
 
-const subPropertyTypes = {
+export const subPropertyTypes = {
   Residential: ["Single-family homes", "Multi-family homes", "Apartments"],
   Commercial: ["Office buildings", "Retail spaces", "Shopping malls"],
   // Add more sub-property types under each property type
 };
 
 // Seed Function
-async function seedDatabase() {
+export async function seedDatabase() {
   try {
     // Seed Banks
     const bankCount = await BankModel.countDocuments();

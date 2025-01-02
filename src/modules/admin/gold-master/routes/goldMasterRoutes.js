@@ -1,38 +1,39 @@
-const express = require("express");
+import express from "express";
 
 const router = express.Router();
 
-const goldMasterController = require("../controller/goldMasterController.js");
+import {
+  deleteGoldMasterInfo,
+  getGoldMasterInfo,
+  goldMasterInfoRegister,
+  updateGoldMasterInfo,
+} from "../controller/goldMasterController.js";
 
-const {
-  ensureAuthenticated,
+import {} from "../controller/goldMasterController.js";
+import {
   ensureAdmin,
-} = require("../../../../middlewares/authValidator.js");
+  ensureAuthenticated,
+} from "../../../../middlewares/authValidator.js";
 
 router.post(
   "/goldMaster/register",
   ensureAuthenticated,
   ensureAdmin,
-  goldMasterController.goldMasterInfoRegister
+  goldMasterInfoRegister
 );
 router.put(
   "/goldMaster/update/:id",
   ensureAuthenticated,
   ensureAdmin,
-  goldMasterController.updateGoldMasterInfo
+  updateGoldMasterInfo
 );
 router.delete(
   "/goldMaster/delete/:id",
   ensureAuthenticated,
   ensureAdmin,
-  goldMasterController.deleteGoldMasterInfo
+  deleteGoldMasterInfo
 );
-router.get(
-  "/goldMaster",
-  ensureAuthenticated,
-  ensureAdmin,
-  goldMasterController.getGoldMasterInfo
-);
+router.get("/goldMaster", ensureAuthenticated, ensureAdmin, getGoldMasterInfo);
 
 // Multiple Delete Remaining
-module.exports = router;
+export default router;

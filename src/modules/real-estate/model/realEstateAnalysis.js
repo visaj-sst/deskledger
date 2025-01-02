@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const realEstateAnalysisSchema = new Schema({ 
@@ -18,4 +18,4 @@ const realEstateAnalysisSchema = new Schema({
 }, { timestamps: true });
 
 const RealEstateAnalysisModel = mongoose.model("RealEstateAnalysis", realEstateAnalysisSchema);
-module.exports = RealEstateAnalysisModel;
+export default RealEstateAnalysisModel;

@@ -1,6 +1,6 @@
 //goldModel.js
 
-const mongoose = require("mongoose");
+import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const goldSchema = new Schema(
@@ -54,4 +54,4 @@ const goldSchema = new Schema(
 );
 
 const GoldModel = mongoose.model("Gold", goldSchema);
-module.exports = GoldModel;
+export default GoldModel;

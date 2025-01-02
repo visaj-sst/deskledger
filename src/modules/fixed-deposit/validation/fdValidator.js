@@ -1,7 +1,7 @@
-const Joi = require("joi");
-const { statusCode } = require("../../../utils/api.response");
+import Joi from "joi";
+import { statusCode } from "../../../utils/api.response.js";
 
-const validateFixedDeposit = (req, res, next) => {
+export const validateFixedDeposit = (req, res, next) => {
   const isUpdating = req.method === "PUT";
 
   const schema = Joi.object({
@@ -148,5 +148,3 @@ const validateFixedDeposit = (req, res, next) => {
 
   next();
 };
-
-module.exports = { validateFixedDeposit };
