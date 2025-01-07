@@ -14,35 +14,61 @@ import {
   updateGoldData,
   updateRealEstateData,
 } from "./src/cronJobs/cron.js";
+import { startScraping } from "./src/scripts/area-price-ws.js";
+import { startGoldPriceScraping } from "./src/scripts/gold-price-ws.js";
 
-// Import necessary methods to resolve __dirname in ES modules
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 
 dotenv.config();
 
-// Resolve __dirname using import.meta.url
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// Initialize Express app
 const app = express();
 const PORT = parseInt(process.env.PORT, 10) || 3000;
 const HOST = process.env.HOST || "localhost";
 const DB_CONNECTION = process.env.CONNECTION;
 
-// Middleware
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(cookieParser());
 const corsOptions = {
-  origin: "*",
+  // origin: (origin, callback) => {
+  //   console.log("CORS request from origin:", origin);
+  //   if (
+  //     origin === "http://148.72.246.221:81" ||
+  //     origin === "http://localhost:3000"
+  //   ) {
+  //     console.log("CORS allowed for origin:", origin);
+  //     callback(null, true);
+  //   } else {
+  //     console.log("CORS not allowed for origin:", origin);
+  //     callback(new Error("CORS not allowed"), false);
+  //   }
+  // },
+
+  origin: (origin, callback) => {
+    if (
+      !origin || // Allow undefined origins (like Postman)
+      origin === "http://148.72.246.221:81" ||
+      origin === "http://localhost:3000"
+    ) {
+      callback(null, true);
+    } else {
+      callback(new Error("CORS not allowed"), false);
+    }
+  },
+
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization", "ids"],
 };
+
 app.use(cors(corsOptions));
 app.options("*", cors(corsOptions));
+
+// Middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
 
 // Static files
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
@@ -68,8 +94,6 @@ app.get("/image/:filename", (req, res) => {
 const databaseConnection = async () => {
   try {
     await mongoose.connect(DB_CONNECTION, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
       serverSelectionTimeoutMS: 5000,
     });
     logger.info("Connected to the database.");
@@ -84,27 +108,55 @@ const runSeeder = async () => {
   try {
     logger.info("Starting database seeding...");
     await seedDatabase();
+    await startGoldPriceScraping();
+    await startScraping();
     logger.info("Database seeding completed.");
   } catch (error) {
     logger.error(`Error during seeding: ${error.message}`);
   }
 };
 
-// Cron job
-cron.schedule("0 0 * * *", async () => {
-  try {
-    logger.info("Cron job running at 12 AM...");
-    await updateFdData();
-    await updateGoldData();
-    await updateRealEstateData();
-    logger.info("Cron job completed successfully.");
-  } catch (error) {
-    logger.error(`Error in cron job: ${error.message}`);
-  }
-});
+// Cron job with additional error handling
+const scheduleCronJob = () => {
+  const cronExpression = "0 0 * * *";
 
-// Server startup
-app.listen(PORT, HOST, async () => {
+  logger.info(`Scheduling cron job with expression: ${cronExpression}`);
+
+  try {
+    cron.schedule(cronExpression, async () => {
+      logger.info("Cron job running at 12 AM...");
+
+      try {
+        await updateFdData();
+        logger.info("updateFdData completed successfully.");
+      } catch (error) {
+        logger.error(`Error in updateFdData: ${error.message}`);
+      }
+
+      try {
+        await updateGoldData();
+        logger.info("updateGoldData completed successfully.");
+      } catch (error) {
+        logger.error(`Error in updateGoldData: ${error.message}`);
+      }
+
+      try {
+        await updateRealEstateData();
+        logger.info("updateRealEstateData completed successfully.");
+      } catch (error) {
+        logger.error(`Error in updateRealEstateData: ${error.message}`);
+      }
+
+      logger.info("Cron job completed.");
+    });
+  } catch (error) {
+    logger.error(`Failed to schedule cron job: ${error.message}`);
+  }
+};
+
+scheduleCronJob();
+
+app.listen(PORT, async () => {
   logger.info(`App listening at http://${HOST}:${PORT}`);
   await databaseConnection();
   await runSeeder();

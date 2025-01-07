@@ -4,6 +4,8 @@ import PropertyType from "../../src/modules/admin/property-type/model/propertyTy
 import SubPropertyType from "../../src/modules/admin/sub-prop-type/model/subPropertyType.js";
 import StateModel from "../../src/modules/admin/state/model/state.js";
 import CityModel from "../../src/modules/admin/city/model/city.js";
+import UserModel from "../modules/user/model/userModel.js";
+import bcrypt from "bcrypt";
 
 // Data arrays (populate with actual data)
 const indianBanks = [
@@ -1608,6 +1610,33 @@ export const insertCities = async () => {
   }
 };
 
+export const insertAdminUser = async () => {
+  try {
+    const adminEmail = "admin@gmail.com";
+    const existingAdmin = await UserModel.findOne({ email: adminEmail });
+
+    if (existingAdmin) {
+      logger.info("Admin user already exists, skipping seeding.");
+      return;
+    }
+
+    const hashedPassword = await bcrypt.hash("Test@123", 10);
+    const adminUser = new UserModel({
+      userId: "admin",
+      firstName: "Admin",
+      lastName: "User",
+      email: adminEmail,
+      password: hashedPassword,
+      is_admin: true,
+    });
+
+    await adminUser.save();
+    logger.info("Admin user seeded successfully.");
+  } catch (err) {
+    logger.error(`Error inserting admin user: ${err.message}`);
+  }
+};
+
 export const seedDatabase = async () => {
   try {
     logger.info("Starting database seeding...");
@@ -1615,7 +1644,7 @@ export const seedDatabase = async () => {
     await insertPropertyTypes();
     await insertStates();
     await insertCities();
-    logger.info("Database seeding completed successfully.");
+    await insertAdminUser();
   } catch (err) {
     logger.error(`Error during seeding: ${err.message}`);
   }

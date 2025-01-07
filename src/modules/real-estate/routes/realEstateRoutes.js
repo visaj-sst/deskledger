@@ -21,12 +21,7 @@ router.post(
   createRealEstate
 );
 router.get("/real-estate/view", ensureAuthenticated, getAllRealEstate);
-router.put(
-  "/real-estate/update/:id",
-  ensureAuthenticated,
-  validateRealEstate,
-  updateRealEstate
-);
+router.put("/real-estate/update/:id", ensureAuthenticated, updateRealEstate);
 router.delete("/real-estate/delete/:id", ensureAuthenticated, deleteRealEstate);
 router.delete(
   "/real-estate/multiple-delete",
