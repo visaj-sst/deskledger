@@ -7,25 +7,20 @@ export const cityRegister = async (req, res) => {
   try {
     const { city, stateId } = req.body;
 
-    logger.info(`Checking if city ${city} already exists...`);
     const cityExists = await CityModel.findOne({ city });
     if (cityExists) {
-      logger.warn(`City already exists: ${city}`);
       return res.status(statusCode.CONFLICT).json({
         statusCode: statusCode.CONFLICT,
         message: message.cityAlreadyExists,
       });
     }
 
-    logger.info(`Adding new city: ${city}`);
     const newCity = new CityModel({
       city,
       stateId,
     });
 
     const savedCity = await newCity.save();
-
-    logger.info(`City ${city} added successfully`);
 
     const registeredCity = await CityModel.aggregate([
       {
@@ -75,8 +70,6 @@ export const updateCity = async (req, res) => {
     const { id } = req.params;
     const { city, stateId } = req.body;
 
-    logger.info(`Updating city with ID: ${id} to name: ${city}`);
-
     const updatedCity = await CityModel.findByIdAndUpdate(
       id,
       { city, stateId },
@@ -84,14 +77,11 @@ export const updateCity = async (req, res) => {
     );
 
     if (!updatedCity) {
-      logger.warn(`City with ID: ${id} not found`);
       return res.status(statusCode.NOT_FOUND).json({
         statusCode: statusCode.NOT_FOUND,
         message: message.cityNotFound,
       });
     }
-
-    logger.info(`Successfully updated city: ${updatedCity.city}`);
 
     const updatedCityWithState = await CityModel.aggregate([
       {
@@ -141,18 +131,14 @@ export const deleteCity = async (req, res) => {
   try {
     const { id } = req.params;
 
-    logger.info(`Deleting city with ID: ${id}`);
-
     const deletedCity = await CityModel.findByIdAndDelete(id);
     if (!deletedCity) {
-      logger.warn(`City with ID: ${id} not found`);
       return res.status(statusCode.NOT_FOUND).json({
         statusCode: statusCode.NOT_FOUND,
         message: message.cityNotFound,
       });
     }
 
-    logger.info(`Successfully deleted city: ${deletedCity.city}`);
     const deletedCityWithState = await CityModel.aggregate([
       {
         $match: { _id: deletedCity._id },
@@ -199,8 +185,6 @@ export const deleteCity = async (req, res) => {
 
 export const getCity = async (req, res) => {
   try {
-    logger.info("Fetching cities with state data...");
-
     const cities = await CityModel.aggregate([
       {
         $lookup: {
@@ -231,8 +215,6 @@ export const getCity = async (req, res) => {
       city,
     }));
 
-    logger.info(`Fetched ${citiesWithSrNo.length} cities successfully`);
-
     res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
       message: message.citiesView,
@@ -253,19 +235,14 @@ export const deleteMultipleCities = async (req, res) => {
   try {
     const { ids } = req.body;
 
-    logger.info(`Deleting multiple cities with IDs: ${ids}`);
-
     const deletedCities = await CityModel.deleteMany({ _id: { $in: ids } });
 
     if (deletedCities.deletedCount === 0) {
-      logger.warn("No cities found for deletion");
       return res.status(statusCode.NOT_FOUND).json({
         statusCode: statusCode.NOT_FOUND,
         message: message.cityNotFound,
       });
     }
-
-    logger.info(`Successfully deleted ${deletedCities.deletedCount} cities`);
 
     res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
@@ -277,7 +254,6 @@ export const deleteMultipleCities = async (req, res) => {
     res.status(statusCode.INTERNAL_SERVER_ERROR).json({
       statusCode: statusCode.INTERNAL_SERVER_ERROR,
       message: message.errorDeletingCity,
-      error: error.message,
     });
   }
 };

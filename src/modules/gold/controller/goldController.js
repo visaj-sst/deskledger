@@ -19,14 +19,11 @@ export const createGoldRecord = async (req, res) => {
       purityOfGold,
     } = req.body;
 
-    logger.info("Starting gold record creation", { userId, body: req.body });
-
     const goldMaster = await GoldMasterModel.findOne().sort({ createdAt: -1 });
 
     if (!goldMaster) {
-      logger.warn("Gold master record not found", { userId });
-      return res.status(statusCode.BAD_REQUEST).json({
-        statusCode: statusCode.BAD_REQUEST,
+      return res.status(statusCode.OK).json({
+        statusCode: statusCode.OK,
         message: message.goldMasterNotFound,
       });
     }
@@ -42,7 +39,6 @@ export const createGoldRecord = async (req, res) => {
     });
 
     if (existingGoldRecord) {
-      logger.warn("Gold record already exists", { userId, body: req.body });
       return res.status(statusCode.CONFLICT).json({
         statusCode: statusCode.CONFLICT,
         message: "Gold information already exists",
@@ -70,11 +66,6 @@ export const createGoldRecord = async (req, res) => {
     });
 
     const saveGoldInfo = await newGoldRecord.save();
-
-    logger.info("Gold record created successfully", {
-      userId,
-      record: saveGoldInfo,
-    });
 
     return res.status(statusCode.CREATED).json({
       statusCode: statusCode.CREATED,
@@ -105,12 +96,9 @@ export const updateGoldRecord = async (req, res) => {
     } = req.body;
     const userId = req.user.id;
 
-    logger.info("Starting gold record update", { userId, id, body: req.body });
-
     const existingGoldRecord = await GoldModel.findOne({ _id: id, userId });
 
     if (!existingGoldRecord) {
-      logger.warn("Gold record not found for update", { userId, id });
       return res.status(statusCode.NOT_FOUND).json({
         statusCode: statusCode.NOT_FOUND,
         message: message.goldNotFound,
@@ -130,7 +118,6 @@ export const updateGoldRecord = async (req, res) => {
       });
 
       if (!goldMaster) {
-        logger.warn("Gold master record not found for update", { userId });
         return res.status(statusCode.BAD_REQUEST).json({
           statusCode: statusCode.BAD_REQUEST,
           message: message.errorFetchingGoldMaster,
@@ -140,10 +127,6 @@ export const updateGoldRecord = async (req, res) => {
       const { goldRate22KPerGram, goldRate24KPerGram } = goldMaster;
 
       if (![22, 24].includes(updatedPurityOfGold)) {
-        logger.warn("Invalid purity value during update", {
-          userId,
-          purityOfGold: updatedPurityOfGold,
-        });
         return res.status(statusCode.BAD_REQUEST).json({
           statusCode: statusCode.BAD_REQUEST,
           message: message.errorUpdatingGoldInfo,
@@ -176,21 +159,11 @@ export const updateGoldRecord = async (req, res) => {
     );
 
     if (!updatedGoldRecord) {
-      logger.warn("Gold record not found after update attempt", {
-        userId,
-        id,
-      });
       return res.status(statusCode.NOT_FOUND).json({
         statusCode: statusCode.NOT_FOUND,
         message: message.goldNotFound,
       });
     }
-
-    logger.info("Gold record updated successfully", {
-      userId,
-      id,
-      record: updatedGoldRecord,
-    });
 
     return res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
@@ -213,22 +186,17 @@ export const deleteGoldRecord = async (req, res) => {
     const { id } = req.params;
     const userId = req.user.id;
 
-    logger.info("Starting gold record deletion", { userId, id });
-
     const deletedGoldRecord = await GoldModel.findOneAndDelete({
       _id: id,
       userId,
     });
 
     if (!deletedGoldRecord) {
-      logger.warn("Gold record not found for deletion", { userId, id });
       return res.status(statusCode.NOT_FOUND).json({
         statusCode: statusCode.NOT_FOUND,
         message: message.goldNotFound,
       });
     }
-
-    logger.info("Gold record deleted successfully", { userId, id });
 
     return res
       .status(statusCode.OK)
@@ -248,14 +216,7 @@ export const deleteMultipleGoldRecords = async (req, res) => {
     const { ids } = req.body;
     const userId = req.user.id;
 
-    logger.info(
-      `Request to delete multiple gold records by user: ${userId}, IDs: ${JSON.stringify(
-        ids
-      )}`
-    );
-
     if (!Array.isArray(ids) || ids.length === 0) {
-      logger.warn(`Invalid IDs provided by user: ${userId}`);
       return res.status(statusCode.BAD_REQUEST).json({
         statusCode: statusCode.BAD_REQUEST,
         message: message.invalidIds,
@@ -265,16 +226,12 @@ export const deleteMultipleGoldRecords = async (req, res) => {
     const result = await GoldModel.deleteMany({ _id: { $in: ids }, userId });
 
     if (result.deletedCount === 0) {
-      logger.warn(`No records found for deletion for user: ${userId}`);
       return res.status(statusCode.NOT_FOUND).json({
         statusCode: statusCode.NOT_FOUND,
         message: message.goldNotFound,
       });
     }
 
-    logger.info(
-      `Successfully deleted ${result.deletedCount} gold records for user: ${userId}`
-    );
     return res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
       message: `${result.deletedCount} gold records have been successfully deleted.`,
@@ -294,7 +251,6 @@ export const deleteMultipleGoldRecords = async (req, res) => {
 export const getGoldAnalysis = async (req, res) => {
   try {
     const userId = req.user.id;
-    logger.info(`Fetching gold analysis for user: ${userId}`);
 
     const goldAnalysis = await GoldModel.aggregate([
       { $match: { userId: new mongoose.Types.ObjectId(userId) } },
@@ -316,7 +272,6 @@ export const getGoldAnalysis = async (req, res) => {
     ]);
 
     if (!goldAnalysis || goldAnalysis.length === 0) {
-      logger.warn(`No gold analysis data found for user: ${userId}`);
       return res.status(statusCode.NO_CONTENT).json({
         statusCode: statusCode.NO_CONTENT,
         message: message.goldNotFetch,
@@ -345,7 +300,6 @@ export const getGoldAnalysis = async (req, res) => {
       options
     );
 
-    logger.info(`Gold analysis data successfully updated for user: ${userId}`);
     res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
       message: message.analysisReportofGold,
@@ -358,7 +312,6 @@ export const getGoldAnalysis = async (req, res) => {
     res.status(statusCode.INTERNAL_SERVER_ERROR).json({
       statusCode: statusCode.INTERNAL_SERVER_ERROR,
       message: message.errorGoldAnalytics,
-      error: error.message,
     });
   }
 };
@@ -369,24 +322,16 @@ export const getAllGoldRecords = async (req, res) => {
     const userId = req.user.id;
     const { id } = req.params;
 
-    logger.info(
-      `Fetching gold records for user: ${userId}, specific ID: ${id || "All"}`
-    );
-
     if (id) {
       const goldRecord = await GoldModel.findOne({ _id: id, userId });
 
       if (!goldRecord) {
-        logger.warn(`Gold record with ID: ${id} not found for user: ${userId}`);
         return res.status(statusCode.NOT_FOUND).json({
           statusCode: statusCode.NOT_FOUND,
           message: message.goldNotFound,
         });
       }
 
-      logger.info(
-        `Gold record with ID: ${id} fetched successfully for user: ${userId}`
-      );
       return res.status(statusCode.OK).json({
         statusCode: statusCode.OK,
         message: message.goldRecordFetched,
@@ -404,7 +349,6 @@ export const getAllGoldRecords = async (req, res) => {
       };
     });
 
-    logger.info(`All gold records fetched successfully for user: ${userId}`);
     return res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
       message: message.goldRecordsFetched,
@@ -416,7 +360,7 @@ export const getAllGoldRecords = async (req, res) => {
     );
     return res.status(statusCode.INTERNAL_SERVER_ERROR).json({
       statusCode: statusCode.INTERNAL_SERVER_ERROR,
-      message: message.errorFetchingGoldRecords,
+      message: message.INTERNAL_SERVER_ERROR,
     });
   }
 };

@@ -1,7 +1,5 @@
-//userModel.js
-
-import mongoose from 'mongoose';
-import bcrypt from 'bcryptjs';
+import mongoose from "mongoose";
+import bcrypt from "bcryptjs";
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema(
@@ -13,14 +11,14 @@ const UserSchema = new Schema(
     firstName: {
       type: String,
       trim: true,
-    },   
+    },
     lastName: {
       type: String,
       trim: true,
     },
     phoneNo: {
       type: Number,
-      unique: true
+      unique: true,
     },
     email: {
       type: String,
@@ -32,15 +30,16 @@ const UserSchema = new Schema(
     },
     password: {
       type: String,
-    }, 
-    profileImage:{
+    },
+    profileImage: {
       type: String,
-      default: 'default_user.jpg', 
+      default: "",
       required: false,
-    }
+    },
   },
   { timestamps: true }
-); 
+);
+
 UserSchema.methods.comparePassword = async function (password) {
   return await bcrypt.compare(password, this.password);
 };

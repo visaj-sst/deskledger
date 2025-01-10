@@ -33,10 +33,7 @@ export const fixedDepositRegister = async (req, res) => {
 
     const userId = req.user.id;
 
-    logger.info("Initiating FD registration", { userId, fdNo });
-
     if (String(req.user.id) !== String(userId)) {
-      logger.warn("Unauthorized user attempted to register FD", { userId });
       return res.status(statusCode.FORBIDDEN).json({
         statusCode: statusCode.FORBIDDEN,
         message: message.unAuthUser,
@@ -45,7 +42,6 @@ export const fixedDepositRegister = async (req, res) => {
 
     const fdExists = await FixedDepositModel.findOne({ fdNo, userId });
     if (fdExists) {
-      logger.warn("FD with the same number already exists", { userId, fdNo });
       return res.status(statusCode.CONFLICT).json({
         statusCode: statusCode.CONFLICT,
         message: message.fdAlreadyExists,
@@ -70,7 +66,6 @@ export const fixedDepositRegister = async (req, res) => {
     });
 
     await newFixedDeposit.save();
-    logger.info("New FD created", { userId, fdNo });
 
     const [updatedFd] = await FixedDepositModel.aggregate(
       registerFdAggregation(
@@ -127,10 +122,6 @@ export const fixedDepositRegister = async (req, res) => {
       maturityDate: formatDate(updatedFdResult.maturityDate),
     };
 
-    logger.info("FD successfully registered", {
-      userId,
-      fdId: newFixedDeposit._id,
-    });
     res.status(statusCode.CREATED).json({
       statusCode: statusCode.CREATED,
       message: message.fdCreated,
@@ -153,10 +144,7 @@ export const updateFixedDeposit = async (req, res) => {
     const userId = req.user.id;
     const updateData = req.body;
 
-    logger.info("Initiating FD update", { userId, fdId: id });
-
     if (!mongoose.Types.ObjectId.isValid(id)) {
-      logger.warn("Invalid FD ID provided", { userId, fdId: id });
       return res.status(statusCode.BAD_REQUEST).json({
         statusCode: statusCode.BAD_REQUEST,
         message: message.errorUpdatingFD,
@@ -167,8 +155,8 @@ export const updateFixedDeposit = async (req, res) => {
       _id: new mongoose.Types.ObjectId(id),
       userId: new mongoose.Types.ObjectId(userId),
     });
+
     if (!fixedDeposit) {
-      logger.warn("FD not found for user", { userId, fdId: id });
       return res.status(statusCode.NOT_FOUND).json({
         statusCode: statusCode.NOT_FOUND,
         message: message.errorFetchingFD,
@@ -238,7 +226,6 @@ export const updateFixedDeposit = async (req, res) => {
       });
     }
 
-    logger.info("FD successfully updated", { userId, fdId: id });
     res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
       message: message.fdUpdated,
@@ -260,10 +247,7 @@ export const fixedDepositDelete = async (req, res) => {
     const { id } = req.params;
     const userId = req.user.id;
 
-    logger.info("Initiating FD deletion", { userId, fdId: id });
-
     if (!mongoose.Types.ObjectId.isValid(id)) {
-      logger.warn("Invalid FD ID format", { userId, fdId: id });
       return res.status(statusCode.BAD_REQUEST).json({
         statusCode: statusCode.BAD_REQUEST,
         message: "Invalid FD ID format",
@@ -275,10 +259,6 @@ export const fixedDepositDelete = async (req, res) => {
       userId,
     });
     if (!fixedDeposit) {
-      logger.warn("FD not found or unauthorized deletion attempt", {
-        userId,
-        fdId: id,
-      });
       return res.status(statusCode.NOT_FOUND).json({
         statusCode: statusCode.NOT_FOUND,
         message: "FD not found or not authorized to delete",
@@ -288,14 +268,12 @@ export const fixedDepositDelete = async (req, res) => {
     await FixedDepositModel.findByIdAndDelete(id);
     await FdAnalysisModel.deleteOne({ fdId: id, userId });
 
-    logger.info("FD successfully deleted", { userId, fdId: id });
     res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
       message: "FD deleted successfully",
     });
   } catch (error) {
     logger.error("Error while deleting Fixed Deposit", {
-      error: error.message,
       userId,
       fdId: id,
     });
@@ -312,8 +290,6 @@ export const getFdDetails = async (req, res) => {
   try {
     const userId = req.user.id;
     const { id } = req.params;
-
-    logger.info("Fetching FD details", { userId, fdId: id || "all" });
 
     const pipeline = [
       {
@@ -359,14 +335,14 @@ export const getFdDetails = async (req, res) => {
 
     const fdDetails = await FixedDepositModel.aggregate(pipeline);
 
-    if (!fdDetails.length) {
-      logger.info("No FD records found for user", { userId });
-    } else {
-      logger.info("FD records retrieved successfully", {
-        userId,
-        count: fdDetails.length,
-      });
-    }
+    // if (!fdDetails.length) {
+    //   logger.info("No FD records found for user", { userId });
+    // } else {
+    //   logger.info("FD records retrieved successfully", {
+    //     userId,
+    //     count: fdDetails.length,
+    //   });
+    // }
 
     const formattedFdDetails = fdDetails.map((fd, index) => ({
       srNo: index + 1,
@@ -384,7 +360,6 @@ export const getFdDetails = async (req, res) => {
     });
   } catch (error) {
     logger.error("Error while fetching FD details", {
-      error: error.message,
       userId,
       fdId: id || "all",
     });
@@ -403,13 +378,10 @@ export const deleteMultipleFDs = async (req, res) => {
     const { ids } = req.body;
     const userId = req.user.id;
 
-    logger.info("Initiating deletion of multiple FDs", { userId, fdIds: ids });
-
     if (
       !Array.isArray(ids) ||
       ids.some((id) => !mongoose.Types.ObjectId.isValid(id))
     ) {
-      logger.warn("Invalid FD ID format in the list", { userId, fdIds: ids });
       return res.status(statusCode.BAD_REQUEST).json({
         statusCode: statusCode.BAD_REQUEST,
         message: "Invalid FD ID format in the provided list",
@@ -422,11 +394,6 @@ export const deleteMultipleFDs = async (req, res) => {
     });
 
     if (fdsToDelete.length !== ids.length) {
-      logger.warn("Some FDs not found or unauthorized deletion attempt", {
-        userId,
-        requestedFdIds: ids,
-        foundFdIds: fdsToDelete.map((fd) => fd._id),
-      });
       return res.status(statusCode.NOT_FOUND).json({
         statusCode: statusCode.NOT_FOUND,
         message: "Some FDs not found or not authorized to delete",
@@ -436,14 +403,12 @@ export const deleteMultipleFDs = async (req, res) => {
     await FixedDepositModel.deleteMany({ _id: { $in: ids }, userId });
     await FdAnalysisModel.deleteMany({ fdId: { $in: ids }, userId });
 
-    logger.info("Successfully deleted multiple FDs", { userId, fdIds: ids });
     res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
       message: "FDs deleted successfully",
     });
   } catch (error) {
     logger.error("Error while deleting multiple FDs", {
-      error: error.message,
       userId,
       fdIds: ids,
     });
@@ -460,8 +425,6 @@ export const deleteMultipleFDs = async (req, res) => {
 export const getFdAnalysisbyNumber = async (req, res) => {
   try {
     const userId = req.user.id;
-
-    logger.info("Initiating FD analysis by number", { userId });
 
     const fdAnalysis = await FixedDepositModel.aggregate([
       { $match: { userId: new mongoose.Types.ObjectId(userId) } },
@@ -540,7 +503,6 @@ export const getFdAnalysisbyNumber = async (req, res) => {
     ]);
 
     if (!fdAnalysis || fdAnalysis.length === 0) {
-      logger.info("No FD analysis data found", { userId });
       return res.status(statusCode.OK).json({
         statusCode: statusCode.OK,
         message: message.errorFetchingFD,
@@ -559,11 +521,6 @@ export const getFdAnalysisbyNumber = async (req, res) => {
       userId: new mongoose.Types.ObjectId(userId),
     };
 
-    logger.info("FD analysis data retrieved successfully", {
-      userId,
-      analysisData: rawData,
-    });
-
     res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
       message: message.analysisReportofFd,
@@ -571,13 +528,11 @@ export const getFdAnalysisbyNumber = async (req, res) => {
     });
   } catch (error) {
     logger.error("Error while fetching FD analysis by number", {
-      error: error.message,
       userId,
     });
     res.status(statusCode.INTERNAL_SERVER_ERROR).json({
       statusCode: statusCode.INTERNAL_SERVER_ERROR,
       message: message.errorFdAnalytics,
-      error: error.message,
     });
   }
 };

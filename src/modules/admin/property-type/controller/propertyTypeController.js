@@ -8,24 +8,19 @@ export const propertyTypeRegister = async (req, res) => {
   try {
     const { propertyType } = req.body;
 
-    logger.info(`Checking if property type ${propertyType} already exists...`);
-
     const PropertyTypeExists = await PropertyTypeModel.findOne({
       propertyType,
     });
     if (PropertyTypeExists) {
-      logger.warn(`Property type ${propertyType} already exists`);
       return res.status(statusCode.CONFLICT).json({
         statusCode: statusCode.CONFLICT,
         message: message.propertyTypeAlreadyExists,
       });
     }
 
-    logger.info("Creating new property type...");
     const newPropertyType = new PropertyTypeModel({ propertyType });
     const savedPropertyType = await newPropertyType.save();
 
-    logger.info("Property type created successfully");
     res.status(statusCode.CREATED).json({
       statusCode: statusCode.CREATED,
       message: message.propertyTypeCreated,
@@ -36,7 +31,6 @@ export const propertyTypeRegister = async (req, res) => {
     res.status(statusCode.INTERNAL_SERVER_ERROR).json({
       statusCode: statusCode.INTERNAL_SERVER_ERROR,
       message: message.errorRegisterPropertyType,
-      error: error.message,
     });
   }
 };
@@ -48,8 +42,6 @@ export const updatePropertyType = async (req, res) => {
     const id = req.params.id;
     const { propertyType } = req.body;
 
-    logger.info(`Updating property type with ID: ${id}`);
-
     const updatedPropertyType = await PropertyTypeModel.findByIdAndUpdate(
       id,
       { propertyType },
@@ -57,14 +49,12 @@ export const updatePropertyType = async (req, res) => {
     );
 
     if (!updatedPropertyType) {
-      logger.warn(`No record found with ID: ${id}`);
       return res.status(statusCode.NOT_FOUND).json({
         statusCode: statusCode.NOT_FOUND,
         message: message.propertyTypeNotFound,
       });
     }
 
-    logger.info("Property type updated successfully");
     res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
       message: message.propertyTypeUpdated,
@@ -75,7 +65,6 @@ export const updatePropertyType = async (req, res) => {
     res.status(statusCode.INTERNAL_SERVER_ERROR).json({
       statusCode: statusCode.INTERNAL_SERVER_ERROR,
       message: message.errorUpdatingProperty,
-      error: error.message,
     });
   }
 };
@@ -86,19 +75,15 @@ export const deletePropertyType = async (req, res) => {
   try {
     const id = req.params.id;
 
-    logger.info(`Deleting property type with ID: ${id}`);
-
     const deletedState = await PropertyTypeModel.findByIdAndDelete(id);
 
     if (!deletedState) {
-      logger.warn(`No record found with ID: ${id}`);
       return res.status(statusCode.NOT_FOUND).json({
         statusCode: statusCode.NOT_FOUND,
         message: message.propertyTypeNotFound,
       });
     }
 
-    logger.info("Property type deleted successfully");
     res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
       message: message.propertyTypeDeleted,
@@ -108,7 +93,6 @@ export const deletePropertyType = async (req, res) => {
     res.status(statusCode.INTERNAL_SERVER_ERROR).json({
       statusCode: statusCode.INTERNAL_SERVER_ERROR,
       message: message.errorDeletingPropertyType,
-      error: error.message,
     });
   }
 };
@@ -117,8 +101,6 @@ export const deletePropertyType = async (req, res) => {
 
 export const getPropertyType = async (req, res) => {
   try {
-    logger.info("Fetching all property types...");
-
     const propertyTypes = await PropertyTypeModel.find();
 
     const propertyTypesWithSrNo = propertyTypes.map((propertyType, index) => ({
@@ -126,7 +108,6 @@ export const getPropertyType = async (req, res) => {
       ...propertyType.toObject(),
     }));
 
-    logger.info("Successfully fetched property types");
     res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
       message: message.propertyTypeView,
@@ -137,7 +118,6 @@ export const getPropertyType = async (req, res) => {
     res.status(statusCode.INTERNAL_SERVER_ERROR).json({
       statusCode: statusCode.INTERNAL_SERVER_ERROR,
       message: message.errorFetchingPropertyType,
-      error: error.message,
     });
   }
 };
@@ -148,23 +128,17 @@ export const deleteMultiplePropertyTypes = async (req, res) => {
   try {
     const { ids } = req.body;
 
-    logger.info(`Deleting multiple property types with IDs: ${ids.join(", ")}`);
-
     const deletedPropertyTypes = await PropertyTypeModel.deleteMany({
       _id: { $in: ids },
     });
 
     if (deletedPropertyTypes.deletedCount === 0) {
-      logger.warn("No property types found for deletion");
       return res.status(statusCode.NOT_FOUND).json({
         statusCode: statusCode.NOT_FOUND,
         message: message.errorFetchingPropertyType,
       });
     }
 
-    logger.info(
-      `${deletedPropertyTypes.deletedCount} property types deleted successfully`
-    );
     res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
       message: message.propertyTypesDeleted,
@@ -177,7 +151,6 @@ export const deleteMultiplePropertyTypes = async (req, res) => {
     res.status(statusCode.INTERNAL_SERVER_ERROR).json({
       statusCode: statusCode.INTERNAL_SERVER_ERROR,
       message: message.errorDeletingPropertyTypes,
-      error: error.message,
     });
   }
 };

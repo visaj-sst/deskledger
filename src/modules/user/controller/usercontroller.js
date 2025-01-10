@@ -8,6 +8,7 @@ import { statusCode, message } from "../../../utils/api.response.js";
 import FixedDepositModel from "../../fixed-deposit/model/fixedDeposit.js";
 import generateOtp from "../../../helpers/otp.js";
 import logger from "../../../service/logger.service.js";
+import mongoose from "mongoose";
 
 //====================== REGISTER USER ======================//
 
@@ -18,11 +19,17 @@ export const registerUser = async (req, res) => {
     const userExists = await UserModel.findOne({ email });
 
     if (userExists) {
-      console.log("warning : ");
-      logger.warn(`User with email ${email} already exists.`);
       return res.status(statusCode.BAD_REQUEST).json({
         statusCode: statusCode.BAD_REQUEST,
         message: message.userExists,
+      });
+    }
+
+    const phoneNoExists = await UserModel.findOne({ phoneNo });
+    if (phoneNoExists) {
+      return res.status(statusCode.BAD_REQUEST).json({
+        statusCode: statusCode.BAD_REQUEST,
+        message: message.phoneNoExists,
       });
     }
 
@@ -38,9 +45,6 @@ export const registerUser = async (req, res) => {
     });
 
     const savedUser = await newUser.save();
-    console.log("saving user : ");
-
-    logger.info(`User registered successfully with email ${email}`);
 
     res.status(statusCode.CREATED).json({
       statusCode: statusCode.CREATED,
@@ -48,7 +52,6 @@ export const registerUser = async (req, res) => {
       data: { ...savedUser.toObject(), password: undefined },
     });
   } catch (error) {
-    console.error("error registering  user : ");
     logger.error(`Error registering user: ${error.message}`);
     res.status(statusCode.INTERNAL_SERVER_ERROR).json({
       statusCode: statusCode.INTERNAL_SERVER_ERROR,
@@ -62,22 +65,25 @@ export const registerUser = async (req, res) => {
 export const loginUser = async (req, res) => {
   const { email, password } = req.body;
 
+  if (mongoose.connection.readyState !== 1) {
+    logger.error("Database connection state:", mongoose.connection.readyState);
+    return res.status(500).json({
+      message: "Database is not connected. Please try again later.",
+    });
+  }
+
   try {
     const user = await UserModel.findOne({ email });
     if (!user) {
-      logger.warn(`Login attempt failed: User with email ${email} not found.`);
-      return res.status(statusCode.BAD_REQUEST).json({
-        statusCode: statusCode.BAD_REQUEST,
-        message: message.userNotFound,
+      return res.status(400).json({
+        message: "User not found.",
       });
     }
 
     const isMatch = await user.comparePassword(password);
     if (!isMatch) {
-      logger.warn(`Login attempt failed: Incorrect password for ${email}.`);
-      return res.status(statusCode.BAD_REQUEST).json({
-        statusCode: statusCode.BAD_REQUEST,
-        message: message.passwordIncorrect,
+      return res.status(400).json({
+        message: "Incorrect password.",
       });
     }
 
@@ -88,11 +94,8 @@ export const loginUser = async (req, res) => {
     const tokenDoc = new TokenModel({ token, userId: user._id });
     await tokenDoc.save();
 
-    logger.info(`User with email ${email} logged in successfully`);
-
-    res.status(statusCode.OK).json({
-      statusCode: statusCode.OK,
-      message: message.userLoggedIn,
+    return res.status(200).json({
+      message: "Login successful",
       data: {
         token,
         _id: user._id,
@@ -104,9 +107,8 @@ export const loginUser = async (req, res) => {
     });
   } catch (error) {
     logger.error(`Error logging in user: ${error.message}`);
-    res.status(statusCode.INTERNAL_SERVER_ERROR).json({
-      statusCode: statusCode.INTERNAL_SERVER_ERROR,
-      message: message.errorLogin,
+    return res.status(500).json({
+      message: "An error occurred during login.",
     });
   }
 };
@@ -118,13 +120,11 @@ export const getUser = async (req, res) => {
     const id = req.params.id;
     const user = await UserModel.findById(id, { password: 0 });
     if (!user) {
-      logger.warn(`User with ID ${id} not found.`);
       return res.status(statusCode.NOT_FOUND).json({
         statusCode: statusCode.NOT_FOUND,
         message: message.userNotFound,
       });
     }
-    logger.info(`User with ID ${id} fetched successfully.`);
     res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
       message: message.userView,
@@ -145,7 +145,6 @@ export const getUser = async (req, res) => {
 export const updateUser = async (req, res) => {
   try {
     if (req.fileValidationError) {
-      logger.warn("Invalid image file uploaded.");
       return res.status(statusCode.BAD_REQUEST).json({
         statusCode: statusCode.BAD_REQUEST,
         message: "Please upload a valid image file",
@@ -153,10 +152,9 @@ export const updateUser = async (req, res) => {
     }
 
     if (req.fileSizeLimitError) {
-      logger.warn("File size exceeds limit (1MB).");
       return res.status(statusCode.BAD_REQUEST).json({
         statusCode: statusCode.BAD_REQUEST,
-        message: "File size should be less than 1 MB.",
+        message: "File size should be less than 5 MB.",
       });
     }
 
@@ -165,7 +163,6 @@ export const updateUser = async (req, res) => {
 
     const user = await UserModel.findById(req.params.id);
     if (!user) {
-      logger.warn(`User with ID ${req.params.id} not found.`);
       return res.status(statusCode.NOT_FOUND).json({
         statusCode: statusCode.NOT_FOUND,
         message: message.userNotFound,
@@ -181,8 +178,6 @@ export const updateUser = async (req, res) => {
     }
 
     await user.save();
-
-    logger.info(`User with ID ${req.params.id} profile updated successfully.`);
 
     res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
@@ -210,9 +205,6 @@ export const deleteUser = async (req, res) => {
     const userId = req.params.id;
 
     if (req.user.id !== userId) {
-      logger.warn(
-        `Unauthorized delete attempt by user ${req.user.id} on user ${userId}`
-      );
       return res.status(statusCode.UNAUTHORIZED).json({
         statusCode: statusCode.UNAUTHORIZED,
         message: message.deleteAuth,
@@ -223,14 +215,12 @@ export const deleteUser = async (req, res) => {
 
     const deletedUser = await UserModel.findByIdAndDelete(userId);
     if (!deletedUser) {
-      logger.warn(`User with ID ${userId} not found during delete attempt.`);
       return res.status(statusCode.NOT_FOUND).json({
         statusCode: statusCode.NOT_FOUND,
         message: message.userNotFound,
       });
     }
 
-    logger.info(`User with ID ${userId} deleted successfully.`);
     res
       .status(statusCode.OK)
       .json({ statusCode: statusCode.OK, message: message.userDeleted });
@@ -239,7 +229,6 @@ export const deleteUser = async (req, res) => {
     res.status(statusCode.INTERNAL_SERVER_ERROR).json({
       statusCode: statusCode.INTERNAL_SERVER_ERROR,
       message: message.deleteUserError,
-      error: error.message,
     });
   }
 };
@@ -252,9 +241,6 @@ export const changePassword = async (req, res) => {
 
     const user = await UserModel.findById(userId);
     if (!user) {
-      logger.warn(
-        `User with ID ${userId} not found during password change attempt.`
-      );
       return res.status(statusCode.NOT_FOUND).json({
         statusCode: statusCode.NOT_FOUND,
         message: message.userNotFound,
@@ -263,7 +249,6 @@ export const changePassword = async (req, res) => {
 
     const isMatch = await bcrypt.compare(oldPassword, user.password);
     if (!isMatch) {
-      logger.warn(`Incorrect old password provided by user ${userId}`);
       return res.status(statusCode.BAD_REQUEST).json({
         statusCode: statusCode.BAD_REQUEST,
         message: message.incorrectOldPassword,
@@ -271,9 +256,6 @@ export const changePassword = async (req, res) => {
     }
 
     if (newPassword !== confirmPassword) {
-      logger.warn(
-        `Password mismatch during password change attempt for user ${userId}`
-      );
       return res.status(statusCode.BAD_REQUEST).json({
         statusCode: statusCode.BAD_REQUEST,
         message: message.passwordNotMatch,
@@ -288,7 +270,6 @@ export const changePassword = async (req, res) => {
 
     await TokenModel.deleteMany({ userId: userId });
 
-    logger.info(`Password changed successfully for user ${userId}`);
     res
       .status(statusCode.OK)
       .json({ statusCode: statusCode.OK, message: message.passwordChanged });
@@ -319,9 +300,6 @@ export const forgotPassword = async (req, res) => {
     const user = await UserModel.findOne({ email });
 
     if (!user) {
-      logger.warn(
-        `Password reset attempt for non-existent user with email ${email}`
-      );
       return res.status(statusCode.BAD_REQUEST).json({
         statusCode: statusCode.BAD_REQUEST,
         message: message.userNotFound,
@@ -347,7 +325,6 @@ export const forgotPassword = async (req, res) => {
 
     await transporter.sendMail(mailOptions);
 
-    logger.info(`Password reset OTP sent to email ${email}`);
     res
       .status(statusCode.OK)
       .json({ statusCode: statusCode.OK, message: message.resetPasswordSend });
@@ -369,7 +346,6 @@ export const resetPassword = async (req, res) => {
     const resetToken = await PasswordResetTokenModel.findOne({ token: otp });
 
     if (!resetToken) {
-      logger.warn(`Invalid OTP provided for password reset: ${otp}`);
       return res.status(statusCode.BAD_REQUEST).json({
         statusCode: statusCode.BAD_REQUEST,
         message: message.otpInvalid,
@@ -377,7 +353,6 @@ export const resetPassword = async (req, res) => {
     }
 
     if (resetToken.expires < Date.now()) {
-      logger.warn(`Expired OTP provided for password reset: ${otp}`);
       return res.status(statusCode.BAD_REQUEST).json({
         statusCode: statusCode.BAD_REQUEST,
         message: "Expired OTP",
@@ -387,14 +362,12 @@ export const resetPassword = async (req, res) => {
     const user = await UserModel.findById(resetToken.userId);
 
     if (!user) {
-      logger.warn(`User not found for OTP reset token: ${otp}`);
       return res.status(statusCode.NOT_FOUND).json({
         statusCode: statusCode.NOT_FOUND,
         message: message.userNotFound,
       });
     }
 
-    logger.info(`OTP validation successful for user with ID ${user._id}`);
     return res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
       message: message.otpSuccess,
@@ -416,7 +389,6 @@ export const newPassword = async (req, res) => {
     const { userId, newPassword, confirmPassword } = req.body;
 
     if (newPassword !== confirmPassword) {
-      logger.warn(`Password mismatch for user with ID ${userId}`);
       return res.status(statusCode.BAD_REQUEST).json({
         statusCode: statusCode.BAD_REQUEST,
         message: message.passwordNotMatch,
@@ -426,9 +398,6 @@ export const newPassword = async (req, res) => {
     const user = await UserModel.findById(userId);
 
     if (!user) {
-      logger.warn(
-        `User with ID ${userId} not found during password reset attempt.`
-      );
       return res.status(statusCode.NOT_FOUND).json({
         statusCode: statusCode.NOT_FOUND,
         message: message.userNotFound,
@@ -443,7 +412,6 @@ export const newPassword = async (req, res) => {
 
     await PasswordResetTokenModel.findOneAndDelete({ userId });
 
-    logger.info(`Password successfully changed for user with ID ${userId}`);
     res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
       message: message.passwordChanged,
@@ -465,7 +433,6 @@ export const logoutUser = async (req, res) => {
   try {
     const authorizationHeader = req.headers["authorization"];
     if (!authorizationHeader) {
-      logger.warn("Authorization header missing during logout attempt");
       return res.status(statusCode.UNAUTHORIZED).json({
         statusCode: statusCode.UNAUTHORIZED,
         message: message.authHeaderError,
@@ -474,9 +441,6 @@ export const logoutUser = async (req, res) => {
 
     const token = authorizationHeader.split(" ")[1];
     if (!token) {
-      logger.warn(
-        "Token missing in authorization header during logout attempt"
-      );
       return res.status(statusCode.UNAUTHORIZED).json({
         statusCode: statusCode.UNAUTHORIZED,
         message: message.tokenMissing,
@@ -485,14 +449,12 @@ export const logoutUser = async (req, res) => {
 
     const tokenExists = await TokenModel.findOneAndDelete({ token });
     if (!tokenExists) {
-      logger.warn(`Token not found for user during logout: ${token}`);
       return res.status(statusCode.UNAUTHORIZED).json({
         statusCode: statusCode.UNAUTHORIZED,
         message: message.tokenNotFound,
       });
     }
 
-    logger.info("User successfully logged out");
     res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
       message: message.userLoggedOut,
@@ -528,7 +490,6 @@ export const getUsers = async (req, res) => {
       user,
     }));
 
-    logger.info(`Fetched ${usersWithSrNo.length} users successfully`);
     res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
       message: message.usersView,
@@ -539,7 +500,7 @@ export const getUsers = async (req, res) => {
     logger.error(`Error fetching users: ${error.message}`);
     res.status(statusCode.INTERNAL_SERVER_ERROR).json({
       statusCode: statusCode.INTERNAL_SERVER_ERROR,
-      message: message.errorFetchingUsers || "Error fetching users",
+      message: message.errorFetchingUsers,
       error: error.message || error,
     });
   }

@@ -23,8 +23,6 @@ export const createRealEstate = async (req, res) => {
       purchasePrice,
     } = req.body;
 
-    logger.info(`Creating real estate for user: ${userId}`);
-
     if (
       !userId ||
       !propertyTypeId ||
@@ -32,13 +30,6 @@ export const createRealEstate = async (req, res) => {
       !cityId ||
       !stateId
     ) {
-      logger.warn(`Missing required fields for user: ${userId}`, {
-        userId,
-        propertyTypeId,
-        subPropertyTypeId,
-        cityId,
-        stateId,
-      });
       return res.status(400).json({
         message: "Missing required fields",
       });
@@ -48,10 +39,6 @@ export const createRealEstate = async (req, res) => {
       !mongoose.Types.ObjectId.isValid(cityId) ||
       !mongoose.Types.ObjectId.isValid(stateId)
     ) {
-      logger.warn(`Invalid ObjectId format for city/state IDs`, {
-        cityId,
-        stateId,
-      });
       return res.status(400).json({
         message: "Invalid city or state ID format",
       });
@@ -72,10 +59,6 @@ export const createRealEstate = async (req, res) => {
     });
 
     if (existingRealEstate) {
-      logger.warn(
-        `Property already exists for user: ${userId}`,
-        existingRealEstate
-      );
       return res.status(409).json({
         message: "Property already exists",
       });
@@ -88,11 +71,6 @@ export const createRealEstate = async (req, res) => {
     });
 
     if (!areaPrice) {
-      logger.warn(`Area price not found for user: ${userId}`, {
-        areaName,
-        cityId,
-        stateId,
-      });
       return res.status(404).json({
         message: "Area price not found",
       });
@@ -120,10 +98,6 @@ export const createRealEstate = async (req, res) => {
     });
 
     const savedRealEstate = await newRealEstate.save();
-    logger.info(
-      `Real estate created successfully for user: ${userId}`,
-      savedRealEstate
-    );
 
     return res.status(statusCode.CREATED).json({
       statusCode: statusCode.CREATED,
@@ -158,8 +132,6 @@ export const updateRealEstate = async (req, res) => {
     } = req.body;
     const userId = req.user.id;
 
-    logger.info(`Updating real estate with ID: ${id} for user: ${userId}`);
-
     let newCurrentValue, newProfit;
 
     const existingRealEstate = await RealEstateModel.findOne({
@@ -168,7 +140,6 @@ export const updateRealEstate = async (req, res) => {
     });
 
     if (!existingRealEstate) {
-      logger.warn(`Real estate with ID: ${id} not found for user: ${userId}`);
       return res.status(statusCode.NOT_FOUND).json({
         statusCode: statusCode.NOT_FOUND,
         message: message.propertyNotFound,
@@ -191,11 +162,6 @@ export const updateRealEstate = async (req, res) => {
       });
 
       if (!areaPrice) {
-        logger.warn(`Area price not found for user: ${userId}`, {
-          areaName: resolvedAreaName,
-          cityId: resolvedCityId,
-          stateId: resolvedStateId,
-        });
         return res.status(statusCode.NOT_FOUND).json({
           statusCode: statusCode.NOT_FOUND,
           message: message.areaPriceNotFound,
@@ -226,19 +192,11 @@ export const updateRealEstate = async (req, res) => {
     );
 
     if (!updatedRealEstate) {
-      logger.warn(
-        `Failed to update real estate with ID: ${id} for user: ${userId}`
-      );
       return res.status(statusCode.NOT_FOUND).json({
         statusCode: statusCode.NOT_FOUND,
         message: message.propertyNotFound,
       });
     }
-
-    logger.info(
-      `Real estate updated successfully for user: ${userId}`,
-      updatedRealEstate
-    );
 
     res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
@@ -262,24 +220,17 @@ export const deleteRealEstate = async (req, res) => {
     const { id } = req.params;
     const userId = req.user.id;
 
-    logger.info(`Deleting real estate with ID: ${id} for user: ${userId}`);
-
     const deletedRealEstate = await RealEstateModel.findOneAndDelete({
       _id: id,
       userId,
     });
 
     if (!deletedRealEstate) {
-      logger.warn(`Real estate with ID: ${id} not found for user: ${userId}`);
       return res.status(statusCode.NOT_FOUND).json({
         statusCode: statusCode.NOT_FOUND,
         message: message.propertyNotFound,
       });
     }
-
-    logger.info(
-      `Real estate with ID: ${id} deleted successfully for user: ${userId}`
-    );
 
     return res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
@@ -388,10 +339,6 @@ export const getAllRealEstate = async (req, res) => {
       ...realEstate,
     }));
 
-    logger.info(
-      `Fetched ${realEstatesWithSrNo.length} real estate records for user ${userId}`
-    );
-
     res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
       message: message.propertiesView,
@@ -402,7 +349,6 @@ export const getAllRealEstate = async (req, res) => {
     res.status(statusCode.INTERNAL_SERVER_ERROR).json({
       statusCode: statusCode.INTERNAL_SERVER_ERROR,
       message: message.errorFetchingProperties,
-      error: error.message,
     });
   }
 };
@@ -415,7 +361,6 @@ export const deleteMultipleRealEstates = async (req, res) => {
     const userId = req.user.id;
 
     if (!Array.isArray(ids) || ids.length === 0) {
-      logger.warn("Invalid real estate IDs provided for deletion.");
       return res.status(statusCode.BAD_REQUEST).json({
         statusCode: statusCode.BAD_REQUEST,
         message: message.invalidRealEstateid,
@@ -428,18 +373,11 @@ export const deleteMultipleRealEstates = async (req, res) => {
     });
 
     if (result.deletedCount === 0) {
-      logger.info(
-        `No real estate properties found for user ${userId} to delete.`
-      );
       return res.status(statusCode.NOT_FOUND).json({
         statusCode: statusCode.NOT_FOUND,
         message: message.propertyNotFound,
       });
     }
-
-    logger.info(
-      `${result.deletedCount} real estate properties deleted for user ${userId}.`
-    );
 
     return res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
@@ -482,7 +420,6 @@ export const getRealEstateAnalysis = async (req, res) => {
     ]);
 
     if (!realEstateAnalysis || realEstateAnalysis.length === 0) {
-      logger.warn(`No real estate analysis data found for user ${userId}`);
       return res.status(statusCode.NO_CONTENT).json({
         statusCode: statusCode.NO_CONTENT,
         message: message.errorFetchingPropertyAnalysis,
@@ -508,10 +445,6 @@ export const getRealEstateAnalysis = async (req, res) => {
 
     const updatedRealEstateAnalysis =
       await RealEstateAnalysisModel.findOneAndUpdate(filter, update, options);
-
-    logger.info(
-      `Real estate analysis successfully calculated for user ${userId}`
-    );
 
     return res.status(statusCode.OK).json({
       statusCode: statusCode.OK,

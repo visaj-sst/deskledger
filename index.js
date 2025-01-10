@@ -14,8 +14,9 @@ import {
   updateGoldData,
   updateRealEstateData,
 } from "./src/cronJobs/cron.js";
-import { startScraping } from "./src/scripts/area-price-ws.js";
-import { startGoldPriceScraping } from "./src/scripts/gold-price-ws.js";
+import { startScraping } from "./src/scripts/area-price-pp.js";
+import { loadScrapedDataToDB } from "./src/scripts/load-scraped-data.js";
+import { startGoldPriceScraping } from "./src/scripts/gold-price-pp.js";
 
 import { fileURLToPath } from "url";
 import { dirname } from "path";
@@ -99,7 +100,7 @@ const databaseConnection = async () => {
     logger.info("Connected to the database.");
   } catch (error) {
     logger.error(`Database connection failed: ${error.message}`);
-    process.exit(1);
+    process.exit(1); // Exit process if the database connection fails
   }
 };
 
@@ -109,7 +110,7 @@ const runSeeder = async () => {
     logger.info("Starting database seeding...");
     await seedDatabase();
     await startGoldPriceScraping();
-    await startScraping();
+    await loadScrapedDataToDB();
     logger.info("Database seeding completed.");
   } catch (error) {
     logger.error(`Error during seeding: ${error.message}`);
@@ -157,7 +158,11 @@ const scheduleCronJob = () => {
 scheduleCronJob();
 
 app.listen(PORT, async () => {
-  logger.info(`App listening at http://${HOST}:${PORT}`);
-  await databaseConnection();
-  await runSeeder();
+  try {
+    await databaseConnection();
+    await runSeeder();
+    logger.info(`App listening at http://${HOST}:${PORT}`);
+  } catch (error) {
+    logger.error(`Failed to start application: ${error.message}`);
+  }
 });

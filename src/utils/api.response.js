@@ -99,6 +99,7 @@ export const message = {
   errorCreatingFD: "Error creating FD",
   errorDeletingFD: "Error deleting FD",
   errorFetchingFDs: "Error fetching FDs",
+  errorFetchingFD: "Error fetching FD",
   errorFdAnalytics: "Error calculating FD Analytics",
   errorUpdatingFD: "Error updating FD",
   passwordChangeError: "Error Changing Password",
@@ -136,6 +137,9 @@ export const message = {
   authHeaderError: "Authorization header is missing",
   tokenMissing: "Token is missing",
   tokenNotFound: "Token Not Found in the database",
+  phoneNoExists: "Phone number is already registered",
+  deleteUserError: "Error Deleting user",
+  errorFetchingUsers: "Error Fetching users",
 
   // Gold Management
   analysisReportofFd: "Analysis Report of all the fixed deposits",

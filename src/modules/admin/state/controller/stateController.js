@@ -8,11 +8,8 @@ export const stateRegister = async (req, res) => {
   try {
     const { state } = req.body;
 
-    logger.info(`Attempting to register new state: ${state}`);
-
     const stateExists = await StateModel.findOne({ state });
     if (stateExists) {
-      logger.warn(`State already exists: ${state}`);
       return res.status(statusCode.CONFLICT).json({
         statusCode: statusCode.CONFLICT,
         message: message.stateAlreadyExists,
@@ -23,7 +20,6 @@ export const stateRegister = async (req, res) => {
 
     const savedState = await newState.save();
 
-    logger.info(`State registered successfully: ${state}`);
     res.status(statusCode.CREATED).json({
       statusCode: statusCode.CREATED,
       message: message.stateCreated,
@@ -34,7 +30,6 @@ export const stateRegister = async (req, res) => {
     res.status(statusCode.INTERNAL_SERVER_ERROR).json({
       statusCode: statusCode.INTERNAL_SERVER_ERROR,
       message: message.errorCreatingState,
-      error: error.message,
     });
   }
 };
@@ -46,8 +41,6 @@ export const updateState = async (req, res) => {
     const { id } = req.params;
     const { state } = req.body;
 
-    logger.info(`Attempting to update state with ID: ${id}`);
-
     const updatedState = await StateModel.findByIdAndUpdate(
       id,
       { state },
@@ -55,14 +48,12 @@ export const updateState = async (req, res) => {
     );
 
     if (!updatedState) {
-      logger.warn(`No state found with ID: ${id}`);
       return res.status(statusCode.NOT_FOUND).json({
         statusCode: statusCode.NOT_FOUND,
         message: message.errorFetchingState,
       });
     }
 
-    logger.info(`State updated successfully: ${state}`);
     res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
       message: message.stateUpdated,
@@ -73,7 +64,6 @@ export const updateState = async (req, res) => {
     res.status(statusCode.INTERNAL_SERVER_ERROR).json({
       statusCode: statusCode.INTERNAL_SERVER_ERROR,
       message: message.errorUpdatingState,
-      error: error.message,
     });
   }
 };
@@ -84,19 +74,15 @@ export const deleteState = async (req, res) => {
   try {
     const { id } = req.params;
 
-    logger.info(`Attempting to delete state with ID: ${id}`);
-
     const deletedState = await StateModel.findByIdAndDelete(id);
 
     if (!deletedState) {
-      logger.warn(`No state found with ID: ${id}`);
       return res.status(statusCode.NOT_FOUND).json({
         statusCode: statusCode.NOT_FOUND,
         message: message.errorFetchingState,
       });
     }
 
-    logger.info(`State deleted successfully with ID: ${id}`);
     res
       .status(statusCode.OK)
       .json({ statusCode: statusCode.OK, message: message.stateDeleted });
@@ -105,7 +91,6 @@ export const deleteState = async (req, res) => {
     res.status(statusCode.INTERNAL_SERVER_ERROR).json({
       statusCode: statusCode.INTERNAL_SERVER_ERROR,
       message: message.errorDeletingState,
-      error: error.message,
     });
   }
 };
@@ -114,8 +99,6 @@ export const deleteState = async (req, res) => {
 
 export const getState = async (req, res) => {
   try {
-    logger.info("Attempting to fetch all states");
-
     const states = await StateModel.find();
 
     if (states.length == 0) {
@@ -131,7 +114,6 @@ export const getState = async (req, res) => {
       ...state.toObject(),
     }));
 
-    logger.info(`Successfully fetched ${statesWithSrNo.length} states`);
     res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
       message: message.statesView,
@@ -153,19 +135,15 @@ export const deleteMultipleStates = async (req, res) => {
   try {
     const { ids } = req.body;
 
-    logger.info(`Attempting to delete multiple states with IDs: ${ids}`);
-
     const deletedStates = await StateModel.deleteMany({ _id: { $in: ids } });
 
     if (deletedStates.deletedCount === 0) {
-      logger.warn("No states found to delete");
       return res.status(statusCode.NOT_FOUND).json({
         statusCode: statusCode.NOT_FOUND,
         message: message.errorFetchingState,
       });
     }
 
-    logger.info(`${deletedStates.deletedCount} states deleted successfully`);
     res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
       message: message.statesDeleted,
@@ -176,7 +154,6 @@ export const deleteMultipleStates = async (req, res) => {
     res.status(statusCode.INTERNAL_SERVER_ERROR).json({
       statusCode: statusCode.INTERNAL_SERVER_ERROR,
       message: message.errorDeletingState,
-      error: error.message,
     });
   }
 };

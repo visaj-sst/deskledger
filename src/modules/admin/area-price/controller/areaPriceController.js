@@ -16,7 +16,6 @@ export const createAreaPrice = async (req, res) => {
     });
 
     if (areaPriceExists) {
-      logger.warn(`Area price already exists for : ${areaName}`);
       return res.status(statusCode.CONFLICT).json({
         statusCode: statusCode.CONFLICT,
         message: message.areaPriceAlreadyExists,
@@ -30,10 +29,8 @@ export const createAreaPrice = async (req, res) => {
       pricePerSquareFoot,
     });
 
-    logger.info(`Adding Area price for : ${areaName}`);
     const savedAreaPrice = await newAreaPrice.save();
 
-    logger.info(`Area price successfully added for : ${areaName}`);
     res.status(statusCode.CREATED).json({
       statusCode: statusCode.CREATED,
       message: message.areaPriceCreated,
@@ -57,7 +54,6 @@ export const updateAreaPrice = async (req, res) => {
     const { id } = req.params;
     const { cityId, stateId, areaName, pricePerSquareFoot } = req.body;
 
-    logger.info(`Updating Area price for: ${areaName} with ID: ${id}`);
     const updatedAreaPrice = await AreaPriceModel.findByIdAndUpdate(
       id,
       { cityId, stateId, areaName, pricePerSquareFoot },
@@ -65,14 +61,12 @@ export const updateAreaPrice = async (req, res) => {
     );
 
     if (!updatedAreaPrice) {
-      logger.warn(`Area price with ID ${id} not found for update`);
       return res.status(statusCode.NOT_FOUND).json({
         statusCode: statusCode.NOT_FOUND,
         message: message.errorFetchingAreaPrice,
       });
     }
 
-    logger.info(`Area price updated successfully for ID: ${id}`);
     res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
       message: message.areaPriceUpdated,
@@ -95,18 +89,15 @@ export const deleteAreaPrice = async (req, res) => {
   try {
     const { id } = req.params;
 
-    logger.info(`Deleting Area price with ID: ${id}`);
     const deletedAreaPrice = await AreaPriceModel.findByIdAndDelete(id);
 
     if (!deletedAreaPrice) {
-      logger.warn(`Area price with ID ${id} not found for deletion`);
       return res.status(statusCode.NOT_FOUND).json({
         statusCode: statusCode.NOT_FOUND,
         message: message.errorFetchingAreaPrice,
       });
     }
 
-    logger.info(`Area price successfully deleted for ID: ${id}`);
     res
       .status(statusCode.OK)
       .json({ statusCode: statusCode.OK, message: message.areaPriceDeleted });
@@ -125,8 +116,6 @@ export const deleteAreaPrice = async (req, res) => {
 
 export const getAreaPrices = async (req, res) => {
   try {
-    logger.info("Fetching area prices with details...");
-
     const areaPrices = await AreaPriceModel.aggregate([
       {
         $lookup: {
@@ -172,10 +161,6 @@ export const getAreaPrices = async (req, res) => {
       ...areaPrice,
     }));
 
-    logger.info(
-      `Successfully fetched ${areaPricesWithSrNo.length} area prices`
-    );
-
     res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
       message: message.areaPriceRetrieved,
@@ -195,25 +180,17 @@ export const getAreaPrices = async (req, res) => {
 export const deleteMultipleAreaPrices = async (req, res) => {
   try {
     const { ids } = req.body;
-    logger.info(`Deleting multiple area prices with IDs: ${ids.join(", ")}`);
 
     const deletedAreaPrices = await AreaPriceModel.deleteMany({
       _id: { $in: ids },
     });
 
     if (deletedAreaPrices.deletedCount === 0) {
-      logger.warn(
-        `No area prices found to delete for the given IDs: ${ids.join(", ")}`
-      );
       return res.status(statusCode.NOT_FOUND).json({
         statusCode: statusCode.NOT_FOUND,
         message: message.errorFetchingAreaPrice,
       });
     }
-
-    logger.info(
-      `Successfully deleted ${deletedAreaPrices.deletedCount} area prices`
-    );
 
     res.status(statusCode.OK).json({
       statusCode: statusCode.OK,

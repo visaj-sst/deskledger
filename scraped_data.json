@@ -1,0 +1,6140 @@
+[
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "Varthur",
+    "pricePerSquareFoot": 13300
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "Sarjapur",
+    "pricePerSquareFoot": 11250
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "Tumkur Road",
+    "pricePerSquareFoot": 15000
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "Gunjur",
+    "pricePerSquareFoot": 11200
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "Hoodi",
+    "pricePerSquareFoot": 12600
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "Lingadheeranahalli",
+    "pricePerSquareFoot": 8050
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "Bagalur",
+    "pricePerSquareFoot": 9300
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "Manyata Tech Park",
+    "pricePerSquareFoot": 9850
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "Bagalur Main Road",
+    "pricePerSquareFoot": 9300
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "Kannamangala",
+    "pricePerSquareFoot": 11900
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "Kundalahalli",
+    "pricePerSquareFoot": 13700
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "Panathur",
+    "pricePerSquareFoot": 12500
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "Kogilu",
+    "pricePerSquareFoot": 10000
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "Pattandur Agrahara",
+    "pricePerSquareFoot": 11450
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "Kudlu Gate",
+    "pricePerSquareFoot": 13500
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "Kadubeesanahalli",
+    "pricePerSquareFoot": 12500
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "Dommasandra",
+    "pricePerSquareFoot": 8050
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "Amruthahalli",
+    "pricePerSquareFoot": 8400
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "Hosahalli",
+    "pricePerSquareFoot": 10850
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "5th Phase JP Nagar",
+    "pricePerSquareFoot": 10500
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "Bhoganhalli",
+    "pricePerSquareFoot": 15500
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "Chokkanahalli",
+    "pricePerSquareFoot": 10600
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "Sompura",
+    "pricePerSquareFoot": 6750
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "Garudachar Palya",
+    "pricePerSquareFoot": 16000
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "Thanisandra Main Road",
+    "pricePerSquareFoot": 10500
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "Whitefield",
+    "pricePerSquareFoot": 11900
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "Budigere",
+    "pricePerSquareFoot": 10950
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "Balagere",
+    "pricePerSquareFoot": 13050
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "Seegehalli",
+    "pricePerSquareFoot": 8550
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "Rachenahalli",
+    "pricePerSquareFoot": 10450
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "Lakshminarayana Pura",
+    "pricePerSquareFoot": 13400
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "Green Glen Layout",
+    "pricePerSquareFoot": 12700
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "Chandapura",
+    "pricePerSquareFoot": 5550
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "Hosa Road",
+    "pricePerSquareFoot": 8800
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "Nallurhalli",
+    "pricePerSquareFoot": 10400
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "Jakkur",
+    "pricePerSquareFoot": 10200
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "Sarjapur Road",
+    "pricePerSquareFoot": 10250
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "Hebbal",
+    "pricePerSquareFoot": 11950
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "Magadi Road",
+    "pricePerSquareFoot": 8700
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "Hadosiddapura",
+    "pricePerSquareFoot": 16100
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "Chikkakannalli",
+    "pricePerSquareFoot": 14650
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "Hosakerehalli",
+    "pricePerSquareFoot": 7550
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "Kumbena Agrahara",
+    "pricePerSquareFoot": 7450
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "Hoskote",
+    "pricePerSquareFoot": 6100
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "Rayasandra",
+    "pricePerSquareFoot": 7650
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "Kariyammana Agrahara",
+    "pricePerSquareFoot": 15000
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "ITPL",
+    "pricePerSquareFoot": 13000
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "Harlur",
+    "pricePerSquareFoot": 11400
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "Kaikondrahalli",
+    "pricePerSquareFoot": 11600
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Bangalore",
+    "areaName": "Bellandur",
+    "pricePerSquareFoot": 11950
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Hanuman Nagar",
+    "pricePerSquareFoot": 62250
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Film City Road",
+    "pricePerSquareFoot": 32850
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Motilal Nagar 1",
+    "pricePerSquareFoot": 34800
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Kanchpada",
+    "pricePerSquareFoot": 33750
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Marine Lines",
+    "pricePerSquareFoot": 77050
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Sion East",
+    "pricePerSquareFoot": 34250
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Evershine Nagar",
+    "pricePerSquareFoot": 30400
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Prabhadevi",
+    "pricePerSquareFoot": 66200
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Sher E Punjab Colony",
+    "pricePerSquareFoot": 28350
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Bangur Nagar",
+    "pricePerSquareFoot": 33150
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Vikhroli West",
+    "pricePerSquareFoot": 28100
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Thakur Village",
+    "pricePerSquareFoot": 32100
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Union Park",
+    "pricePerSquareFoot": 40650
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Eksar",
+    "pricePerSquareFoot": 33300
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Kurar Village",
+    "pricePerSquareFoot": 26700
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Kasam Baug",
+    "pricePerSquareFoot": 28550
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Bandra Kurla Complex",
+    "pricePerSquareFoot": 60000
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Lower Parel West",
+    "pricePerSquareFoot": 53850
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Dattapada",
+    "pricePerSquareFoot": 32250
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Seven Bunglow",
+    "pricePerSquareFoot": 41800
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Goregaon East",
+    "pricePerSquareFoot": 30800
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "JB Nagar",
+    "pricePerSquareFoot": 33400
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Powai",
+    "pricePerSquareFoot": 35700
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Gamdevi",
+    "pricePerSquareFoot": 70300
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Rajendra Nagar",
+    "pricePerSquareFoot": 32750
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Deonar",
+    "pricePerSquareFoot": 34950
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Siddharth Nagar, Goregaon",
+    "pricePerSquareFoot": 27900
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Kandivali East",
+    "pricePerSquareFoot": 27900
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Dahisar West",
+    "pricePerSquareFoot": 26050
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Worli",
+    "pricePerSquareFoot": 62500
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Lokhandwala Kandivali East",
+    "pricePerSquareFoot": 25150
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Link Road",
+    "pricePerSquareFoot": 29700
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Swastik Park",
+    "pricePerSquareFoot": 32000
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Wadala",
+    "pricePerSquareFoot": 35150
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Dindoshi",
+    "pricePerSquareFoot": 28250
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Vile Parle West",
+    "pricePerSquareFoot": 49100
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Borivali East",
+    "pricePerSquareFoot": 28850
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Malad East",
+    "pricePerSquareFoot": 27150
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Goregaon West",
+    "pricePerSquareFoot": 30800
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Jogeshwari West",
+    "pricePerSquareFoot": 28150
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Wadala East",
+    "pricePerSquareFoot": 34900
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Sunder Nagar",
+    "pricePerSquareFoot": 28900
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Lower Parel",
+    "pricePerSquareFoot": 52450
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Borivali West",
+    "pricePerSquareFoot": 30000
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Chincholi Bunder",
+    "pricePerSquareFoot": 27700
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Malad West",
+    "pricePerSquareFoot": 26300
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Saki Vihar",
+    "pricePerSquareFoot": 30250
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Kandivali West",
+    "pricePerSquareFoot": 26000
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Charkop",
+    "pricePerSquareFoot": 22500
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mumbai",
+    "areaName": "Unnat Nagar",
+    "pricePerSquareFoot": 32050
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector 15 Dwarka",
+    "pricePerSquareFoot": 6300
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector C Vasant Kunj",
+    "pricePerSquareFoot": 21450
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector 18A Dwarka",
+    "pricePerSquareFoot": 15650
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector 18 Dwarka",
+    "pricePerSquareFoot": 15250
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector 5 Dwarka",
+    "pricePerSquareFoot": 14300
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector 13 Dwarka",
+    "pricePerSquareFoot": 13600
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector 12 Dwarka",
+    "pricePerSquareFoot": 14400
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector 19B Dwarka",
+    "pricePerSquareFoot": 15450
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Moti Nagar",
+    "pricePerSquareFoot": 19050
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector 22 Dwarka",
+    "pricePerSquareFoot": 14400
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector 1 Dwarka",
+    "pricePerSquareFoot": 11650
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector 6 Dwarka",
+    "pricePerSquareFoot": 14350
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector 23 Dwarka",
+    "pricePerSquareFoot": 13950
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector 7 Dwarka",
+    "pricePerSquareFoot": 13700
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector 4 Dwarka",
+    "pricePerSquareFoot": 14200
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector 10 Dwarka",
+    "pricePerSquareFoot": 14500
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector 9 Dwarka",
+    "pricePerSquareFoot": 13850
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector D Vasant Kunj",
+    "pricePerSquareFoot": 19500
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector 19 Dwarka",
+    "pricePerSquareFoot": 13950
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector 11 Dwarka",
+    "pricePerSquareFoot": 14100
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector 3 Dwarka",
+    "pricePerSquareFoot": 13350
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector 16 Dwarka",
+    "pricePerSquareFoot": 10000
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector 25 Rohini",
+    "pricePerSquareFoot": 9150
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Vasant Kunj",
+    "pricePerSquareFoot": 18450
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector 2 Dwarka",
+    "pricePerSquareFoot": 13600
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Munirka",
+    "pricePerSquareFoot": 17600
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Pocket 2 Sector 6 Dwarka",
+    "pricePerSquareFoot": 12250
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector B Vasant Kunj",
+    "pricePerSquareFoot": 17850
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector 17 Dwarka",
+    "pricePerSquareFoot": 11550
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Khanpur",
+    "pricePerSquareFoot": 4250
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Karol Bagh",
+    "pricePerSquareFoot": 19200
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Nawada",
+    "pricePerSquareFoot": 5250
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector 14 Dwarka",
+    "pricePerSquareFoot": 10600
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Lajpat Nagar",
+    "pricePerSquareFoot": 14550
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector 28 Rohini",
+    "pricePerSquareFoot": 7700
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector 14 Rohini",
+    "pricePerSquareFoot": 17200
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Greater Kailash",
+    "pricePerSquareFoot": 21750
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "IP Extension",
+    "pricePerSquareFoot": 12650
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Akshardham",
+    "pricePerSquareFoot": 25000
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Shalimar Bagh",
+    "pricePerSquareFoot": 11900
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Uttam Nagar West",
+    "pricePerSquareFoot": 5400
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Vasundhara Enclave",
+    "pricePerSquareFoot": 10550
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Vikas Puri",
+    "pricePerSquareFoot": 10750
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Patparganj",
+    "pricePerSquareFoot": 12200
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Paschim Vihar",
+    "pricePerSquareFoot": 11250
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Alaknanda",
+    "pricePerSquareFoot": 16000
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector 23 Rohini",
+    "pricePerSquareFoot": 9400
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Pitampura",
+    "pricePerSquareFoot": 12500
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector 13 Dwarka",
+    "pricePerSquareFoot": 13600
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector 12 Dwarka",
+    "pricePerSquareFoot": 14400
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector 19B Dwarka",
+    "pricePerSquareFoot": 15450
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Moti Nagar",
+    "pricePerSquareFoot": 19050
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector 22 Dwarka",
+    "pricePerSquareFoot": 14400
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector 1 Dwarka",
+    "pricePerSquareFoot": 11650
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector 6 Dwarka",
+    "pricePerSquareFoot": 14350
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector 23 Dwarka",
+    "pricePerSquareFoot": 13950
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector 7 Dwarka",
+    "pricePerSquareFoot": 13700
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector 4 Dwarka",
+    "pricePerSquareFoot": 14200
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector 10 Dwarka",
+    "pricePerSquareFoot": 14500
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector 9 Dwarka",
+    "pricePerSquareFoot": 13850
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector D Vasant Kunj",
+    "pricePerSquareFoot": 19500
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector 19 Dwarka",
+    "pricePerSquareFoot": 13950
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector 11 Dwarka",
+    "pricePerSquareFoot": 14100
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector 3 Dwarka",
+    "pricePerSquareFoot": 13350
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector 16 Dwarka",
+    "pricePerSquareFoot": 10000
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector 25 Rohini",
+    "pricePerSquareFoot": 9150
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Vasant Kunj",
+    "pricePerSquareFoot": 18450
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector 2 Dwarka",
+    "pricePerSquareFoot": 13600
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Munirka",
+    "pricePerSquareFoot": 17600
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Pocket 2 Sector 6 Dwarka",
+    "pricePerSquareFoot": 12250
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector B Vasant Kunj",
+    "pricePerSquareFoot": 17850
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector 17 Dwarka",
+    "pricePerSquareFoot": 11550
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Khanpur",
+    "pricePerSquareFoot": 4250
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Karol Bagh",
+    "pricePerSquareFoot": 19200
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Nawada",
+    "pricePerSquareFoot": 5250
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector 14 Dwarka",
+    "pricePerSquareFoot": 10600
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Lajpat Nagar",
+    "pricePerSquareFoot": 14550
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector 28 Rohini",
+    "pricePerSquareFoot": 7700
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector 14 Rohini",
+    "pricePerSquareFoot": 17200
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Greater Kailash",
+    "pricePerSquareFoot": 21750
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "IP Extension",
+    "pricePerSquareFoot": 12650
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Akshardham",
+    "pricePerSquareFoot": 25000
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Shalimar Bagh",
+    "pricePerSquareFoot": 11900
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Uttam Nagar West",
+    "pricePerSquareFoot": 5400
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Vasundhara Enclave",
+    "pricePerSquareFoot": 10550
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Vikas Puri",
+    "pricePerSquareFoot": 10750
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Patparganj",
+    "pricePerSquareFoot": 12200
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Paschim Vihar",
+    "pricePerSquareFoot": 11250
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Alaknanda",
+    "pricePerSquareFoot": 16000
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Sector 23 Rohini",
+    "pricePerSquareFoot": 9400
+  },
+  {
+    "stateName": "Delhi",
+    "cityName": "Delhi",
+    "areaName": "Pitampura",
+    "pricePerSquareFoot": 12500
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "Ghorpadi",
+    "pricePerSquareFoot": 11850
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "Lullanagar",
+    "pricePerSquareFoot": 9000
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "Pune Mumbai Highway",
+    "pricePerSquareFoot": 9250
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "Koregaon Park",
+    "pricePerSquareFoot": 16200
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "Gahunje",
+    "pricePerSquareFoot": 7850
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "Balewadi",
+    "pricePerSquareFoot": 10250
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "Kharadi",
+    "pricePerSquareFoot": 10400
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "Dange Chowk",
+    "pricePerSquareFoot": 8850
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "Tingre Nagar",
+    "pricePerSquareFoot": 8850
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "Magarpatta",
+    "pricePerSquareFoot": 11950
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "Bhusari Colony",
+    "pricePerSquareFoot": 12150
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "Mahalunge",
+    "pricePerSquareFoot": 8650
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "Hinjewadi Phase 1",
+    "pricePerSquareFoot": 8400
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "Kalyani Nagar",
+    "pricePerSquareFoot": 13000
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "Baner",
+    "pricePerSquareFoot": 10650
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "Pashan",
+    "pricePerSquareFoot": 9650
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "Hinjewadi",
+    "pricePerSquareFoot": 7800
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "Viman Nagar",
+    "pricePerSquareFoot": 11300
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "Shewalewadi",
+    "pricePerSquareFoot": 6900
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "Baner Sus",
+    "pricePerSquareFoot": 8300
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "BT Kawade Road",
+    "pricePerSquareFoot": 8750
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "Marunji",
+    "pricePerSquareFoot": 6750
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "Phase 3 Hinjewadi",
+    "pricePerSquareFoot": 7400
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "Bhukum",
+    "pricePerSquareFoot": 6300
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "Vishnu Dev Nagar",
+    "pricePerSquareFoot": 8850
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "Eon Free Zone",
+    "pricePerSquareFoot": 9650
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "Kaspate Vasti",
+    "pricePerSquareFoot": 9150
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "Baner Pashan Link Road",
+    "pricePerSquareFoot": 10600
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "Koregaon Park Annexe",
+    "pricePerSquareFoot": 11050
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "Bhunde Vasti",
+    "pricePerSquareFoot": 9400
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "Clover Park",
+    "pricePerSquareFoot": 11000
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "Mundhwa",
+    "pricePerSquareFoot": 8450
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "Thergaon",
+    "pricePerSquareFoot": 7500
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "Yewalewadi",
+    "pricePerSquareFoot": 5350
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "Hadapsar",
+    "pricePerSquareFoot": 9550
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "Loni Kalbhor",
+    "pricePerSquareFoot": 5200
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "Prabhat Road",
+    "pricePerSquareFoot": 19100
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "Bavdhan",
+    "pricePerSquareFoot": 8700
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "Paud Road",
+    "pricePerSquareFoot": 8650
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "Mhada Colony",
+    "pricePerSquareFoot": 10450
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "Hinjewadi Phase 2",
+    "pricePerSquareFoot": 7500
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "Tukaram Nagar",
+    "pricePerSquareFoot": 8650
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "Yerawada",
+    "pricePerSquareFoot": 10150
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "Kothrud",
+    "pricePerSquareFoot": 13100
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "Keshav Nagar",
+    "pricePerSquareFoot": 8000
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "Wagholi",
+    "pricePerSquareFoot": 5650
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "Madhav Nagar",
+    "pricePerSquareFoot": 6900
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "NIBM",
+    "pricePerSquareFoot": 7350
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "Moshi",
+    "pricePerSquareFoot": 5750
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Pune",
+    "areaName": "Erandwane",
+    "pricePerSquareFoot": 16200
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "Egattur",
+    "pricePerSquareFoot": 10600
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "Anna Nagar West",
+    "pricePerSquareFoot": 13450
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "Vengaivasal",
+    "pricePerSquareFoot": 6550
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "Surapet",
+    "pricePerSquareFoot": 6300
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "Thalambur",
+    "pricePerSquareFoot": 5800
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "KK Nagar",
+    "pricePerSquareFoot": 14150
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "Nungambakkam",
+    "pricePerSquareFoot": 19500
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "Urapakkam",
+    "pricePerSquareFoot": 5500
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "New perungalathur",
+    "pricePerSquareFoot": 5850
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "Pammal",
+    "pricePerSquareFoot": 6900
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "Mangadu",
+    "pricePerSquareFoot": 6300
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "Mogappair",
+    "pricePerSquareFoot": 8300
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "Valasaravakkam",
+    "pricePerSquareFoot": 10400
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "Madhavaram",
+    "pricePerSquareFoot": 6950
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "GST Road",
+    "pricePerSquareFoot": 6650
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "Thiruporur",
+    "pricePerSquareFoot": 4550
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "Padur",
+    "pricePerSquareFoot": 6200
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "Vanagaram",
+    "pricePerSquareFoot": 7600
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "OMR",
+    "pricePerSquareFoot": 6800
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "Perambur",
+    "pricePerSquareFoot": 7700
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "Manapakkam",
+    "pricePerSquareFoot": 7550
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "Avadi",
+    "pricePerSquareFoot": 5500
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "Anna Nagar",
+    "pricePerSquareFoot": 14200
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "Saidapet",
+    "pricePerSquareFoot": 14000
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "Anakaputhur",
+    "pricePerSquareFoot": 5800
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "Arcot Road",
+    "pricePerSquareFoot": 10300
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "Maduravoyal",
+    "pricePerSquareFoot": 7200
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "Keelkattalai",
+    "pricePerSquareFoot": 7800
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "Thiruvanmiyur",
+    "pricePerSquareFoot": 13750
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "Villivakkam",
+    "pricePerSquareFoot": 6950
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "Poonamallee",
+    "pricePerSquareFoot": 5550
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "Ayanambakkam",
+    "pricePerSquareFoot": 6400
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "Medavakkam",
+    "pricePerSquareFoot": 6600
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "Porur",
+    "pricePerSquareFoot": 7550
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "Ramapuram",
+    "pricePerSquareFoot": 7000
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "Kallikuppam",
+    "pricePerSquareFoot": 6000
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "Nanganallur",
+    "pricePerSquareFoot": 9100
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "Siruseri",
+    "pricePerSquareFoot": 5700
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "Adyar",
+    "pricePerSquareFoot": 16500
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "Thoraipakkam",
+    "pricePerSquareFoot": 7750
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "Sholinganallur",
+    "pricePerSquareFoot": 6750
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "Kattupakkam",
+    "pricePerSquareFoot": 5950
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "Velachery",
+    "pricePerSquareFoot": 9200
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "Alwarpet",
+    "pricePerSquareFoot": 20100
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "Iyyappanthangal",
+    "pricePerSquareFoot": 6150
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "Thirumullaivoyal",
+    "pricePerSquareFoot": 5150
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "Mogappair West",
+    "pricePerSquareFoot": 7500
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "Alwarthirunagar",
+    "pricePerSquareFoot": 10400
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "Puzhuthivakkam",
+    "pricePerSquareFoot": 8050
+  },
+  {
+    "stateName": "Tamil Nadu",
+    "cityName": "Chennai",
+    "areaName": "Kolathur",
+    "pricePerSquareFoot": 7000
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "Aminpur",
+    "pricePerSquareFoot": 5300
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "Kollur",
+    "pricePerSquareFoot": 5800
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "Narsingi",
+    "pricePerSquareFoot": 10150
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "Whitefields",
+    "pricePerSquareFoot": 11000
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "Gachibowli",
+    "pricePerSquareFoot": 10450
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "Miyapur",
+    "pricePerSquareFoot": 6550
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "Dilsukh Nagar",
+    "pricePerSquareFoot": 5700
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "Moti Nagar",
+    "pricePerSquareFoot": 10050
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "Nallagandla",
+    "pricePerSquareFoot": 10000
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "Puppalaguda",
+    "pricePerSquareFoot": 9050
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "Kokapet",
+    "pricePerSquareFoot": 10500
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "Patancheru",
+    "pricePerSquareFoot": 4850
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "Boduppal",
+    "pricePerSquareFoot": 4750
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "Adibatla",
+    "pricePerSquareFoot": 3700
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "Nanakramguda",
+    "pricePerSquareFoot": 11450
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "Jubilee Hills",
+    "pricePerSquareFoot": 12200
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "Kondapur",
+    "pricePerSquareFoot": 9800
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "Chandanagar",
+    "pricePerSquareFoot": 6250
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "Kothaguda",
+    "pricePerSquareFoot": 10900
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "Bachupally",
+    "pricePerSquareFoot": 5650
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "Financial District",
+    "pricePerSquareFoot": 11100
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "Pocharam",
+    "pricePerSquareFoot": 4700
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "Isnapur",
+    "pricePerSquareFoot": 4500
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "Uppal",
+    "pricePerSquareFoot": 5850
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "Beeramguda",
+    "pricePerSquareFoot": 4600
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "Mokila",
+    "pricePerSquareFoot": 5800
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "Kukatpally",
+    "pricePerSquareFoot": 6850
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "Suchitra",
+    "pricePerSquareFoot": 6000
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "Manikonda",
+    "pricePerSquareFoot": 7350
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "Kompally",
+    "pricePerSquareFoot": 5600
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "Khajaguda",
+    "pricePerSquareFoot": 9650
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "Sanath Nagar",
+    "pricePerSquareFoot": 8800
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "KPHB",
+    "pricePerSquareFoot": 9300
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "Nizampet",
+    "pricePerSquareFoot": 5350
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "5th Phase KPHB",
+    "pricePerSquareFoot": 11050
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "Hi Tech City",
+    "pricePerSquareFoot": 11200
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "Serilingampally",
+    "pricePerSquareFoot": 7100
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "Tellapur",
+    "pricePerSquareFoot": 7500
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "Mallampet",
+    "pricePerSquareFoot": 4750
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "Rajendra Nagar",
+    "pricePerSquareFoot": 7250
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "Qutbullapur",
+    "pricePerSquareFoot": 5650
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "Shaikpet",
+    "pricePerSquareFoot": 9350
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "LB Nagar",
+    "pricePerSquareFoot": 6300
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "Appa Junction",
+    "pricePerSquareFoot": 8050
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "Mayuri Nagar, Miyapur",
+    "pricePerSquareFoot": 6150
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "Begumpet",
+    "pricePerSquareFoot": 7600
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "Neknampur",
+    "pricePerSquareFoot": 6700
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "Himayat Nagar",
+    "pricePerSquareFoot": 7950
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "Upparpally",
+    "pricePerSquareFoot": 5300
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Hyderabad",
+    "areaName": "Attapur",
+    "pricePerSquareFoot": 6150
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "Belgharia Expressway",
+    "pricePerSquareFoot": 5150
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "Tollygunge",
+    "pricePerSquareFoot": 9450
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "Tangra",
+    "pricePerSquareFoot": 10350
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "Anandapur",
+    "pricePerSquareFoot": 15050
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "Sinthee",
+    "pricePerSquareFoot": 8500
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "Bangur",
+    "pricePerSquareFoot": 7750
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "Joka",
+    "pricePerSquareFoot": 5450
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "EM Bypass",
+    "pricePerSquareFoot": 5550
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "New Town",
+    "pricePerSquareFoot": 7450
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "Kalighat",
+    "pricePerSquareFoot": 10900
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "Southern Bypass",
+    "pricePerSquareFoot": 4850
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "Action Area 2",
+    "pricePerSquareFoot": 7850
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "Ariadaha",
+    "pricePerSquareFoot": 3700
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "Narayanpur",
+    "pricePerSquareFoot": 4450
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "Salt Lake",
+    "pricePerSquareFoot": 10700
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "Ultadanga",
+    "pricePerSquareFoot": 8850
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "EM Bypass",
+    "pricePerSquareFoot": 11550
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "Lake Town",
+    "pricePerSquareFoot": 7350
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "Entally",
+    "pricePerSquareFoot": 9650
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "New Alipore",
+    "pricePerSquareFoot": 10350
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "Madhyamgram",
+    "pricePerSquareFoot": 4300
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "Khardah",
+    "pricePerSquareFoot": 3400
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "New Garia",
+    "pricePerSquareFoot": 4800
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "Bara Nagar",
+    "pricePerSquareFoot": 4900
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "Garia",
+    "pricePerSquareFoot": 5000
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "Kamalgazi",
+    "pricePerSquareFoot": 4750
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "Parnasree Palli",
+    "pricePerSquareFoot": 5000
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "Narendrapur",
+    "pricePerSquareFoot": 4450
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "Kankurgachi",
+    "pricePerSquareFoot": 11250
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "Baruipur",
+    "pricePerSquareFoot": 3500
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "Barrackpore",
+    "pricePerSquareFoot": 4150
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "Haltu",
+    "pricePerSquareFoot": 5150
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "Nayabad",
+    "pricePerSquareFoot": 4400
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "Baguiati",
+    "pricePerSquareFoot": 3750
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "Sonarpur",
+    "pricePerSquareFoot": 3750
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "Patuli",
+    "pricePerSquareFoot": 6050
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "Belgharia",
+    "pricePerSquareFoot": 4000
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "Chinar Park",
+    "pricePerSquareFoot": 5500
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "Bhawanipore",
+    "pricePerSquareFoot": 13250
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "Maniktala",
+    "pricePerSquareFoot": 9000
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "Santoshpur",
+    "pricePerSquareFoot": 6250
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "Paikpara",
+    "pricePerSquareFoot": 7000
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "Dum Dum Cantt",
+    "pricePerSquareFoot": 3350
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "Dakshineswar",
+    "pricePerSquareFoot": 4500
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "Purbalok",
+    "pricePerSquareFoot": 5900
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "Dum Dum Park",
+    "pricePerSquareFoot": 5450
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "Bablatala",
+    "pricePerSquareFoot": 5950
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "Jodhpur Park",
+    "pricePerSquareFoot": 9750
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "Topsia",
+    "pricePerSquareFoot": 11550
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Kolkata",
+    "areaName": "Uniworld City",
+    "pricePerSquareFoot": 7100
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Sector 6 Nerul",
+    "pricePerSquareFoot": 27950
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Juinagar",
+    "pricePerSquareFoot": 24350
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Seawoods",
+    "pricePerSquareFoot": 31300
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Sector 34 Kharghar",
+    "pricePerSquareFoot": 16400
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Sector 10B Ulwe",
+    "pricePerSquareFoot": 17850
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Khanda Colony",
+    "pricePerSquareFoot": 17300
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Sector 58 Seawoods",
+    "pricePerSquareFoot": 38450
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Sector 35E Kharghar",
+    "pricePerSquareFoot": 16650
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Sector 23 Kharghar",
+    "pricePerSquareFoot": 28800
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Vashi",
+    "pricePerSquareFoot": 27600
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Sector 15 Belapur",
+    "pricePerSquareFoot": 26000
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Sanpada",
+    "pricePerSquareFoot": 29850
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Jijamata Nagar",
+    "pricePerSquareFoot": 29400
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Belapur",
+    "pricePerSquareFoot": 22150
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Nerul",
+    "pricePerSquareFoot": 26150
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Sector 18 Kharghar",
+    "pricePerSquareFoot": 17250
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Karave Nagar",
+    "pricePerSquareFoot": 29350
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Ghansoli",
+    "pricePerSquareFoot": 24150
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Sector 44 Seawoods",
+    "pricePerSquareFoot": 20400
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Sector 29 Nerul",
+    "pricePerSquareFoot": 26150
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Sector 34A Kharghar",
+    "pricePerSquareFoot": 17150
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Sector 13 Kharghar",
+    "pricePerSquareFoot": 15850
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Sector 8 Kharghar",
+    "pricePerSquareFoot": 18100
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Sector 12 Kharghar",
+    "pricePerSquareFoot": 17900
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Sector 5 Ghansoli",
+    "pricePerSquareFoot": 20350
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Sector 6 Kharghar",
+    "pricePerSquareFoot": 25000
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Sector 20 Nerul",
+    "pricePerSquareFoot": 19650
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Sector 19 Kharghar",
+    "pricePerSquareFoot": 17600
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Sector 30 Kharghar",
+    "pricePerSquareFoot": 12500
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Sector 2 Kharghar",
+    "pricePerSquareFoot": 19850
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Sector 6 Kamothe",
+    "pricePerSquareFoot": 12800
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Sector 26 Vashi",
+    "pricePerSquareFoot": 20850
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Sector 29C Airoli",
+    "pricePerSquareFoot": 20550
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Sector 34C Kharghar",
+    "pricePerSquareFoot": 16050
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Sector 21 Nerul",
+    "pricePerSquareFoot": 23400
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Sector 21 Kamothe",
+    "pricePerSquareFoot": 13400
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Sector 20 Kopar Khairane",
+    "pricePerSquareFoot": 19800
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Sector 36 Seawoods",
+    "pricePerSquareFoot": 21850
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Sector 21 Kharghar",
+    "pricePerSquareFoot": 16300
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Sukapur",
+    "pricePerSquareFoot": 8800
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Sector 11 Kharghar",
+    "pricePerSquareFoot": 16200
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Sector 18 Kamothe",
+    "pricePerSquareFoot": 13950
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Sector 7 Kamothe",
+    "pricePerSquareFoot": 13500
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Sector 11 Belapur",
+    "pricePerSquareFoot": 22150
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Kopar Khairane",
+    "pricePerSquareFoot": 19500
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Sector 20 Kharghar",
+    "pricePerSquareFoot": 16650
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Sector 36 Kamothe",
+    "pricePerSquareFoot": 14000
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Sector 7 Kharghar",
+    "pricePerSquareFoot": 20450
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Sector 28 Vashi",
+    "pricePerSquareFoot": 18200
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Navi Mumbai",
+    "areaName": "Ghotkamp Koyana Vele",
+    "pricePerSquareFoot": 8900
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "Sector 63A Gurgaon",
+    "pricePerSquareFoot": 20000
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "Sector 76 Gurgaon",
+    "pricePerSquareFoot": 13900
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "Sector 36A Gurgaon",
+    "pricePerSquareFoot": 18700
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "Sector 78 Gurgaon",
+    "pricePerSquareFoot": 9350
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "Sector 108 Gurgaon",
+    "pricePerSquareFoot": 16100
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "Sector 95A Gurgaon",
+    "pricePerSquareFoot": 7850
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "Sector 89 Gurgaon",
+    "pricePerSquareFoot": 10450
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "Sector 93 Gurgaon",
+    "pricePerSquareFoot": 10950
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "Sector 80 Gurgaon",
+    "pricePerSquareFoot": 13900
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "Sector 95 Gurgaon",
+    "pricePerSquareFoot": 8450
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "Sector 106 Gurgaon",
+    "pricePerSquareFoot": 14500
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "Sector 42 Gurgaon",
+    "pricePerSquareFoot": 59700
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "Sector 71 Gurgaon",
+    "pricePerSquareFoot": 14550
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "Sector 85 Gurgaon",
+    "pricePerSquareFoot": 10550
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "Gurgaon Faridabad Road",
+    "pricePerSquareFoot": 14600
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "Sector 79 Gurgaon",
+    "pricePerSquareFoot": 12650
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "Sector 53 Gurgaon",
+    "pricePerSquareFoot": 24900
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "Sohna",
+    "pricePerSquareFoot": 9400
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "NH 8",
+    "pricePerSquareFoot": 12800
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "Sector 63 Gurgaon",
+    "pricePerSquareFoot": 20250
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "Nirvana Country",
+    "pricePerSquareFoot": 15350
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "Sector 111 Gurgaon",
+    "pricePerSquareFoot": 17850
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "Sector 72 Gurgaon",
+    "pricePerSquareFoot": 18200
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "Sector 60 Gurgaon",
+    "pricePerSquareFoot": 19300
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "Sector 102 Gurgaon",
+    "pricePerSquareFoot": 12600
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "Sector 90 Gurgaon",
+    "pricePerSquareFoot": 10100
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "Sector 70A Gurgaon",
+    "pricePerSquareFoot": 14250
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "Sector 91 Gurgaon",
+    "pricePerSquareFoot": 10200
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "Sector 110 Gurgaon",
+    "pricePerSquareFoot": 13550
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "MG Road",
+    "pricePerSquareFoot": 25250
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "Sector 37D Gurgaon",
+    "pricePerSquareFoot": 10350
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "Sector 84 Gurgaon",
+    "pricePerSquareFoot": 9900
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "Gwal Pahari",
+    "pricePerSquareFoot": 14900
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "sector 58 Gurgaon",
+    "pricePerSquareFoot": 22250
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "Sector 103 Gurgaon",
+    "pricePerSquareFoot": 9550
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "Sector 82 Gurgaon",
+    "pricePerSquareFoot": 10250
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "Sector 82A Gurgaon",
+    "pricePerSquareFoot": 15750
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "Sector 62 Gurgaon",
+    "pricePerSquareFoot": 19900
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "Sector 59 Gurgaon",
+    "pricePerSquareFoot": 23100
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "Sector 50 Gurgaon",
+    "pricePerSquareFoot": 15050
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "Sector 69 Gurgaon",
+    "pricePerSquareFoot": 12950
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "Sushant Lok Phase 1",
+    "pricePerSquareFoot": 17950
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "Sector-33 Sohna",
+    "pricePerSquareFoot": 12300
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "Sector 104 Gurgaon",
+    "pricePerSquareFoot": 12500
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "DLF Phase 5",
+    "pricePerSquareFoot": 23550
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "Sector 92 Gurgaon",
+    "pricePerSquareFoot": 9000
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "Sector 77 Gurgaon",
+    "pricePerSquareFoot": 11250
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "Sector 83 Gurgaon",
+    "pricePerSquareFoot": 11150
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "Sector 54 Gurgaon",
+    "pricePerSquareFoot": 29700
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Gurgaon",
+    "areaName": "Sector 113 Gurgaon",
+    "pricePerSquareFoot": 15800
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 45 Noida",
+    "pricePerSquareFoot": 11350
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 152 Noida",
+    "pricePerSquareFoot": 13500
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 144 Noida",
+    "pricePerSquareFoot": 14000
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 75 Noida",
+    "pricePerSquareFoot": 13150
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 93 A Noida",
+    "pricePerSquareFoot": 14600
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 151 Noida",
+    "pricePerSquareFoot": 7150
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 108 Noida",
+    "pricePerSquareFoot": 14500
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 107 Noida",
+    "pricePerSquareFoot": 14050
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 143B Noida",
+    "pricePerSquareFoot": 11500
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 93 Noida",
+    "pricePerSquareFoot": 13750
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 143 Noida",
+    "pricePerSquareFoot": 11250
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 129 Noida",
+    "pricePerSquareFoot": 7500
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 134 Noida",
+    "pricePerSquareFoot": 7950
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 100 Noida",
+    "pricePerSquareFoot": 12000
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 94 Noida",
+    "pricePerSquareFoot": 20500
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 79 Noida",
+    "pricePerSquareFoot": 11350
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 110 Noida",
+    "pricePerSquareFoot": 9400
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 133 Noida",
+    "pricePerSquareFoot": 7700
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 128 Noida",
+    "pricePerSquareFoot": 12750
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 99 Noida",
+    "pricePerSquareFoot": 8400
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 93 B Noida",
+    "pricePerSquareFoot": 14150
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 78 Noida",
+    "pricePerSquareFoot": 10250
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 16 Noida",
+    "pricePerSquareFoot": 7200
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 137 Noida",
+    "pricePerSquareFoot": 9000
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 77 Noida",
+    "pricePerSquareFoot": 10600
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 150 Noida",
+    "pricePerSquareFoot": 11250
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 168 Noida",
+    "pricePerSquareFoot": 8700
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 82 Noida",
+    "pricePerSquareFoot": 9000
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 61 Noida",
+    "pricePerSquareFoot": 10700
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 70 Noida",
+    "pricePerSquareFoot": 8050
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 50 Noida",
+    "pricePerSquareFoot": 12600
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 71 Noida",
+    "pricePerSquareFoot": 8000
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 46 Noida",
+    "pricePerSquareFoot": 7450
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 76 Noida",
+    "pricePerSquareFoot": 8900
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 120 Noida",
+    "pricePerSquareFoot": 7900
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 37 Noida",
+    "pricePerSquareFoot": 10000
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 62 Noida",
+    "pricePerSquareFoot": 8100
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 52 Noida",
+    "pricePerSquareFoot": 9150
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 119 Noida",
+    "pricePerSquareFoot": 7450
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 49 Noida",
+    "pricePerSquareFoot": 3800
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Hajipur",
+    "pricePerSquareFoot": 3900
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 135 Noida",
+    "pricePerSquareFoot": 6100
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 53 Noida",
+    "pricePerSquareFoot": 4000
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 118 Noida",
+    "pricePerSquareFoot": 6000
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 29 Noida",
+    "pricePerSquareFoot": 9400
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 34 Noida",
+    "pricePerSquareFoot": 8500
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 25 Noida",
+    "pricePerSquareFoot": 8300
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 74 Noida",
+    "pricePerSquareFoot": 6300
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 117 Noida",
+    "pricePerSquareFoot": 5750
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Noida",
+    "areaName": "Sector 28 Noida",
+    "pricePerSquareFoot": 8500
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Greater Noida",
+    "areaName": "Sector-4 Greater Noida West",
+    "pricePerSquareFoot": 11900
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Greater Noida",
+    "areaName": "Sector 1 Greater Noida West",
+    "pricePerSquareFoot": 9150
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Greater Noida",
+    "areaName": "Sector Chi 4 Greater Noida",
+    "pricePerSquareFoot": 10900
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Greater Noida",
+    "areaName": "Eta 2",
+    "pricePerSquareFoot": 6950
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Greater Noida",
+    "areaName": "Sector 10 Greater Noida West",
+    "pricePerSquareFoot": 9200
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Greater Noida",
+    "areaName": "Sigma 4",
+    "pricePerSquareFoot": 7100
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Greater Noida",
+    "areaName": "Sector 16 Greater Noida",
+    "pricePerSquareFoot": 8550
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Greater Noida",
+    "areaName": "Jaypee Greens",
+    "pricePerSquareFoot": 13500
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Greater Noida",
+    "areaName": "Sector Chi Greater Noida",
+    "pricePerSquareFoot": 9500
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Greater Noida",
+    "areaName": "Sector Mu Greater Noida",
+    "pricePerSquareFoot": 8900
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Greater Noida",
+    "areaName": "Sector Chi 5 Greater Noida",
+    "pricePerSquareFoot": 9450
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Greater Noida",
+    "areaName": "Sector 2 Greater Noida",
+    "pricePerSquareFoot": 8150
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Greater Noida",
+    "areaName": "Sector 16 B Greater Noida",
+    "pricePerSquareFoot": 7450
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Greater Noida",
+    "areaName": "NRI City",
+    "pricePerSquareFoot": 7850
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Greater Noida",
+    "areaName": "Sector Omicron 1 Greater Noida",
+    "pricePerSquareFoot": 7350
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Greater Noida",
+    "areaName": "Sector 16C Greater Noida",
+    "pricePerSquareFoot": 8550
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Greater Noida",
+    "areaName": "Sector Omicron 3 Greater Noida",
+    "pricePerSquareFoot": 6750
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Greater Noida",
+    "areaName": "Sector ZETA Greater Noida",
+    "pricePerSquareFoot": 8750
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Greater Noida",
+    "areaName": "Techzone 4 Greater Noida West",
+    "pricePerSquareFoot": 8500
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Greater Noida",
+    "areaName": "Pari Chowk",
+    "pricePerSquareFoot": 6800
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Greater Noida",
+    "areaName": "Techzone",
+    "pricePerSquareFoot": 8400
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Greater Noida",
+    "areaName": "Sector Omicron 1A Greater Noida",
+    "pricePerSquareFoot": 7350
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Greater Noida",
+    "areaName": "Sector ZETA 1 Greater Noida",
+    "pricePerSquareFoot": 8700
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Greater Noida",
+    "areaName": "Sector Omega 1 Greater Noida",
+    "pricePerSquareFoot": 7350
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Greater Noida",
+    "areaName": "Site C Greater Noida",
+    "pricePerSquareFoot": 5750
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Greater Noida",
+    "areaName": "Alpha 2 Greater Noida",
+    "pricePerSquareFoot": 7700
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Greater Noida",
+    "areaName": "Sector Pi 2 Greater Noida",
+    "pricePerSquareFoot": 6150
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Greater Noida",
+    "areaName": "Sector Phi  Greater Noida",
+    "pricePerSquareFoot": 6650
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Greater Noida",
+    "areaName": "Sector Pi Greater Noida",
+    "pricePerSquareFoot": 7000
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Greater Noida",
+    "areaName": "Sector Pi 1 Greater Noida",
+    "pricePerSquareFoot": 7050
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Greater Noida",
+    "areaName": "Sector 4 Greater Noida",
+    "pricePerSquareFoot": 7000
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Greater Noida",
+    "areaName": "Shahberi",
+    "pricePerSquareFoot": 2950
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Greater Noida",
+    "areaName": "Sector MU 2 Greater Noida",
+    "pricePerSquareFoot": 5200
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Ghaziabad",
+    "areaName": "Ahinsa Khand 1",
+    "pricePerSquareFoot": 13850
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Ghaziabad",
+    "areaName": "Wave City",
+    "pricePerSquareFoot": 6650
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Ghaziabad",
+    "areaName": "Siddhartha Vihar",
+    "pricePerSquareFoot": 7950
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Ghaziabad",
+    "areaName": "Ahinsa Khand",
+    "pricePerSquareFoot": 10250
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Ghaziabad",
+    "areaName": "Sanjay Nagar",
+    "pricePerSquareFoot": 4050
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Ghaziabad",
+    "areaName": "Garhi",
+    "pricePerSquareFoot": 5900
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Ghaziabad",
+    "areaName": "Mehrauli",
+    "pricePerSquareFoot": 6000
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Ghaziabad",
+    "areaName": "NH 24 Highway",
+    "pricePerSquareFoot": 6000
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Ghaziabad",
+    "areaName": "Shakti Khand",
+    "pricePerSquareFoot": 8550
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Ghaziabad",
+    "areaName": "Sector 5 Vasundhara",
+    "pricePerSquareFoot": 11650
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Ghaziabad",
+    "areaName": "Sain Vihar",
+    "pricePerSquareFoot": 5550
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Ghaziabad",
+    "areaName": "Crossing Republik",
+    "pricePerSquareFoot": 5800
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Ghaziabad",
+    "areaName": "Pratap Vihar",
+    "pricePerSquareFoot": 5200
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Ghaziabad",
+    "areaName": "Vaibhav Khand",
+    "pricePerSquareFoot": 9450
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Ghaziabad",
+    "areaName": "Indirapuram",
+    "pricePerSquareFoot": 8800
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Ghaziabad",
+    "areaName": "Bamheta",
+    "pricePerSquareFoot": 5400
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Ghaziabad",
+    "areaName": "Raj Nagar Extension",
+    "pricePerSquareFoot": 5750
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Ghaziabad",
+    "areaName": "Lal Kuan",
+    "pricePerSquareFoot": 4800
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Ghaziabad",
+    "areaName": "Ahinsa Khand 2",
+    "pricePerSquareFoot": 7550
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Ghaziabad",
+    "areaName": "Judges Enclave",
+    "pricePerSquareFoot": 7450
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Ghaziabad",
+    "areaName": "Ramprastha Greens",
+    "pricePerSquareFoot": 11550
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Ghaziabad",
+    "areaName": "Shahpur Bamheta",
+    "pricePerSquareFoot": 5450
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Ghaziabad",
+    "areaName": "Dundahera",
+    "pricePerSquareFoot": 4950
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Ghaziabad",
+    "areaName": "Nyay Khand 2",
+    "pricePerSquareFoot": 6300
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Ghaziabad",
+    "areaName": "Sector 3 Vasundhara",
+    "pricePerSquareFoot": 7500
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Ghaziabad",
+    "areaName": "Sector 9 Vaishali",
+    "pricePerSquareFoot": 8500
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Ghaziabad",
+    "areaName": "Vasundhara",
+    "pricePerSquareFoot": 7550
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Ghaziabad",
+    "areaName": "Nyay Khand 1",
+    "pricePerSquareFoot": 7250
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Ghaziabad",
+    "areaName": "Bhopura",
+    "pricePerSquareFoot": 3700
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Ghaziabad",
+    "areaName": "Vaishali Extension",
+    "pricePerSquareFoot": 8800
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Ghaziabad",
+    "areaName": "Shalimar garden",
+    "pricePerSquareFoot": 4350
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Ghaziabad",
+    "areaName": "Sector 3 Vaishali",
+    "pricePerSquareFoot": 8150
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Ghaziabad",
+    "areaName": "Sector 1 Vaishali",
+    "pricePerSquareFoot": 7500
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Ghaziabad",
+    "areaName": "Sector 4 Vaishali",
+    "pricePerSquareFoot": 7750
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Ghaziabad",
+    "areaName": "Gyan Khand",
+    "pricePerSquareFoot": 5550
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Ghaziabad",
+    "areaName": "Mohan Nagar",
+    "pricePerSquareFoot": 6050
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Ghaziabad",
+    "areaName": "Vaishali",
+    "pricePerSquareFoot": 7550
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Ghaziabad",
+    "areaName": "Ankur Vihar",
+    "pricePerSquareFoot": 3100
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Ghaziabad",
+    "areaName": "Gyan Khand 3",
+    "pricePerSquareFoot": 5550
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Ghaziabad",
+    "areaName": "Govind Puram",
+    "pricePerSquareFoot": 3050
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Ghaziabad",
+    "areaName": "Sector 5 Vaishali",
+    "pricePerSquareFoot": 6800
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Ghaziabad",
+    "areaName": "Kaushambi",
+    "pricePerSquareFoot": 5900
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Ghaziabad",
+    "areaName": "Loni",
+    "pricePerSquareFoot": 3200
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Ghaziabad",
+    "areaName": "Sahibabad",
+    "pricePerSquareFoot": 4650
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Ghaziabad",
+    "areaName": "Shalimar Garden Extension 2",
+    "pricePerSquareFoot": 3850
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Ghaziabad",
+    "areaName": "Rajendra Nagar",
+    "pricePerSquareFoot": 4400
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Ghaziabad",
+    "areaName": "Shastri Nagar",
+    "pricePerSquareFoot": 3350
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "Sanand",
+    "pricePerSquareFoot": 3450
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "Nava Vadaj",
+    "pricePerSquareFoot": 5750
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "Juhapura",
+    "pricePerSquareFoot": 5850
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "Prahlad Nagar",
+    "pricePerSquareFoot": 7850
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "Nikol",
+    "pricePerSquareFoot": 3750
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "SP Ring Road East",
+    "pricePerSquareFoot": 3350
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "Nava Naroda",
+    "pricePerSquareFoot": 3250
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "Ghatlodia",
+    "pricePerSquareFoot": 5500
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "New Maninagar",
+    "pricePerSquareFoot": 3100
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "SP Ring Road West",
+    "pricePerSquareFoot": 5400
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "Naroda",
+    "pricePerSquareFoot": 3350
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "Ranip",
+    "pricePerSquareFoot": 4450
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "Ambli",
+    "pricePerSquareFoot": 9000
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "SG Highway",
+    "pricePerSquareFoot": 7400
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "New Ranip",
+    "pricePerSquareFoot": 4450
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "Vastrapur",
+    "pricePerSquareFoot": 8050
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "Bodakdev",
+    "pricePerSquareFoot": 8500
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "Vastral",
+    "pricePerSquareFoot": 3450
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "Sughad",
+    "pricePerSquareFoot": 4250
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "Shela",
+    "pricePerSquareFoot": 4700
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "Narol",
+    "pricePerSquareFoot": 2750
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "Thaltej",
+    "pricePerSquareFoot": 7500
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "Chandlodiya",
+    "pricePerSquareFoot": 4500
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "Sindhu Bhavan Road",
+    "pricePerSquareFoot": 7800
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "Vejalpur",
+    "pricePerSquareFoot": 4850
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "Sarkhej",
+    "pricePerSquareFoot": 4050
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "Chandkheda",
+    "pricePerSquareFoot": 4550
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "Shilaj",
+    "pricePerSquareFoot": 5200
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "Satellite",
+    "pricePerSquareFoot": 7800
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "Tragad",
+    "pricePerSquareFoot": 4350
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "Bopal",
+    "pricePerSquareFoot": 5000
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "Vasna",
+    "pricePerSquareFoot": 5300
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "Gota",
+    "pricePerSquareFoot": 4900
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "New CG Road",
+    "pricePerSquareFoot": 4550
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "Ambli Road",
+    "pricePerSquareFoot": 9200
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "SG Highway",
+    "pricePerSquareFoot": 4950
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "Sola",
+    "pricePerSquareFoot": 6700
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "Makarba",
+    "pricePerSquareFoot": 5600
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "Vaishnodevi Circle",
+    "pricePerSquareFoot": 5150
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "South Bopal",
+    "pricePerSquareFoot": 4950
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "Science City",
+    "pricePerSquareFoot": 6700
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "Koteshwar",
+    "pricePerSquareFoot": 4800
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "Vatva",
+    "pricePerSquareFoot": 2550
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "Jodhpur",
+    "pricePerSquareFoot": 7500
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "Ghuma",
+    "pricePerSquareFoot": 4150
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "Memnagar",
+    "pricePerSquareFoot": 6200
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "Ambli Bopal",
+    "pricePerSquareFoot": 9400
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "Naranpura",
+    "pricePerSquareFoot": 6150
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "Gurukul",
+    "pricePerSquareFoot": 6100
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Ahmedabad",
+    "areaName": "Shyamal",
+    "pricePerSquareFoot": 6650
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Lucknow",
+    "areaName": "Mohanlalganj",
+    "pricePerSquareFoot": 4350
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Lucknow",
+    "areaName": "Gomti Nagar Extension",
+    "pricePerSquareFoot": 7550
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Lucknow",
+    "areaName": "Jankipuram Extension",
+    "pricePerSquareFoot": 5200
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Lucknow",
+    "areaName": "Sushant Golf City",
+    "pricePerSquareFoot": 6850
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Lucknow",
+    "areaName": "Sultanpur Road",
+    "pricePerSquareFoot": 6800
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Lucknow",
+    "areaName": "Mahanagar",
+    "pricePerSquareFoot": 13750
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Lucknow",
+    "areaName": "IIM Road",
+    "pricePerSquareFoot": 5750
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Lucknow",
+    "areaName": "Amar Shaheed Path",
+    "pricePerSquareFoot": 7000
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Lucknow",
+    "areaName": "Chinhat",
+    "pricePerSquareFoot": 4550
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Lucknow",
+    "areaName": "Faizabad Road",
+    "pricePerSquareFoot": 5000
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Lucknow",
+    "areaName": "Vrindavan Yojna",
+    "pricePerSquareFoot": 5800
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Lucknow",
+    "areaName": "Vrindavan Colony",
+    "pricePerSquareFoot": 5750
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Lucknow",
+    "areaName": "Raebareli Road",
+    "pricePerSquareFoot": 5750
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Lucknow",
+    "areaName": "Kursi Road",
+    "pricePerSquareFoot": 3700
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Lucknow",
+    "areaName": "Kanpur Road",
+    "pricePerSquareFoot": 4700
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Lucknow",
+    "areaName": "Jankipuram",
+    "pricePerSquareFoot": 5100
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Lucknow",
+    "areaName": "Indira Nagar",
+    "pricePerSquareFoot": 4300
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Lucknow",
+    "areaName": "Vibhuti Khand",
+    "pricePerSquareFoot": 7350
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Lucknow",
+    "areaName": "Sitapur Road",
+    "pricePerSquareFoot": 5150
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Lucknow",
+    "areaName": "Anora Kala",
+    "pricePerSquareFoot": 3450
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Lucknow",
+    "areaName": "Butler Colony",
+    "pricePerSquareFoot": 6200
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Nagpur",
+    "areaName": "Hingna Road",
+    "pricePerSquareFoot": 4350
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Nagpur",
+    "areaName": "Swawlambi Nagar",
+    "pricePerSquareFoot": 6400
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Nagpur",
+    "areaName": "Khamla",
+    "pricePerSquareFoot": 6950
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Nagpur",
+    "areaName": "Pratap Nagar",
+    "pricePerSquareFoot": 7000
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Nagpur",
+    "areaName": "Dabha",
+    "pricePerSquareFoot": 3650
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Nagpur",
+    "areaName": "New Manish Nagar",
+    "pricePerSquareFoot": 4350
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Nagpur",
+    "areaName": "Dharampeth",
+    "pricePerSquareFoot": 9000
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Nagpur",
+    "areaName": "Narendra Nagar",
+    "pricePerSquareFoot": 5350
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Nagpur",
+    "areaName": "Manewada",
+    "pricePerSquareFoot": 4000
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Nagpur",
+    "areaName": "Koradi Road",
+    "pricePerSquareFoot": 3600
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Nagpur",
+    "areaName": "Besa",
+    "pricePerSquareFoot": 3850
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Nagpur",
+    "areaName": "Amravati Road",
+    "pricePerSquareFoot": 4150
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Nagpur",
+    "areaName": "Wardha Road",
+    "pricePerSquareFoot": 4550
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Nagpur",
+    "areaName": "Katol Road",
+    "pricePerSquareFoot": 4600
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Nagpur",
+    "areaName": "Trimurti Nagar",
+    "pricePerSquareFoot": 5300
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Nagpur",
+    "areaName": "Friends Colony",
+    "pricePerSquareFoot": 4850
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Nagpur",
+    "areaName": "Manish Nagar",
+    "pricePerSquareFoot": 4450
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Nagpur",
+    "areaName": "Zingabai Takli",
+    "pricePerSquareFoot": 3300
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Nagpur",
+    "areaName": "Mihan",
+    "pricePerSquareFoot": 4400
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Nagpur",
+    "areaName": "Somalwada, Wardha Road",
+    "pricePerSquareFoot": 4650
+  },
+  {
+    "stateName": "Punjab",
+    "cityName": "Mohali",
+    "areaName": "Airport Road",
+    "pricePerSquareFoot": 7750
+  },
+  {
+    "stateName": "Punjab",
+    "cityName": "Mohali",
+    "areaName": "Sector 86 Mohali",
+    "pricePerSquareFoot": 6200
+  },
+  {
+    "stateName": "Punjab",
+    "cityName": "Mohali",
+    "areaName": "Sector 67 Mohali",
+    "pricePerSquareFoot": 11000
+  },
+  {
+    "stateName": "Punjab",
+    "cityName": "Mohali",
+    "areaName": "Sector 85 Mohali",
+    "pricePerSquareFoot": 8350
+  },
+  {
+    "stateName": "Punjab",
+    "cityName": "Mohali",
+    "areaName": "Aerocity",
+    "pricePerSquareFoot": 7000
+  },
+  {
+    "stateName": "Punjab",
+    "cityName": "Mohali",
+    "areaName": "Sector 66A Mohali",
+    "pricePerSquareFoot": 9000
+  },
+  {
+    "stateName": "Punjab",
+    "cityName": "Mohali",
+    "areaName": "Sector 74A Mohali",
+    "pricePerSquareFoot": 4950
+  },
+  {
+    "stateName": "Punjab",
+    "cityName": "Mohali",
+    "areaName": "Sector 126 Mohali",
+    "pricePerSquareFoot": 7050
+  },
+  {
+    "stateName": "Punjab",
+    "cityName": "Mohali",
+    "areaName": "Sector 99 Mohali",
+    "pricePerSquareFoot": 6900
+  },
+  {
+    "stateName": "Punjab",
+    "cityName": "Mohali",
+    "areaName": "Sector 79 Mohali",
+    "pricePerSquareFoot": 7400
+  },
+  {
+    "stateName": "Punjab",
+    "cityName": "Mohali",
+    "areaName": "Sector 105 Mohali",
+    "pricePerSquareFoot": 6050
+  },
+  {
+    "stateName": "Punjab",
+    "cityName": "Mohali",
+    "areaName": "Sector 116 Mohali",
+    "pricePerSquareFoot": 4350
+  },
+  {
+    "stateName": "Punjab",
+    "cityName": "Mohali",
+    "areaName": "Sector 66b Mohali",
+    "pricePerSquareFoot": 8450
+  },
+  {
+    "stateName": "Punjab",
+    "cityName": "Mohali",
+    "areaName": "It City",
+    "pricePerSquareFoot": 8450
+  },
+  {
+    "stateName": "Punjab",
+    "cityName": "Mohali",
+    "areaName": "Sector 92 Mohali",
+    "pricePerSquareFoot": 5200
+  },
+  {
+    "stateName": "Punjab",
+    "cityName": "Mohali",
+    "areaName": "Kharar Landran Road",
+    "pricePerSquareFoot": 4250
+  },
+  {
+    "stateName": "Punjab",
+    "cityName": "Mohali",
+    "areaName": "Sector 115 Mohali",
+    "pricePerSquareFoot": 4100
+  },
+  {
+    "stateName": "Punjab",
+    "cityName": "Mohali",
+    "areaName": "Sector 127 Mohali",
+    "pricePerSquareFoot": 4450
+  },
+  {
+    "stateName": "Punjab",
+    "cityName": "Mohali",
+    "areaName": "Sunny Enclave",
+    "pricePerSquareFoot": 3850
+  },
+  {
+    "stateName": "Punjab",
+    "cityName": "Mohali",
+    "areaName": "Sector 91 Mohali",
+    "pricePerSquareFoot": 6450
+  },
+  {
+    "stateName": "Punjab",
+    "cityName": "Mohali",
+    "areaName": "Sector 65 Mohali",
+    "pricePerSquareFoot": 10150
+  },
+  {
+    "stateName": "Punjab",
+    "cityName": "Mohali",
+    "areaName": "Kharar",
+    "pricePerSquareFoot": 4150
+  },
+  {
+    "stateName": "Punjab",
+    "cityName": "Mohali",
+    "areaName": "Sector 121 Mohali",
+    "pricePerSquareFoot": 6700
+  },
+  {
+    "stateName": "Punjab",
+    "cityName": "Mohali",
+    "areaName": "Zirakpur",
+    "pricePerSquareFoot": 5500
+  },
+  {
+    "stateName": "Punjab",
+    "cityName": "Mohali",
+    "areaName": "Sector 88 Mohali",
+    "pricePerSquareFoot": 7600
+  },
+  {
+    "stateName": "Punjab",
+    "cityName": "Mohali",
+    "areaName": "Sector 82 Mohali",
+    "pricePerSquareFoot": 8350
+  },
+  {
+    "stateName": "Punjab",
+    "cityName": "Mohali",
+    "areaName": "Dhakoli",
+    "pricePerSquareFoot": 4700
+  },
+  {
+    "stateName": "Punjab",
+    "cityName": "Mohali",
+    "areaName": "Sector 117 Mohali",
+    "pricePerSquareFoot": 4950
+  },
+  {
+    "stateName": "Punjab",
+    "cityName": "Mohali",
+    "areaName": "Sector 66 Mohali",
+    "pricePerSquareFoot": 9000
+  },
+  {
+    "stateName": "Punjab",
+    "cityName": "Mohali",
+    "areaName": "Sector 125 Mohali",
+    "pricePerSquareFoot": 3400
+  },
+  {
+    "stateName": "Punjab",
+    "cityName": "Mohali",
+    "areaName": "Sector 70 Mohali",
+    "pricePerSquareFoot": 8950
+  },
+  {
+    "stateName": "Punjab",
+    "cityName": "Mohali",
+    "areaName": "Sector 110 Mohali",
+    "pricePerSquareFoot": 3750
+  },
+  {
+    "stateName": "Punjab",
+    "cityName": "Mohali",
+    "areaName": "Sas Nagar",
+    "pricePerSquareFoot": 4800
+  },
+  {
+    "stateName": "Madhya Pradesh",
+    "cityName": "Indore",
+    "areaName": "Bicholi Mardana",
+    "pricePerSquareFoot": 5800
+  },
+  {
+    "stateName": "Madhya Pradesh",
+    "cityName": "Indore",
+    "areaName": "AB Bypass Road",
+    "pricePerSquareFoot": 5350
+  },
+  {
+    "stateName": "Madhya Pradesh",
+    "cityName": "Indore",
+    "areaName": "Pipliya Kumar",
+    "pricePerSquareFoot": 6250
+  },
+  {
+    "stateName": "Madhya Pradesh",
+    "cityName": "Indore",
+    "areaName": "Vijay Nagar",
+    "pricePerSquareFoot": 5800
+  },
+  {
+    "stateName": "Madhya Pradesh",
+    "cityName": "Indore",
+    "areaName": "Talawali Chanda",
+    "pricePerSquareFoot": 4350
+  },
+  {
+    "stateName": "Madhya Pradesh",
+    "cityName": "Indore",
+    "areaName": "Mahalaxmi Nagar",
+    "pricePerSquareFoot": 4950
+  },
+  {
+    "stateName": "Madhya Pradesh",
+    "cityName": "Indore",
+    "areaName": "Nipania",
+    "pricePerSquareFoot": 5500
+  },
+  {
+    "stateName": "Madhya Pradesh",
+    "cityName": "Indore",
+    "areaName": "Super Corridor",
+    "pricePerSquareFoot": 4200
+  },
+  {
+    "stateName": "Madhya Pradesh",
+    "cityName": "Indore",
+    "areaName": "AB Road indore",
+    "pricePerSquareFoot": 4450
+  },
+  {
+    "stateName": "Madhya Pradesh",
+    "cityName": "Indore",
+    "areaName": "Rau",
+    "pricePerSquareFoot": 2950
+  },
+  {
+    "stateName": "Madhya Pradesh",
+    "cityName": "Indore",
+    "areaName": "Rajendra Nagar",
+    "pricePerSquareFoot": 3550
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Thane",
+    "areaName": "Kalher",
+    "pricePerSquareFoot": 10200
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Thane",
+    "areaName": "Kolshet Industrial Area",
+    "pricePerSquareFoot": 21250
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Thane",
+    "areaName": "Vijay Nagari",
+    "pricePerSquareFoot": 17400
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Thane",
+    "areaName": "Ghodbunder Road",
+    "pricePerSquareFoot": 19550
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Thane",
+    "areaName": "Pokhran 2",
+    "pricePerSquareFoot": 24200
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Thane",
+    "areaName": "Devdaya Nagar",
+    "pricePerSquareFoot": 22500
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Thane",
+    "areaName": "Wagle Estate",
+    "pricePerSquareFoot": 22100
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Thane",
+    "areaName": "Louis Wadi",
+    "pricePerSquareFoot": 22200
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Thane",
+    "areaName": "Panch Pakhadi",
+    "pricePerSquareFoot": 23700
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Thane",
+    "areaName": "Hiranandani Estate",
+    "pricePerSquareFoot": 24200
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Thane",
+    "areaName": "Thane West",
+    "pricePerSquareFoot": 19750
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Thane",
+    "areaName": "Kapurbawadi",
+    "pricePerSquareFoot": 22650
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Thane",
+    "areaName": "Kharegaon",
+    "pricePerSquareFoot": 12800
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Thane",
+    "areaName": "Kolshet Road",
+    "pricePerSquareFoot": 19650
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Thane",
+    "areaName": "Parsik Nagar",
+    "pricePerSquareFoot": 16550
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Thane",
+    "areaName": "Laxmi Nagar",
+    "pricePerSquareFoot": 27000
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Thane",
+    "areaName": "Pokharan Road",
+    "pricePerSquareFoot": 20850
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Thane",
+    "areaName": "Patlipada",
+    "pricePerSquareFoot": 18700
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Thane",
+    "areaName": "Manpada",
+    "pricePerSquareFoot": 20950
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Thane",
+    "areaName": "Majiwada",
+    "pricePerSquareFoot": 19350
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Thane",
+    "areaName": "Balkum",
+    "pricePerSquareFoot": 19200
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Thane",
+    "areaName": "Sainath Nagar",
+    "pricePerSquareFoot": 17650
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Thane",
+    "areaName": "Naupada",
+    "pricePerSquareFoot": 24150
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Thane",
+    "areaName": "Dhokali",
+    "pricePerSquareFoot": 17800
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Thane",
+    "areaName": "Vasant Vihar",
+    "pricePerSquareFoot": 19650
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Thane",
+    "areaName": "Bhayandarpada",
+    "pricePerSquareFoot": 13050
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Thane",
+    "areaName": "Waghbil",
+    "pricePerSquareFoot": 14950
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Thane",
+    "areaName": "khopat",
+    "pricePerSquareFoot": 18750
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Thane",
+    "areaName": "Kopri",
+    "pricePerSquareFoot": 17650
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Thane",
+    "areaName": "Vartak Nagar",
+    "pricePerSquareFoot": 18600
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Thane",
+    "areaName": "Charai",
+    "pricePerSquareFoot": 17850
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Thane",
+    "areaName": "Thane East",
+    "pricePerSquareFoot": 18350
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Thane",
+    "areaName": "Brahmand",
+    "pricePerSquareFoot": 15300
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Thane",
+    "areaName": "Samata Nagar",
+    "pricePerSquareFoot": 20350
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Thane",
+    "areaName": "Kolshet",
+    "pricePerSquareFoot": 18300
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Thane",
+    "areaName": "Kavesar",
+    "pricePerSquareFoot": 15700
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Thane",
+    "areaName": "Kasar vadavali",
+    "pricePerSquareFoot": 13400
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Thane",
+    "areaName": "Hiranandani Meadows",
+    "pricePerSquareFoot": 25300
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Thane",
+    "areaName": "Anand Nagar",
+    "pricePerSquareFoot": 14400
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Thane",
+    "areaName": "Chirak Nagar",
+    "pricePerSquareFoot": 18200
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Thane",
+    "areaName": "Owale",
+    "pricePerSquareFoot": 12450
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Thane",
+    "areaName": "Kalwa",
+    "pricePerSquareFoot": 13250
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Thane",
+    "areaName": "Lokmanya Nagar",
+    "pricePerSquareFoot": 14050
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Thane",
+    "areaName": "Kasheli",
+    "pricePerSquareFoot": 5650
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Thane",
+    "areaName": "Mumbra",
+    "pricePerSquareFoot": 4500
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Beyond Thane",
+    "areaName": "Ulhasnagar",
+    "pricePerSquareFoot": 9300
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Beyond Thane",
+    "areaName": "Chikan Ghar",
+    "pricePerSquareFoot": 13450
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Beyond Thane",
+    "areaName": "Karjat",
+    "pricePerSquareFoot": 5550
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Beyond Thane",
+    "areaName": "Ambernath West",
+    "pricePerSquareFoot": 7150
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Beyond Thane",
+    "areaName": "Ambernath East",
+    "pricePerSquareFoot": 7200
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Beyond Thane",
+    "areaName": "Wayle Nagar",
+    "pricePerSquareFoot": 11650
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Beyond Thane",
+    "areaName": "Bhiwandi",
+    "pricePerSquareFoot": 8300
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Beyond Thane",
+    "areaName": "Katrap",
+    "pricePerSquareFoot": 6150
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Beyond Thane",
+    "areaName": "Vasind",
+    "pricePerSquareFoot": 4400
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Beyond Thane",
+    "areaName": "Kalyan West",
+    "pricePerSquareFoot": 10500
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Beyond Thane",
+    "areaName": "Yogidham",
+    "pricePerSquareFoot": 10300
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Beyond Thane",
+    "areaName": "Ambernath",
+    "pricePerSquareFoot": 6850
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Beyond Thane",
+    "areaName": "Gandhar Nagar",
+    "pricePerSquareFoot": 11500
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Beyond Thane",
+    "areaName": "Adharwadi",
+    "pricePerSquareFoot": 9200
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Beyond Thane",
+    "areaName": "Kalyan East",
+    "pricePerSquareFoot": 8650
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Beyond Thane",
+    "areaName": "Khadakpada",
+    "pricePerSquareFoot": 10850
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Beyond Thane",
+    "areaName": "Shirgaon",
+    "pricePerSquareFoot": 5900
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Beyond Thane",
+    "areaName": "Dombivli West",
+    "pricePerSquareFoot": 9600
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Beyond Thane",
+    "areaName": "Dombivli East",
+    "pricePerSquareFoot": 9250
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Beyond Thane",
+    "areaName": "Anjurdive",
+    "pricePerSquareFoot": 11700
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Beyond Thane",
+    "areaName": "Badlapur East",
+    "pricePerSquareFoot": 5900
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Beyond Thane",
+    "areaName": "Shahad",
+    "pricePerSquareFoot": 10650
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Beyond Thane",
+    "areaName": "Titwala",
+    "pricePerSquareFoot": 6350
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Beyond Thane",
+    "areaName": "Hendre Pada",
+    "pricePerSquareFoot": 5350
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Beyond Thane",
+    "areaName": "Badlapur West",
+    "pricePerSquareFoot": 5650
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Beyond Thane",
+    "areaName": "Badlapur",
+    "pricePerSquareFoot": 5800
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Beyond Thane",
+    "areaName": "Nilje Gaon",
+    "pricePerSquareFoot": 8200
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Beyond Thane",
+    "areaName": "Belavali",
+    "pricePerSquareFoot": 5000
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Beyond Thane",
+    "areaName": "Thakurli",
+    "pricePerSquareFoot": 10000
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Beyond Thane",
+    "areaName": "Gauripada",
+    "pricePerSquareFoot": 10000
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Beyond Thane",
+    "areaName": "Valivali Gaon",
+    "pricePerSquareFoot": 5150
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Beyond Thane",
+    "areaName": "Asangaon",
+    "pricePerSquareFoot": 4400
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Beyond Thane",
+    "areaName": "Ambivli",
+    "pricePerSquareFoot": 6100
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Beyond Thane",
+    "areaName": "Neral",
+    "pricePerSquareFoot": 5300
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Beyond Thane",
+    "areaName": "Kharvai",
+    "pricePerSquareFoot": 4800
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Beyond Thane",
+    "areaName": "Vangani",
+    "pricePerSquareFoot": 3950
+  },
+  {
+    "stateName": "Odisha",
+    "cityName": "Bhubaneswar",
+    "areaName": "Tamando",
+    "pricePerSquareFoot": 5800
+  },
+  {
+    "stateName": "Odisha",
+    "cityName": "Bhubaneswar",
+    "areaName": "BJB Nagar",
+    "pricePerSquareFoot": 8500
+  },
+  {
+    "stateName": "Odisha",
+    "cityName": "Bhubaneswar",
+    "areaName": "Nayapalli",
+    "pricePerSquareFoot": 9350
+  },
+  {
+    "stateName": "Odisha",
+    "cityName": "Bhubaneswar",
+    "areaName": "Gothapatna",
+    "pricePerSquareFoot": 4900
+  },
+  {
+    "stateName": "Odisha",
+    "cityName": "Bhubaneswar",
+    "areaName": "Sundarpada",
+    "pricePerSquareFoot": 4450
+  },
+  {
+    "stateName": "Odisha",
+    "cityName": "Bhubaneswar",
+    "areaName": "Raghunathpur",
+    "pricePerSquareFoot": 8000
+  },
+  {
+    "stateName": "Odisha",
+    "cityName": "Bhubaneswar",
+    "areaName": "Madanpur",
+    "pricePerSquareFoot": 6350
+  },
+  {
+    "stateName": "Odisha",
+    "cityName": "Bhubaneswar",
+    "areaName": "Hanspal",
+    "pricePerSquareFoot": 5500
+  },
+  {
+    "stateName": "Odisha",
+    "cityName": "Bhubaneswar",
+    "areaName": "Pahala",
+    "pricePerSquareFoot": 6500
+  },
+  {
+    "stateName": "Odisha",
+    "cityName": "Bhubaneswar",
+    "areaName": "Patia",
+    "pricePerSquareFoot": 6800
+  },
+  {
+    "stateName": "Odisha",
+    "cityName": "Bhubaneswar",
+    "areaName": "Khandagiri",
+    "pricePerSquareFoot": 7150
+  },
+  {
+    "stateName": "Odisha",
+    "cityName": "Bhubaneswar",
+    "areaName": "Uttara",
+    "pricePerSquareFoot": 3950
+  },
+  {
+    "stateName": "Odisha",
+    "cityName": "Bhubaneswar",
+    "areaName": "Ghatikia",
+    "pricePerSquareFoot": 6250
+  },
+  {
+    "stateName": "Odisha",
+    "cityName": "Bhubaneswar",
+    "areaName": "Patrapada",
+    "pricePerSquareFoot": 6000
+  },
+  {
+    "stateName": "Odisha",
+    "cityName": "Bhubaneswar",
+    "areaName": "Kalinganagar",
+    "pricePerSquareFoot": 6350
+  },
+  {
+    "stateName": "Uttarakhand",
+    "cityName": "Dehradun",
+    "areaName": "Kulhan",
+    "pricePerSquareFoot": 8700
+  },
+  {
+    "stateName": "Uttarakhand",
+    "cityName": "Dehradun",
+    "areaName": "Sahastradhara Road",
+    "pricePerSquareFoot": 6200
+  },
+  {
+    "stateName": "Uttarakhand",
+    "cityName": "Dehradun",
+    "areaName": "GMS Road",
+    "pricePerSquareFoot": 6300
+  },
+  {
+    "stateName": "Uttarakhand",
+    "cityName": "Dehradun",
+    "areaName": "Harrawala",
+    "pricePerSquareFoot": 6450
+  },
+  {
+    "stateName": "Uttarakhand",
+    "cityName": "Dehradun",
+    "areaName": "Sahastradhara",
+    "pricePerSquareFoot": 5200
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Vadodara",
+    "areaName": "Harni",
+    "pricePerSquareFoot": 3750
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Vadodara",
+    "areaName": "Bhayli",
+    "pricePerSquareFoot": 3600
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Vadodara",
+    "areaName": "Sevasi",
+    "pricePerSquareFoot": 3300
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Vadodara",
+    "areaName": "Vemali",
+    "pricePerSquareFoot": 3550
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Vadodara",
+    "areaName": "New VIP Road",
+    "pricePerSquareFoot": 3600
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Vadodara",
+    "areaName": "Gotri",
+    "pricePerSquareFoot": 3450
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Vadodara",
+    "areaName": "Ajwa Road",
+    "pricePerSquareFoot": 2650
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Vadodara",
+    "areaName": "Vasna Bhayli Road",
+    "pricePerSquareFoot": 3600
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Vadodara",
+    "areaName": "Old Padra Road",
+    "pricePerSquareFoot": 4500
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Vadodara",
+    "areaName": "Gotri Road",
+    "pricePerSquareFoot": 3450
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Vadodara",
+    "areaName": "New Karelibaug",
+    "pricePerSquareFoot": 2750
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Vadodara",
+    "areaName": "Manjalpur",
+    "pricePerSquareFoot": 3800
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Vadodara",
+    "areaName": "Tarsali",
+    "pricePerSquareFoot": 2650
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Vadodara",
+    "areaName": "Sama Savli Road",
+    "pricePerSquareFoot": 3600
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Vadodara",
+    "areaName": "Waghodia Road",
+    "pricePerSquareFoot": 2750
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Vadodara",
+    "areaName": "New Sama Road",
+    "pricePerSquareFoot": 3800
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Vadodara",
+    "areaName": "Dabhoi Road",
+    "pricePerSquareFoot": 2700
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Vadodara",
+    "areaName": "Vadsar",
+    "pricePerSquareFoot": 2400
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Vadodara",
+    "areaName": "New Alkapuri",
+    "pricePerSquareFoot": 3450
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Vadodara",
+    "areaName": "Alkapuri",
+    "pricePerSquareFoot": 4650
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Vadodara",
+    "areaName": "Atladra",
+    "pricePerSquareFoot": 2600
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Vadodara",
+    "areaName": "Makarpura",
+    "pricePerSquareFoot": 2750
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Vadodara",
+    "areaName": "Subhanpura",
+    "pricePerSquareFoot": 3300
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Vadodara",
+    "areaName": "Vasant Vihar",
+    "pricePerSquareFoot": 3750
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Vadodara",
+    "areaName": "Gorwa",
+    "pricePerSquareFoot": 3050
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Vadodara",
+    "areaName": "Kareli Bagh",
+    "pricePerSquareFoot": 3500
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Vadodara",
+    "areaName": "Vasna Road",
+    "pricePerSquareFoot": 3600
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Vadodara",
+    "areaName": "Sunpharma Road",
+    "pricePerSquareFoot": 2700
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Vadodara",
+    "areaName": "Akota",
+    "pricePerSquareFoot": 3850
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Vadodara",
+    "areaName": "Kalali",
+    "pricePerSquareFoot": 2800
+  },
+  {
+    "stateName": "Andhra Pradesh",
+    "cityName": "Visakhapatnam",
+    "areaName": "Simhachalam",
+    "pricePerSquareFoot": 4300
+  },
+  {
+    "stateName": "Andhra Pradesh",
+    "cityName": "Visakhapatnam",
+    "areaName": "Kommadi",
+    "pricePerSquareFoot": 4800
+  },
+  {
+    "stateName": "Andhra Pradesh",
+    "cityName": "Visakhapatnam",
+    "areaName": "Yendada",
+    "pricePerSquareFoot": 6000
+  },
+  {
+    "stateName": "Andhra Pradesh",
+    "cityName": "Visakhapatnam",
+    "areaName": "Madhurawada",
+    "pricePerSquareFoot": 5000
+  },
+  {
+    "stateName": "Andhra Pradesh",
+    "cityName": "Visakhapatnam",
+    "areaName": "Srinivasa Nagar",
+    "pricePerSquareFoot": 5200
+  },
+  {
+    "stateName": "Andhra Pradesh",
+    "cityName": "Visakhapatnam",
+    "areaName": "Gajuwaka",
+    "pricePerSquareFoot": 3750
+  },
+  {
+    "stateName": "Andhra Pradesh",
+    "cityName": "Visakhapatnam",
+    "areaName": "Seethammadhara",
+    "pricePerSquareFoot": 8000
+  },
+  {
+    "stateName": "Andhra Pradesh",
+    "cityName": "Visakhapatnam",
+    "areaName": "Sujatha Nagar",
+    "pricePerSquareFoot": 3750
+  },
+  {
+    "stateName": "Andhra Pradesh",
+    "cityName": "Visakhapatnam",
+    "areaName": "Kurmannapalem",
+    "pricePerSquareFoot": 3650
+  },
+  {
+    "stateName": "Andhra Pradesh",
+    "cityName": "Visakhapatnam",
+    "areaName": "Atchutapuram",
+    "pricePerSquareFoot": 2400
+  },
+  {
+    "stateName": "Andhra Pradesh",
+    "cityName": "Visakhapatnam",
+    "areaName": "Sheela Nagar",
+    "pricePerSquareFoot": 3850
+  },
+  {
+    "stateName": "Chhattisgarh",
+    "cityName": "Raipur",
+    "areaName": "Mowa",
+    "pricePerSquareFoot": 3550
+  },
+  {
+    "stateName": "Chhattisgarh",
+    "cityName": "Raipur",
+    "areaName": "Shankar Nagar",
+    "pricePerSquareFoot": 3850
+  },
+  {
+    "stateName": "Chhattisgarh",
+    "cityName": "Raipur",
+    "areaName": "Amlidih",
+    "pricePerSquareFoot": 3350
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Secunderabad",
+    "areaName": "Malkajgiri",
+    "pricePerSquareFoot": 4950
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Secunderabad",
+    "areaName": "Sainikpuri",
+    "pricePerSquareFoot": 5550
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Secunderabad",
+    "areaName": "Kapra",
+    "pricePerSquareFoot": 5150
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Secunderabad",
+    "areaName": "Dammaiguda",
+    "pricePerSquareFoot": 4300
+  },
+  {
+    "stateName": "Telangana",
+    "cityName": "Secunderabad",
+    "areaName": "Yapral",
+    "pricePerSquareFoot": 5750
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Surat",
+    "areaName": "Piplod",
+    "pricePerSquareFoot": 6200
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Surat",
+    "areaName": "Vesu",
+    "pricePerSquareFoot": 5700
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Surat",
+    "areaName": "Bhimrad",
+    "pricePerSquareFoot": 4750
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Surat",
+    "areaName": "Palanpur",
+    "pricePerSquareFoot": 3950
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Surat",
+    "areaName": "VIP Road Vesu",
+    "pricePerSquareFoot": 5600
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Surat",
+    "areaName": "Jahangirabad",
+    "pricePerSquareFoot": 3500
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Surat",
+    "areaName": "Althan",
+    "pricePerSquareFoot": 4400
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Surat",
+    "areaName": "Dindoli",
+    "pricePerSquareFoot": 2550
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Surat",
+    "areaName": "Jahangir pura",
+    "pricePerSquareFoot": 3350
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Surat",
+    "areaName": "PAL",
+    "pricePerSquareFoot": 4600
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Surat",
+    "areaName": "Adajan",
+    "pricePerSquareFoot": 4050
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Surat",
+    "areaName": "Amroli",
+    "pricePerSquareFoot": 2450
+  },
+  {
+    "stateName": "Kerala",
+    "cityName": "Kochi",
+    "areaName": "Thrikkakara",
+    "pricePerSquareFoot": 7200
+  },
+  {
+    "stateName": "Kerala",
+    "cityName": "Kochi",
+    "areaName": "Palarivattom",
+    "pricePerSquareFoot": 8350
+  },
+  {
+    "stateName": "Kerala",
+    "cityName": "Kochi",
+    "areaName": "Vyttila",
+    "pricePerSquareFoot": 8000
+  },
+  {
+    "stateName": "Kerala",
+    "cityName": "Kochi",
+    "areaName": "Vazhakkala",
+    "pricePerSquareFoot": 6550
+  },
+  {
+    "stateName": "Kerala",
+    "cityName": "Kochi",
+    "areaName": "Kaloor",
+    "pricePerSquareFoot": 7700
+  },
+  {
+    "stateName": "Kerala",
+    "cityName": "Kochi",
+    "areaName": "Elamakkara",
+    "pricePerSquareFoot": 7650
+  },
+  {
+    "stateName": "Kerala",
+    "cityName": "Kochi",
+    "areaName": "Infopark",
+    "pricePerSquareFoot": 5650
+  },
+  {
+    "stateName": "Kerala",
+    "cityName": "Kochi",
+    "areaName": "Tripunithura",
+    "pricePerSquareFoot": 6200
+  },
+  {
+    "stateName": "Kerala",
+    "cityName": "Kochi",
+    "areaName": "Edappally",
+    "pricePerSquareFoot": 6800
+  },
+  {
+    "stateName": "Kerala",
+    "cityName": "Kochi",
+    "areaName": "Panampilly Nagar",
+    "pricePerSquareFoot": 7550
+  },
+  {
+    "stateName": "Kerala",
+    "cityName": "Kochi",
+    "areaName": "Marine Drive",
+    "pricePerSquareFoot": 10500
+  },
+  {
+    "stateName": "Kerala",
+    "cityName": "Kochi",
+    "areaName": "Edachira",
+    "pricePerSquareFoot": 6000
+  },
+  {
+    "stateName": "Kerala",
+    "cityName": "Kochi",
+    "areaName": "Kakkanad",
+    "pricePerSquareFoot": 5350
+  },
+  {
+    "stateName": "Kerala",
+    "cityName": "Kochi",
+    "areaName": "Kadavanthara",
+    "pricePerSquareFoot": 7750
+  },
+  {
+    "stateName": "Kerala",
+    "cityName": "Kochi",
+    "areaName": "Thevara",
+    "pricePerSquareFoot": 7150
+  },
+  {
+    "stateName": "Kerala",
+    "cityName": "Kochi",
+    "areaName": "Aluva",
+    "pricePerSquareFoot": 4550
+  },
+  {
+    "stateName": "Kerala",
+    "cityName": "Kochi",
+    "areaName": "Vennala",
+    "pricePerSquareFoot": 5500
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mira Road",
+    "areaName": "Nilemore",
+    "pricePerSquareFoot": 8200
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mira Road",
+    "areaName": "Morya Nagar",
+    "pricePerSquareFoot": 8150
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mira Road",
+    "areaName": "Nalasopara West",
+    "pricePerSquareFoot": 8100
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mira Road",
+    "areaName": "Lakshmiben Chedda Nagar",
+    "pricePerSquareFoot": 9100
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mira Road",
+    "areaName": "Sriprastha",
+    "pricePerSquareFoot": 8550
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mira Road",
+    "areaName": "Juchandra",
+    "pricePerSquareFoot": 8750
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mira Road",
+    "areaName": "Bolinj",
+    "pricePerSquareFoot": 8700
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mira Road",
+    "areaName": "Vasai West",
+    "pricePerSquareFoot": 11000
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mira Road",
+    "areaName": "Naigaon East",
+    "pricePerSquareFoot": 9000
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mira Road",
+    "areaName": "Nalasopara East",
+    "pricePerSquareFoot": 7100
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mira Road",
+    "areaName": "Virar West",
+    "pricePerSquareFoot": 8600
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mira Road",
+    "areaName": "Vasai",
+    "pricePerSquareFoot": 9250
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mira Road",
+    "areaName": "Virar",
+    "pricePerSquareFoot": 8400
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mira Road",
+    "areaName": "Virar East",
+    "pricePerSquareFoot": 6250
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mira Road",
+    "areaName": "Vasai East",
+    "pricePerSquareFoot": 8650
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Mira Road",
+    "areaName": "Chikhal Dongari",
+    "pricePerSquareFoot": 6950
+  },
+  {
+    "stateName": "Assam",
+    "cityName": "Guwahati",
+    "areaName": "Jalukbari",
+    "pricePerSquareFoot": 4800
+  },
+  {
+    "stateName": "Assam",
+    "cityName": "Guwahati",
+    "areaName": "Lokhra",
+    "pricePerSquareFoot": 5000
+  },
+  {
+    "stateName": "Assam",
+    "cityName": "Guwahati",
+    "areaName": "Kahilipara",
+    "pricePerSquareFoot": 5000
+  },
+  {
+    "stateName": "Assam",
+    "cityName": "Guwahati",
+    "areaName": "Beltola",
+    "pricePerSquareFoot": 5600
+  },
+  {
+    "stateName": "Assam",
+    "cityName": "Guwahati",
+    "areaName": "Hatigaon",
+    "pricePerSquareFoot": 5250
+  },
+  {
+    "stateName": "Assam",
+    "cityName": "Guwahati",
+    "areaName": "Six Mile",
+    "pricePerSquareFoot": 5150
+  },
+  {
+    "stateName": "Assam",
+    "cityName": "Guwahati",
+    "areaName": "VIP Road",
+    "pricePerSquareFoot": 5200
+  },
+  {
+    "stateName": "Chandigarh",
+    "cityName": "Chandigarh",
+    "areaName": "Mullanpur",
+    "pricePerSquareFoot": 6800
+  },
+  {
+    "stateName": "Chandigarh",
+    "cityName": "Chandigarh",
+    "areaName": "Sector 49 Chandigarh",
+    "pricePerSquareFoot": 12050
+  },
+  {
+    "stateName": "Chandigarh",
+    "cityName": "Chandigarh",
+    "areaName": "Sector 50 Chandigarh",
+    "pricePerSquareFoot": 13350
+  },
+  {
+    "stateName": "Chandigarh",
+    "cityName": "Chandigarh",
+    "areaName": "New Chandigarh",
+    "pricePerSquareFoot": 6500
+  },
+  {
+    "stateName": "Chandigarh",
+    "cityName": "Chandigarh",
+    "areaName": "Sector 48 Chandigarh",
+    "pricePerSquareFoot": 11900
+  },
+  {
+    "stateName": "Chandigarh",
+    "cityName": "Chandigarh",
+    "areaName": "Zirakpur",
+    "pricePerSquareFoot": 5600
+  },
+  {
+    "stateName": "Chandigarh",
+    "cityName": "Chandigarh",
+    "areaName": "Dera Bassi",
+    "pricePerSquareFoot": 3450
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Kanpur",
+    "areaName": "Kalyanpur",
+    "pricePerSquareFoot": 4150
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Kanpur",
+    "areaName": "Swaroop Nagar",
+    "pricePerSquareFoot": 4600
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Panchkula",
+    "areaName": "Panchkula Extension",
+    "pricePerSquareFoot": 8800
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Panchkula",
+    "areaName": "Sector 3 Panchkula",
+    "pricePerSquareFoot": 8900
+  },
+  {
+    "stateName": "Haryana",
+    "cityName": "Panchkula",
+    "areaName": "Peer Muchalla",
+    "pricePerSquareFoot": 4700
+  },
+  {
+    "stateName": "Madhya Pradesh",
+    "cityName": "Bhopal",
+    "areaName": "Bawadia Kalan",
+    "pricePerSquareFoot": 4500
+  },
+  {
+    "stateName": "Madhya Pradesh",
+    "cityName": "Bhopal",
+    "areaName": "Salaiya",
+    "pricePerSquareFoot": 2600
+  },
+  {
+    "stateName": "Madhya Pradesh",
+    "cityName": "Bhopal",
+    "areaName": "Ayodhya Bypass",
+    "pricePerSquareFoot": 3000
+  },
+  {
+    "stateName": "Madhya Pradesh",
+    "cityName": "Bhopal",
+    "areaName": "Kolar Road",
+    "pricePerSquareFoot": 2750
+  },
+  {
+    "stateName": "Madhya Pradesh",
+    "cityName": "Bhopal",
+    "areaName": "Katara Hills",
+    "pricePerSquareFoot": 2350
+  },
+  {
+    "stateName": "Madhya Pradesh",
+    "cityName": "Bhopal",
+    "areaName": "Hoshangabad Road",
+    "pricePerSquareFoot": 2600
+  },
+  {
+    "stateName": "Madhya Pradesh",
+    "cityName": "Bhopal",
+    "areaName": "Misrod",
+    "pricePerSquareFoot": 2650
+  },
+  {
+    "stateName": "Bihar",
+    "cityName": "Patna",
+    "areaName": "Bailey Road",
+    "pricePerSquareFoot": 6450
+  },
+  {
+    "stateName": "Bihar",
+    "cityName": "Patna",
+    "areaName": "Saguna More",
+    "pricePerSquareFoot": 5250
+  },
+  {
+    "stateName": "Bihar",
+    "cityName": "Patna",
+    "areaName": "Danapur",
+    "pricePerSquareFoot": 5650
+  },
+  {
+    "stateName": "Bihar",
+    "cityName": "Patna",
+    "areaName": "Gola Road",
+    "pricePerSquareFoot": 5650
+  },
+  {
+    "stateName": "Bihar",
+    "cityName": "Patna",
+    "areaName": "Boring Road",
+    "pricePerSquareFoot": 7550
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Varanasi",
+    "areaName": "Shivpur",
+    "pricePerSquareFoot": 5900
+  },
+  {
+    "stateName": "Jharkhand",
+    "cityName": "Ranchi",
+    "areaName": "Argora",
+    "pricePerSquareFoot": 4950
+  },
+  {
+    "stateName": "Jharkhand",
+    "cityName": "Ranchi",
+    "areaName": "Bariatu",
+    "pricePerSquareFoot": 4400
+  },
+  {
+    "stateName": "Jharkhand",
+    "cityName": "Ranchi",
+    "areaName": "Morabadi",
+    "pricePerSquareFoot": 4500
+  },
+  {
+    "stateName": "Jharkhand",
+    "cityName": "Ranchi",
+    "areaName": "Lalpur",
+    "pricePerSquareFoot": 4950
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Mangalore",
+    "areaName": "Bejai",
+    "pricePerSquareFoot": 6550
+  },
+  {
+    "stateName": "Karnataka",
+    "cityName": "Mangalore",
+    "areaName": "Derebail",
+    "pricePerSquareFoot": 5450
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Siliguri",
+    "areaName": "Matigara",
+    "pricePerSquareFoot": 4700
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Siliguri",
+    "areaName": "Khaprail More",
+    "pricePerSquareFoot": 4700
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Siliguri",
+    "areaName": "Salugara",
+    "pricePerSquareFoot": 4400
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Siliguri",
+    "areaName": "Champasari",
+    "pricePerSquareFoot": 4000
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Siliguri",
+    "areaName": "Jyoti Nagar",
+    "pricePerSquareFoot": 4300
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Siliguri",
+    "areaName": "Bankim Nagar",
+    "pricePerSquareFoot": 4200
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Siliguri",
+    "areaName": "Dagapur",
+    "pricePerSquareFoot": 4000
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Siliguri",
+    "areaName": "Darjeeling More",
+    "pricePerSquareFoot": 4000
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Siliguri",
+    "areaName": "Sevoke Road",
+    "pricePerSquareFoot": 4200
+  },
+  {
+    "stateName": "Kerala",
+    "cityName": "Thiruvananthapuram",
+    "areaName": "Kazhakootam",
+    "pricePerSquareFoot": 5950
+  },
+  {
+    "stateName": "Goa",
+    "cityName": "North Goa",
+    "areaName": "Siolim",
+    "pricePerSquareFoot": 14700
+  },
+  {
+    "stateName": "Goa",
+    "cityName": "North Goa",
+    "areaName": "Candolim",
+    "pricePerSquareFoot": 17850
+  },
+  {
+    "stateName": "Goa",
+    "cityName": "North Goa",
+    "areaName": "Calangute",
+    "pricePerSquareFoot": 12350
+  },
+  {
+    "stateName": "Goa",
+    "cityName": "North Goa",
+    "areaName": "Arpora",
+    "pricePerSquareFoot": 12100
+  },
+  {
+    "stateName": "Goa",
+    "cityName": "North Goa",
+    "areaName": "Mapusa",
+    "pricePerSquareFoot": 7050
+  },
+  {
+    "stateName": "Goa",
+    "cityName": "North Goa",
+    "areaName": "Porvorim",
+    "pricePerSquareFoot": 9000
+  },
+  {
+    "stateName": "Goa",
+    "cityName": "North Goa",
+    "areaName": "Dona Paula",
+    "pricePerSquareFoot": 12500
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Nashik",
+    "areaName": "Nashik Road",
+    "pricePerSquareFoot": 4250
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Nashik",
+    "areaName": "Gangapur",
+    "pricePerSquareFoot": 5700
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Nashik",
+    "areaName": "Pathardi Phata",
+    "pricePerSquareFoot": 4150
+  },
+  {
+    "stateName": "Maharashtra",
+    "cityName": "Nashik",
+    "areaName": "Panchavati",
+    "pricePerSquareFoot": 4050
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Durgapur",
+    "areaName": "Muchipara",
+    "pricePerSquareFoot": 2550
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Durgapur",
+    "areaName": "Bamunara",
+    "pricePerSquareFoot": 2550
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Durgapur",
+    "areaName": "Bidhannagar",
+    "pricePerSquareFoot": 2750
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Durgapur",
+    "areaName": "Arrah More",
+    "pricePerSquareFoot": 2750
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Durgapur",
+    "areaName": "Benachity",
+    "pricePerSquareFoot": 3100
+  },
+  {
+    "stateName": "West Bengal",
+    "cityName": "Durgapur",
+    "areaName": "Kaliganj",
+    "pricePerSquareFoot": 2200
+  },
+  {
+    "stateName": "Uttar Pradesh",
+    "cityName": "Agra",
+    "areaName": "Dayal Bagh",
+    "pricePerSquareFoot": 4200
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Gandhinagar",
+    "areaName": "Koba",
+    "pricePerSquareFoot": 4600
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Gandhinagar",
+    "areaName": "Randesan",
+    "pricePerSquareFoot": 4450
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Gandhinagar",
+    "areaName": "Vavol",
+    "pricePerSquareFoot": 3800
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Gandhinagar",
+    "areaName": "Raysan",
+    "pricePerSquareFoot": 4700
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Gandhinagar",
+    "areaName": "SG Highway",
+    "pricePerSquareFoot": 4400
+  },
+  {
+    "stateName": "Gujarat",
+    "cityName": "Gandhinagar",
+    "areaName": "Sargasan",
+    "pricePerSquareFoot": 4350
+  }
+]

@@ -8,19 +8,12 @@ export const subPropertyTypeRegister = async (req, res) => {
   try {
     const { subPropertyType, propertyTypeId } = req.body;
 
-    logger.info(
-      `Attempting to register a new Sub Property Type: ${subPropertyType}`
-    );
-
     const subPropertyTypeExists = await SubPropertyTypeModel.findOne({
       subPropertyType,
       propertyTypeId,
     });
 
     if (subPropertyTypeExists) {
-      logger.warn(
-        `Sub Property Type ${subPropertyType} already exists for property type ID ${propertyTypeId}`
-      );
       return res.status(statusCode.CONFLICT).json({
         statusCode: statusCode.CONFLICT,
         message: message.subPropertyTypeAlreadyExists,
@@ -60,9 +53,6 @@ export const subPropertyTypeRegister = async (req, res) => {
       },
     ]);
 
-    logger.info(
-      `Sub Property Type ${subPropertyType} successfully registered with ID: ${savedSubPropertyType._id}`
-    );
     res.status(statusCode.CREATED).json({
       statusCode: statusCode.CREATED,
       message: message.subPropertyTypeAdded,
@@ -73,7 +63,6 @@ export const subPropertyTypeRegister = async (req, res) => {
     res.status(statusCode.INTERNAL_SERVER_ERROR).json({
       statusCode: statusCode.INTERNAL_SERVER_ERROR,
       message: message.errorAddingSubPropertyType,
-      error: error.message,
     });
   }
 };
@@ -85,8 +74,6 @@ export const updateSubPropertyType = async (req, res) => {
     const { id } = req.params;
     const { subPropertyType } = req.body;
 
-    logger.info(`Attempting to update Sub Property Type with ID: ${id}`);
-
     const updatedSubPropertyType = await SubPropertyTypeModel.findByIdAndUpdate(
       id,
       { subPropertyType },
@@ -94,7 +81,6 @@ export const updateSubPropertyType = async (req, res) => {
     );
 
     if (!updatedSubPropertyType) {
-      logger.warn(`Sub Property Type with ID ${id} not found`);
       return res.status(statusCode.NOT_FOUND).json({
         statusCode: statusCode.NOT_FOUND,
         message: message.subPropertyTypeNotFound,
@@ -128,7 +114,6 @@ export const updateSubPropertyType = async (req, res) => {
         },
       ]);
 
-    logger.info(`Sub Property Type with ID ${id} successfully updated`);
     res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
       message: message.subPropertyTypeUpdated,
@@ -139,7 +124,6 @@ export const updateSubPropertyType = async (req, res) => {
     res.status(statusCode.INTERNAL_SERVER_ERROR).json({
       statusCode: statusCode.INTERNAL_SERVER_ERROR,
       message: message.errorUpdatingSubPropType,
-      error: error.message,
     });
   }
 };
@@ -150,21 +134,17 @@ export const deleteSubPropertyType = async (req, res) => {
   try {
     const { id } = req.params;
 
-    logger.info(`Attempting to delete Sub Property Type with ID: ${id}`);
-
     const deletedSubPropertyType = await SubPropertyTypeModel.findByIdAndDelete(
       id
     );
 
     if (!deletedSubPropertyType) {
-      logger.warn(`Sub Property Type with ID ${id} not found`);
       return res.status(statusCode.NOT_FOUND).json({
         statusCode: statusCode.NOT_FOUND,
         message: message.subPropertyTypeNotFound,
       });
     }
 
-    logger.info(`Sub Property Type with ID ${id} successfully deleted`);
     res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
       message: message.subPropertyTypeDeleted,
@@ -175,7 +155,6 @@ export const deleteSubPropertyType = async (req, res) => {
     res.status(statusCode.INTERNAL_SERVER_ERROR).json({
       statusCode: statusCode.INTERNAL_SERVER_ERROR,
       message: message.errorDeletingSubPropType,
-      error: error.message,
     });
   }
 };
@@ -184,8 +163,6 @@ export const deleteSubPropertyType = async (req, res) => {
 
 export const getSubPropertyType = async (req, res) => {
   try {
-    logger.info("Fetching sub property types");
-
     const subpropertytypes = await SubPropertyTypeModel.aggregate([
       {
         $lookup: {
@@ -223,10 +200,6 @@ export const getSubPropertyType = async (req, res) => {
       })
     );
 
-    logger.info(
-      `Successfully retrieved ${subPropertyTypesWithSrNo.length} sub property types`
-    );
-
     res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
       message: message.subPropertyTypeRetrieved,
@@ -237,7 +210,6 @@ export const getSubPropertyType = async (req, res) => {
     res.status(statusCode.INTERNAL_SERVER_ERROR).json({
       statusCode: statusCode.INTERNAL_SERVER_ERROR,
       message: message.errorFetchingSubPropTypes,
-      error: error.message,
     });
   }
 };
@@ -248,32 +220,17 @@ export const deleteMultipleSubPropertyTypes = async (req, res) => {
   try {
     const { ids } = req.body;
 
-    logger.info(
-      `Attempting to delete multiple sub property types with IDs: ${ids.join(
-        ", "
-      )}`
-    );
-
     const deletedMultipleSubPropertyTypes =
       await SubPropertyTypeModel.deleteMany({
         _id: { $in: ids },
       });
 
     if (deletedMultipleSubPropertyTypes.deletedCount === 0) {
-      logger.warn(
-        `No sub property types found for deletion with the given IDs: ${ids.join(
-          ", "
-        )}`
-      );
       return res.status(statusCode.NOT_FOUND).json({
         statusCode: statusCode.NOT_FOUND,
         message: message.errorFetchingSubPropTypes,
       });
     }
-
-    logger.info(
-      `Successfully deleted ${deletedMultipleSubPropertyTypes.deletedCount} sub property types`
-    );
 
     res.status(statusCode.OK).json({
       statusCode: statusCode.OK,

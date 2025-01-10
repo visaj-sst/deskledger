@@ -424,6 +424,7 @@ const indianCities = [
   {
     state: "Gujarat",
     cities: [
+      "Dahod",
       "Ahmedabad",
       "Surat",
       "Vadodara",
@@ -1340,6 +1341,7 @@ const indianCities = [
   {
     state: "Uttar Pradesh",
     cities: [
+      "Mirzapur",
       "Lucknow",
       "Kanpur",
       "Firozabad",
@@ -1527,7 +1529,6 @@ export const insertBanks = async () => {
   try {
     const existingBanks = await BankModel.countDocuments();
     if (existingBanks > 0) {
-      logger.info("Bank data already exists, skipping seeding.");
       return;
     }
 
@@ -1543,7 +1544,6 @@ export const insertPropertyTypes = async () => {
   try {
     const existingPropertyTypes = await PropertyType.countDocuments();
     if (existingPropertyTypes > 0) {
-      logger.info("Property types already exist, skipping seeding.");
       return;
     }
 
@@ -1569,7 +1569,6 @@ export const insertStates = async () => {
   try {
     const existingStates = await StateModel.countDocuments();
     if (existingStates > 0) {
-      logger.info("States already exist, skipping seeding.");
       return;
     }
 
@@ -1585,7 +1584,6 @@ export const insertCities = async () => {
   try {
     const existingCities = await CityModel.countDocuments();
     if (existingCities > 0) {
-      logger.info("Cities are already seeded. Skipping seeding.");
       return;
     }
 
@@ -1616,7 +1614,6 @@ export const insertAdminUser = async () => {
     const existingAdmin = await UserModel.findOne({ email: adminEmail });
 
     if (existingAdmin) {
-      logger.info("Admin user already exists, skipping seeding.");
       return;
     }
 
@@ -1639,7 +1636,6 @@ export const insertAdminUser = async () => {
 
 export const seedDatabase = async () => {
   try {
-    logger.info("Starting database seeding...");
     await insertBanks();
     await insertPropertyTypes();
     await insertStates();

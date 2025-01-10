@@ -10,7 +10,6 @@ export const createBank = async (req, res) => {
 
     const bankExists = await BankModel.findOne({ bankName });
     if (bankExists) {
-      logger.warn(`Bank already exists: ${bankName}`);
       return res.status(statusCode.CONFLICT).json({
         statusCode: statusCode.CONFLICT,
         message: message.bankAlreadyExists,
@@ -18,10 +17,8 @@ export const createBank = async (req, res) => {
     }
 
     const newBank = new BankModel({ bankName });
-    logger.info(`Adding new bank: ${bankName}`);
     const savedBank = await newBank.save();
 
-    logger.info(`Successfully created bank: ${savedBank.bankName}`);
     res.status(statusCode.CREATED).json({
       statusCode: statusCode.CREATED,
       message: message.bankCreated,
@@ -43,8 +40,6 @@ export const updateBank = async (req, res) => {
     const { id } = req.params;
     const { bankName } = req.body;
 
-    logger.info(`Updating bank with ID: ${id} to name: ${bankName}`);
-
     const updatedBank = await BankModel.findByIdAndUpdate(
       id,
       { bankName },
@@ -52,14 +47,12 @@ export const updateBank = async (req, res) => {
     );
 
     if (!updatedBank) {
-      logger.warn(`Bank with ID: ${id} not found`);
       return res.status(statusCode.NOT_FOUND).json({
         statusCode: statusCode.NOT_FOUND,
         message: message.errorFetchingBank,
       });
     }
 
-    logger.info(`Successfully updated bank: ${updatedBank.bankName}`);
     res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
       message: message.bankUpdated,
@@ -80,19 +73,15 @@ export const deleteBank = async (req, res) => {
   try {
     const { id } = req.params;
 
-    logger.info(`Deleting bank with ID: ${id}`);
-
     const deletedBank = await BankModel.findByIdAndDelete(id);
 
     if (!deletedBank) {
-      logger.warn(`Bank with ID: ${id} not found`);
       return res.status(statusCode.NOT_FOUND).json({
         statusCode: statusCode.NOT_FOUND,
         message: message.errorFetchingBank,
       });
     }
 
-    logger.info(`Successfully deleted bank: ${deletedBank.bankName}`);
     res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
       message: message.bankDeleted,
@@ -110,8 +99,6 @@ export const deleteBank = async (req, res) => {
 
 export const getBanks = async (req, res) => {
   try {
-    logger.info("Fetching list of banks...");
-
     const banks = await BankModel.find();
 
     const banksWithSrNo = banks.map((bank, index) => ({
@@ -119,7 +106,6 @@ export const getBanks = async (req, res) => {
       ...bank.toObject(),
     }));
 
-    logger.info(`Successfully fetched ${banksWithSrNo.length} banks`);
     res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
       message: message.banksView,
@@ -140,19 +126,15 @@ export const deleteMultipleBanks = async (req, res) => {
   try {
     const { ids } = req.body;
 
-    logger.info(`Deleting multiple banks with IDs: ${ids.join(", ")}`);
-
     const deletedBanks = await BankModel.deleteMany({ _id: { $in: ids } });
 
     if (deletedBanks.deletedCount === 0) {
-      logger.warn(`No banks found to delete for IDs: ${ids.join(", ")}`);
       return res.status(statusCode.NOT_FOUND).json({
         statusCode: statusCode.NOT_FOUND,
         message: message.errorFetchingBank,
       });
     }
 
-    logger.info(`Successfully deleted ${deletedBanks.deletedCount} banks`);
     res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
       message: message.banksDeleted,
