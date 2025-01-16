@@ -7,6 +7,24 @@ const scrapeGoldPrices = async (url) => {
   try {
     logger.info("Starting gold price scraping...");
 
+    const existingRecord = await GoldMasterModel.findOne({});
+
+    const today = new Date().toISOString().split("T")[0];
+    const lastUpdated = existingRecord?.lastUpdated
+      ?.toISOString()
+      .split("T")[0];
+
+    logger.info(`Today's date: ${today}`);
+    logger.info(`Last updated date: ${lastUpdated}`);
+
+    if (lastUpdated === today) {
+      logger.info(
+        "Gold prices are already up-to-date for today. Skipping update."
+      );
+      return;
+    }
+
+    // Proceed with scraping if data is outdated
     browser = await chromium.launch({
       headless: true,
       args: [
@@ -27,23 +45,6 @@ const scrapeGoldPrices = async (url) => {
 
     const page = await context.newPage();
     await page.goto(url, { waitUntil: "networkidle", timeout: 60000 });
-
-    const goldPriceSeeder = async (goldRates) => {
-      try {
-        await GoldMasterModel.updateOne(
-          {},
-          {
-            goldRate22KPerGram: goldRates.goldRate22K,
-            goldRate24KPerGram: goldRates.goldRate24K,
-          },
-          { upsert: true }
-        );
-        logger.info("Gold prices seeded successfully.");
-      } catch (error) {
-        logger.error(`Error seeding gold prices: ${error.message}`);
-        throw error;
-      }
-    };
 
     const data = await page.evaluate(() => {
       const extractGoldRate = (headingText) => {
@@ -69,16 +70,16 @@ const scrapeGoldPrices = async (url) => {
       throw new Error("Failed to scrape gold prices. Data is incomplete.");
     }
 
+    // Update gold prices and lastUpdated field
     await GoldMasterModel.updateOne(
       {},
       {
         goldRate22KPerGram: data.goldRate22K,
         goldRate24KPerGram: data.goldRate24K,
+        lastUpdated: new Date(), // Update lastUpdated timestamp
       },
       { upsert: true }
     );
-
-    await goldPriceSeeder(data);
 
     logger.info("Gold prices updated successfully.");
   } catch (error) {

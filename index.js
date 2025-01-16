@@ -14,7 +14,6 @@ import {
   updateGoldData,
   updateRealEstateData,
 } from "./src/cronJobs/cron.js";
-import { startScraping } from "./src/scripts/area-price-pp.js";
 import { loadScrapedDataToDB } from "./src/scripts/load-scraped-data.js";
 import { startGoldPriceScraping } from "./src/scripts/gold-price-pp.js";
 
@@ -100,7 +99,7 @@ const databaseConnection = async () => {
     logger.info("Connected to the database.");
   } catch (error) {
     logger.error(`Database connection failed: ${error.message}`);
-    process.exit(1); // Exit process if the database connection fails
+    process.exit(1);
   }
 };
 
