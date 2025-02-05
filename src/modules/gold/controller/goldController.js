@@ -6,7 +6,6 @@ import mongoose from "mongoose";
 import logger from "../../../service/logger.service.js";
 
 //====================== REGISTER GOLD INFO ======================//
-
 export const createGoldRecord = async (req, res) => {
   try {
     const userId = req.user.id;
@@ -82,7 +81,6 @@ export const createGoldRecord = async (req, res) => {
 };
 
 //====================== UPDATING GOLD INFO ======================//
-
 export const updateGoldRecord = async (req, res) => {
   try {
     const { id } = req.params;
@@ -180,7 +178,6 @@ export const updateGoldRecord = async (req, res) => {
 };
 
 //====================== DELETE GOLD INFO ======================//
-
 export const deleteGoldRecord = async (req, res) => {
   try {
     const { id } = req.params;

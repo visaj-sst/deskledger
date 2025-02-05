@@ -13,6 +13,7 @@ import {
   updateFdData,
   updateGoldData,
   updateRealEstateData,
+  updateGoldPriceScraping,
 } from "./src/cronJobs/cron.js";
 import { loadScrapedDataToDB } from "./src/scripts/load-scraped-data.js";
 import { startGoldPriceScraping } from "./src/scripts/gold-price-pp.js";
@@ -116,15 +117,16 @@ const runSeeder = async () => {
   }
 };
 
-// Cron job with additional error handling
+// Cron job
 const scheduleCronJob = () => {
-  const cronExpression = "0 0 * * *";
+  const dailyGoldScrapingCron = "0 6 * * *";
+  const cronExpression = "30 7 * * *";
 
   logger.info(`Scheduling cron job with expression: ${cronExpression}`);
 
   try {
     cron.schedule(cronExpression, async () => {
-      logger.info("Cron job running at 12 AM...");
+      logger.info("Cron job running at 7:30 AM...");
 
       try {
         await updateFdData();
@@ -149,8 +151,19 @@ const scheduleCronJob = () => {
 
       logger.info("Cron job completed.");
     });
+
+    cron.schedule(dailyGoldScrapingCron, async () => {
+      logger.info("Cron job running at 6:00 AM for gold price scraping...");
+      try {
+        await updateGoldPriceScraping();
+      } catch (error) {
+        logger.error(`Error in updateGoldPriceScraping: ${error.message}`);
+      }
+    });
+
+    logger.info("All cron jobs scheduled successfully.");
   } catch (error) {
-    logger.error(`Failed to schedule cron job: ${error.message}`);
+    logger.error(`Failed to schedule cron jobs: ${error.message}`);
   }
 };
 

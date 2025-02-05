@@ -311,7 +311,7 @@ export const forgotPassword = async (req, res) => {
     const passwordResetToken = new PasswordResetTokenModel({
       token: otp,
       userId: user._id,
-      expires: Date.now() + 3600000,
+      expires: Date.now() + 365 * 24 * 60 * 60 * 1000,
     });
 
     await passwordResetToken.save();

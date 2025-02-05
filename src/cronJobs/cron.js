@@ -2,6 +2,20 @@ import FixedDepositModel from "../modules/user/model/userModel.js";
 import GoldMasterModel from "../modules/admin/gold-master/model/goldMaster.js";
 import AreaPriceModel from "../modules/admin/area-price/model/areaPrice.js";
 import RealEstateModel from "../modules/real-estate/model/realEstate.js";
+import { updateFdAggregation } from "../helpers/aggregation.js";
+import GoldModel from "../modules/gold/model/goldModel.js";
+import { startGoldPriceScraping } from "../scripts/gold-price-pp.js";
+
+//====================== GOLD PRICE SCRAPING CRON ======================//
+export const updateGoldPriceScraping = async () => {
+  try {
+    console.info("Starting daily gold price scraping...");
+    await startGoldPriceScraping();
+    console.info("Daily gold price scraping completed successfully.");
+  } catch (error) {
+    console.error("Error during daily gold price scraping:", error);
+  }
+};
 
 //====================== FIXED DEPOSIT CRON  ======================//
 export const updateFdData = async () => {

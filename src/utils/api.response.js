@@ -201,7 +201,18 @@ export const message = {
   errorFetchingStates: "Error fetching states",
   errorUpdatingState: "Error updating state",
 
+  // Stock
+
+  stockCreated: "Stock Added Successfully",
+  stockUpdated: "Stock Updated Successfully",
+  stockDeleted: "Stock Deleted Successfully",
+  stocksDeleted: "Multiple Stocks Deleted Successfully",
+  stockPricesUpdated: "Stock Prices Updated According to Yahoo Finance Api",
+  errorFetchingStock: "Error Fetching Stock",
+  tradingDataFetched: "Trading Data Fetched Successfully",
+
   // Miscellaneous Errors
+  INTERNAL_SERVER_ERROR: "Something went wrong",
   deleteAuth: "You are unauthorized to delete this account",
   expiredToken: "Invalid or expired token",
   tokenNotMatch: "Unauthorized. Token does not match user",

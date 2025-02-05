@@ -9,7 +9,6 @@ export const loadScrapedDataToDB = async () => {
   try {
     logger.info("Checking if areaPrices collection is empty...");
 
-    // Check if the areaPrices collection is empty
     const existingRecords = await AreaPriceModel.countDocuments();
     if (existingRecords > 0) {
       logger.info(
@@ -18,7 +17,6 @@ export const loadScrapedDataToDB = async () => {
       return;
     }
 
-    // Check if scraped_data.json exists
     let rawData;
     try {
       await fs.access("scraped_data.json");
@@ -36,23 +34,19 @@ export const loadScrapedDataToDB = async () => {
 
     const bulkOps = [];
 
-    // Loop through each scraped data item
     for (const item of data) {
-      // Find or create the State
       const state = await StateModel.findOneAndUpdate(
         { state: item.stateName },
         { state: item.stateName },
         { new: true, upsert: true }
       );
 
-      // Find or create the City
       const city = await CityModel.findOneAndUpdate(
         { city: item.cityName, stateId: state._id },
         { city: item.cityName, stateId: state._id },
         { new: true, upsert: true }
       );
 
-      // Check if the area price already exists in the database
       const existingAreaPrice = await AreaPriceModel.findOne({
         cityId: city._id,
         stateId: state._id,
@@ -60,7 +54,6 @@ export const loadScrapedDataToDB = async () => {
       });
 
       if (!existingAreaPrice) {
-        // Prepare to insert this data
         bulkOps.push({
           updateOne: {
             filter: {

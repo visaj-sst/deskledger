@@ -31,79 +31,90 @@ export const commonAggregationStages = (
     {
       $addFields: {
         currentReturnAmount: {
-          $round: [
-            // Use $round for rounding instead of $trunc
-            {
-              $add: [
-                totalInvestedAmount,
-                {
-                  $multiply: [
-                    totalInvestedAmount,
-                    {
-                      $divide: [
-                        { $multiply: [interestRate, "$tenureCompletedYears"] },
-                        100,
-                      ],
-                    },
-                  ],
-                },
-              ],
-            },
-            0, // Round to 0 decimal places
-          ],
+          $trunc: {
+            $add: [
+              totalInvestedAmount,
+              {
+                $multiply: [
+                  totalInvestedAmount,
+                  {
+                    $divide: [
+                      { $multiply: [interestRate, "$tenureCompletedYears"] },
+                      100,
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
         },
         totalReturnedAmount: {
-          $round: [
-            // Use $round to match frontend
-            {
-              $add: [
-                totalInvestedAmount,
-                {
-                  $multiply: [
-                    totalInvestedAmount,
-                    {
-                      $divide: [
-                        { $multiply: [interestRate, "$tenureInYears"] },
-                        100,
-                      ],
-                    },
-                  ],
-                },
-              ],
-            },
-            0, // Round to 0 decimal places
-          ],
+          $trunc: {
+            $subtract: [
+              {
+                $add: [
+                  totalInvestedAmount,
+                  {
+                    $multiply: [
+                      totalInvestedAmount,
+                      {
+                        $divide: [
+                          { $multiply: [interestRate, "$tenureInYears"] },
+                          100,
+                        ],
+                      },
+                    ],
+                  },
+                ],
+              },
+              {
+                $mod: [
+                  {
+                    $add: [
+                      totalInvestedAmount,
+                      {
+                        $multiply: [
+                          totalInvestedAmount,
+                          {
+                            $divide: [
+                              { $multiply: [interestRate, "$tenureInYears"] },
+                              100,
+                            ],
+                          },
+                        ],
+                      },
+                    ],
+                  },
+                  75,
+                ],
+              },
+            ],
+          },
         },
         currentProfitAmount: {
-          $round: [
-            {
-              $subtract: [
-                {
-                  $add: [
-                    totalInvestedAmount,
-                    {
-                      $multiply: [
-                        totalInvestedAmount,
-                        {
-                          $divide: [
-                            {
-                              $multiply: [
-                                interestRate,
-                                "$tenureCompletedYears",
-                              ],
-                            },
-                            100,
-                          ],
-                        },
-                      ],
-                    },
-                  ],
-                },
-                totalInvestedAmount,
-              ],
-            },
-            0, // Round to 0 decimal places
-          ],
+          $trunc: {
+            $subtract: [
+              {
+                $add: [
+                  totalInvestedAmount,
+                  {
+                    $multiply: [
+                      totalInvestedAmount,
+                      {
+                        $divide: [
+                          {
+                            $multiply: [interestRate, "$tenureCompletedYears"],
+                          },
+                          100,
+                        ],
+                      },
+                    ],
+                  },
+                ],
+              },
+              totalInvestedAmount,
+            ],
+          },
         },
       },
     },

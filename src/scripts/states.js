@@ -1,4 +1,4 @@
-import StateModel from '../models/state.js'; // Adjust the path
+import StateModel from "../models/state.js";
 
 const states = [
   "Andhra Pradesh",

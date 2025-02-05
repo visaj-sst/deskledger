@@ -1,8 +1,7 @@
-import mongoose from 'mongoose';
-import PropertyType from './models/PropertyType.js';
-import SubPropertyType from './models/SubPropertyType.js';
+import mongoose from "mongoose";
+import PropertyType from "./models/PropertyType.js";
+import SubPropertyType from "./models/SubPropertyType.js";
 
-// Property types and their sub-types
 const propertyTypes = [
   "Residential",
   "Commercial",
@@ -95,14 +94,11 @@ const subPropertyTypes = {
   ],
 };
 
-// Function to insert PropertyTypes and SubPropertyTypes
 const insertData = async () => {
   try {
-    // Insert PropertyTypes
     for (let type of propertyTypes) {
       const propertyType = await PropertyType.create({ name: type });
 
-      // Insert SubPropertyTypes for each PropertyType
       const subTypes = subPropertyTypes[type];
       for (let subType of subTypes) {
         await SubPropertyType.create({
@@ -117,7 +113,6 @@ const insertData = async () => {
   }
 };
 
-// Connect to MongoDB and run the insertion function
 mongoose
   .connect("mongodb://localhost:27017/investment", {
     useNewUrlParser: true,

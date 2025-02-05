@@ -70,7 +70,6 @@ const scrapeGoldPrices = async (url) => {
       throw new Error("Failed to scrape gold prices. Data is incomplete.");
     }
 
-    // Update gold prices and lastUpdated field
     await GoldMasterModel.updateOne(
       {},
       {

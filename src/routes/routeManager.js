@@ -10,6 +10,7 @@ import propertyTypeRoutes from "../modules/admin/property-type/routes/propertyTy
 import subPropertyTypeRoutes from "../modules/admin/sub-prop-type/routes/subPropertyTypeRoutes.js";
 import realEstateRoutes from "../modules/real-estate/routes/realEstateRoutes.js";
 import dashboardRoutes from "../modules/dashboard/routes/dashboardRoutes.js";
+import stockRoutes from "../modules/stock/routes/stockRoutes.js";
 
 export const routes = [
   userRoutes,
@@ -24,4 +25,5 @@ export const routes = [
   subPropertyTypeRoutes,
   realEstateRoutes,
   dashboardRoutes,
+  stockRoutes,
 ];

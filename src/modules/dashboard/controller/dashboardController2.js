@@ -23,14 +23,12 @@ export const dashboardAnalysis = async (req, res) => {
     const userId = req.user.id;
     const { startDate, endDate } = req.query;
 
-    // Create the match object for all models (FD, Gold, Real Estate)
     const match = { userId: new mongoose.Types.ObjectId(userId) };
 
     if (startDate || endDate) {
       match.createdAt = getDateFilters(startDate, endDate);
     }
 
-    // Aggregate FD data
     const fdAnalysis = await FixedDepositModel.aggregate([
       { $match: match },
       {
@@ -48,7 +46,6 @@ export const dashboardAnalysis = async (req, res) => {
       },
     ]);
 
-    // Aggregate Gold data
     const goldAnalysis = await GoldModel.aggregate([
       { $match: match },
       {
@@ -62,7 +59,6 @@ export const dashboardAnalysis = async (req, res) => {
       },
     ]);
 
-    // Aggregate Real Estate data
     const realEstateAnalysis = await RealEstateModel.aggregate([
       { $match: match },
       {
@@ -76,7 +72,6 @@ export const dashboardAnalysis = async (req, res) => {
       },
     ]);
 
-    // Combine FD, Gold, and Real Estate data
     const totalInvestedAmount =
       (fdAnalysis[0]?.totalInvestedAmount || 0) +
       (goldAnalysis[0]?.totalInvestedAmount || 0) +
@@ -94,9 +89,6 @@ export const dashboardAnalysis = async (req, res) => {
       (goldAnalysis[0]?.profitAmount || 0) +
       (realEstateAnalysis[0]?.profitAmount || 0);
 
-    // Debugging: Log combined totals
-
-    // Format the amounts and prepare response data
     const overallAnalysis = {
       totalInvestedAmount: formatAmount(totalInvestedAmount),
       currentReturnAmount: formatAmount(currentReturnAmount),
@@ -118,7 +110,6 @@ export const dashboardAnalysis = async (req, res) => {
       });
     }
 
-    // Top gainers FD
     const topGainersFD = await FixedDepositModel.aggregate([
       {
         $match: {
@@ -152,7 +143,6 @@ export const dashboardAnalysis = async (req, res) => {
       },
     ]);
 
-    // Top gainers Gold
     const topGainersGold = await GoldModel.aggregate([
       {
         $match: {
@@ -185,7 +175,6 @@ export const dashboardAnalysis = async (req, res) => {
       },
     ]);
 
-    // Top gainers Real Estate
     const topGainersRealEstate = await RealEstateModel.aggregate([
       {
         $match: {
@@ -222,28 +211,23 @@ export const dashboardAnalysis = async (req, res) => {
       },
     ]);
 
-    // Combine top gainers and remove duplicates
     let topGainers = [
       ...topGainersFD,
       ...topGainersGold,
       ...topGainersRealEstate,
     ];
 
-    // Remove duplicates by userId and profit (or any other unique field)
     topGainers = removeDuplicates(
       topGainers,
       (item) => `${item.userId}-${item.profit}`
     );
 
-    // Sort the result based on profit and slice the top 10
     topGainers = topGainers.sort((a, b) => b.profit - a.profit).slice(0, 10);
 
-    // Assign serial number (srNo) to each item
     topGainers.forEach((item, index) => {
       item.srNo = index + 1;
     });
 
-    // Send the response
     res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
       message: message.overAllAnalysis,
