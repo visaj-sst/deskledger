@@ -351,11 +351,9 @@ export const getDatafromLiveStockPricesAndUpdate = async (req, res) => {
         stock.currentPrice = stockData.regularMarketPrice;
         stock.totalReturnAmount = stock.quantity * stock.currentPrice;
 
-        // Calculate Unrealized Profit/Loss (For stocks still held)
         stock.unrealizedProfitLoss =
           stock.totalReturnAmount - stock.totalInvestedAmount;
 
-        // If stock has been sold, calculate realized profit/loss
         if (stock.sellPrice) {
           let realizedProfitLoss =
             (stock.sellPrice - stock.buyPrice) * stock.quantity;
@@ -366,7 +364,6 @@ export const getDatafromLiveStockPricesAndUpdate = async (req, res) => {
       }
     }
 
-    // Fetch stocks again to send updated response with srNo
     const updatedStocks = await StockModel.find();
 
     return res.status(statusCode.OK).json({
@@ -374,7 +371,7 @@ export const getDatafromLiveStockPricesAndUpdate = async (req, res) => {
       message: "Stock prices updated successfully.",
       stocks: updatedStocks.map((stock, index) => ({
         ...stock.toObject(),
-        srNo: index + 1, // Adding serial number
+        srNo: index + 1,
       })),
     });
   } catch (error) {
