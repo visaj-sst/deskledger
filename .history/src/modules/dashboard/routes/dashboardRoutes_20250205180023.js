@@ -7,7 +7,7 @@ import {
   dashboardAnalysis,
   getHighestGrowthInSector,
   getInvestmentsBySector,
-} from "../controller/dashboardController.js";
+} from "../controller/dashboardController2.js";
 
 const router = express.Router();
 
