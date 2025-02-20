@@ -445,18 +445,18 @@ export const getTopGainers = async (req, res) => {
     const topGainers = sortedGainers.slice(0, 5);
 
     return res.status(statusCode.OK).json({
-      statusCode: statusCode.OK,
-      message: message.topGainers,
+      statusCode: 200,
+      message: "Top Gainers fetched successfully",
       data: topGainers.map((gainer, index) => ({
         ...gainer,
         srNo: index + 1,
       })),
     });
   } catch (error) {
-    logger.error("Error fetching Top Gainers:", error);
-    return res.status(statusCode.INTERNAL_SERVER_ERROR).json({
-      statusCode: statusCode.INTERNAL_SERVER_ERROR,
-      message: message.INTERNAL_SERVER_ERROR,
+    console.error("Error fetching Top Gainers:", error);
+    return res.status(500).json({
+      statusCode: 500,
+      message: "Internal Server Error while fetching Top Gainers",
     });
   }
 };
@@ -480,7 +480,7 @@ export const getTopLosers = async (req, res) => {
 
     return res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
-      message: message.stockTopLosers,
+      message: "Top Losers fetched successfully",
       data: sortedLosers.map((loser, index) => ({
         ...loser,
         srNo: index + 1,
@@ -490,7 +490,7 @@ export const getTopLosers = async (req, res) => {
     logger.error("Error fetching Top Losers", error);
     return res.status(statusCode.INTERNAL_SERVER_ERROR).json({
       statusCode: statusCode.INTERNAL_SERVER_ERROR,
-      message: message.INTERNAL_SERVER_ERROR,
+      message: "Internal Server Error while fetching Top Losers",
     });
   }
 };

@@ -490,7 +490,7 @@ export const getTopLosers = async (req, res) => {
     logger.error("Error fetching Top Losers", error);
     return res.status(statusCode.INTERNAL_SERVER_ERROR).json({
       statusCode: statusCode.INTERNAL_SERVER_ERROR,
-      message: message.INTERNAL_SERVER_ERROR,
+      message: "Internal Server Error while fetching Top Losers",
     });
   }
 };

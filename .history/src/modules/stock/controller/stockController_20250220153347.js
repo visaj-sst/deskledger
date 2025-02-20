@@ -426,43 +426,58 @@ export const getTransactionHistory = async (req, res) => {
 };
 
 //====================== TOP GAINERS ======================//
-
 export const getTopGainers = async (req, res) => {
   try {
     const stocks = await loadStocks();
     if (!stocks.length) throw new Error("No stocks found in JSON file.");
 
     let stockPrices = await fetchStockPrices(stocks);
+
+    console.log("Fetched Stock Prices:", stockPrices);
+
     if (!stockPrices.length)
       throw new Error("No stock data returned from API.");
 
-    stockPrices = stockPrices.filter((stock) => stock.change !== 0);
+    stockPrices = stockPrices.filter((stock) => stock.changePercent !== 0);
 
-    const sortedGainers = stockPrices.sort(
-      (a, b) => b.changePercent - a.changePercent
+    console.log(
+      stockPrices.map((s) => ({
+        symbol: s.symbol,
+        price: s.price,
+        change: s.change,
+        changePercent: s.changePercent,
+      }))
     );
 
-    const topGainers = sortedGainers.slice(0, 5);
+    const topGainers = stockPrices
+      .filter((stock) => stock.change > 0) // Ensure only positive change stocks are included
+      .sort((a, b) => b.changePercent - a.changePercent) // Sort descending
+      .slice(0, 5); // Get top 5 gainers
+
+    console.log("Top Gainers:", topGainers);
+
+    const sortedGainers = stockPrices
+      .sort((a, b) => b.changePercent - a.changePercent)
+      .slice(0, 5);
 
     return res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
-      message: message.topGainers,
-      data: topGainers.map((gainer, index) => ({
+      message: "Top Gainers fetched successfully",
+      data: sortedGainers.map((gainer, index) => ({
         ...gainer,
         srNo: index + 1,
       })),
     });
   } catch (error) {
-    logger.error("Error fetching Top Gainers:", error);
+    logger.error("Error fetching Top Gainers", error);
     return res.status(statusCode.INTERNAL_SERVER_ERROR).json({
       statusCode: statusCode.INTERNAL_SERVER_ERROR,
-      message: message.INTERNAL_SERVER_ERROR,
+      message: "Internal Server Error while fetching Top Gainers",
     });
   }
 };
 
 //====================== TOP LOSERS  ======================//
-
 export const getTopLosers = async (req, res) => {
   try {
     const stocks = await loadStocks();
@@ -472,15 +487,17 @@ export const getTopLosers = async (req, res) => {
     if (!stockPrices.length)
       throw new Error("No stock data returned from API.");
 
+    // Remove stocks with 0% change
     stockPrices = stockPrices.filter((stock) => stock.changePercent !== 0);
 
+    // Sort in ascending order (lowest % change first)
     const sortedLosers = stockPrices
       .sort((a, b) => a.changePercent - b.changePercent)
-      .slice(0, 5);
+      .slice(0, 5); // Take only top 5 losers
 
     return res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
-      message: message.stockTopLosers,
+      message: "Top Losers fetched successfully",
       data: sortedLosers.map((loser, index) => ({
         ...loser,
         srNo: index + 1,
@@ -490,7 +507,7 @@ export const getTopLosers = async (req, res) => {
     logger.error("Error fetching Top Losers", error);
     return res.status(statusCode.INTERNAL_SERVER_ERROR).json({
       statusCode: statusCode.INTERNAL_SERVER_ERROR,
-      message: message.INTERNAL_SERVER_ERROR,
+      message: "Internal Server Error while fetching Top Losers",
     });
   }
 };
