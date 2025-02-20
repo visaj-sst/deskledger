@@ -6,10 +6,7 @@ import PropertyTypeModel from "../modules/admin/property-type.js";
 import SubPropertyTypeModel from "../modules/admin/sub-prop-type/model/subPropertyType.js";
 
 // Database Connection
-mongoose.connect("mongodb://localhost:27017/deskledger", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect("mongodb://localhost:27017/deskledger");
 
 mongoose.connection.on("connected", async () => {
   console.log("Connected to MongoDB");

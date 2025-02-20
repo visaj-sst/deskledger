@@ -3,6 +3,9 @@ import { Schema } from "mongoose";
 
 const StockSchema = new Schema(
   {
+    srNo: {
+      type: Number,
+    },
     firstName: {
       type: String,
       required: true,
@@ -11,23 +14,8 @@ const StockSchema = new Schema(
       type: String,
       required: true,
     },
-    type: {
-      type: String,
-      required: true,
-    },
-    srNo: {
-      type: Number,
-    },
     stockSymbol: {
       type: String,
-      required: true,
-    },
-    stockName: {
-      type: String,
-      required: true,
-    },
-    purchasePrice: {
-      type: Number,
       required: true,
     },
     quantity: {
@@ -38,34 +26,35 @@ const StockSchema = new Schema(
       type: Number,
       required: true,
     },
-    currentPrice: {
+    totalReturnAmount: {
       type: Number,
     },
-    currentValue: {
-      type: Number,
-    },
-    profitLoss: {
+    buyPrice: {
       type: Number,
     },
     buyDate: {
       type: Date,
-      default: null,
+    },
+    sellPrice: {
+      type: Number,
     },
     sellDate: {
       type: Date,
-      default: null,
+    },
+    realizedProfitLoss: {
+      type: Number,
+      default: 0,
+    },
+    unrealizedProfitLoss: {
+      type: Number,
+      default: 0,
     },
     sector: {
       type: String,
       default: "Stock Market",
     },
-    userId: {
-      type: Schema.Types.ObjectId,
-      ref: "UserModel",
-    },
   },
   { timestamps: true }
 );
-
 const StockModel = mongoose.model("Stock", StockSchema);
 export default StockModel;

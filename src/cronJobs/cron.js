@@ -5,8 +5,12 @@ import RealEstateModel from "../modules/real-estate/model/realEstate.js";
 import { updateFdAggregation } from "../helpers/aggregation.js";
 import GoldModel from "../modules/gold/model/goldModel.js";
 import { startGoldPriceScraping } from "../scripts/gold-price-pp.js";
+import StockModel from "../modules/stock/model/stockModel.js";
+import yahooFinance from "yahoo-finance2";
+import logger from "../service/logger.service.js";
 
 //====================== GOLD PRICE SCRAPING CRON ======================//
+
 export const updateGoldPriceScraping = async () => {
   try {
     console.info("Starting daily gold price scraping...");
@@ -18,6 +22,7 @@ export const updateGoldPriceScraping = async () => {
 };
 
 //====================== FIXED DEPOSIT CRON  ======================//
+
 export const updateFdData = async () => {
   try {
     const fixedDeposits = await FixedDepositModel.find();
@@ -59,6 +64,7 @@ export const updateFdData = async () => {
 };
 
 //====================== GOLD CRON  ======================//
+
 export const updateGoldData = async () => {
   try {
     const goldMaster = await GoldMasterModel.findOne();
@@ -111,6 +117,7 @@ export const updateGoldData = async () => {
 };
 
 //====================== REAL ESTATE CRON  ======================//
+
 export const updateRealEstateData = async () => {
   try {
     const realEstates = await RealEstateModel.find({});
@@ -150,5 +157,25 @@ export const updateRealEstateData = async () => {
     }
   } catch (error) {
     console.error("Error updating real estate data:", error);
+  }
+};
+
+// ====================== UPDATE DATA ACCORDING TO LATEST PRICES ======================//
+
+export const updateStockPrices = async () => {
+  try {
+    const stocks = await StockModel.find();
+
+    for (let stock of stocks) {
+      const stockData = await yahooFinance.quote(stock.stockSymbol);
+      if (stockData?.regularMarketPrice) {
+        stock.currentPrice = stockData.regularMarketPrice;
+        stock.currentValue = stock.quantity * stock.currentPrice;
+        stock.profitLoss = stock.currentValue - stock.totalInvestedAmount;
+        await stock.save();
+      }
+    }
+  } catch (error) {
+    console.error("Error updating stock prices:", error);
   }
 };

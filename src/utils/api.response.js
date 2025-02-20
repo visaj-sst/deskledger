@@ -204,18 +204,30 @@ export const message = {
   // Stock
 
   stockCreated: "Stock Added Successfully",
-  stockUpdated: "Stock Updated Successfully",
+  stockUpdated: "Bought the same stock again successfully",
   stockDeleted: "Stock Deleted Successfully",
   stocksDeleted: "Multiple Stocks Deleted Successfully",
   stockPricesUpdated: "Stock Prices Updated According to Yahoo Finance Api",
   errorFetchingStock: "Error Fetching Stock",
   tradingDataFetched: "Trading Data Fetched Successfully",
+  stockDataNotFound: "Stock Data Not Found",
+  stockSymbolisRequire: "Stock symbol is required",
+  insufficientStock: "Insufficient stock quantity to sell.",
+  sellStockAdded: "Sold Stock Added Successfully",
+  stockNotFound: "Stock does not exist to sell",
+  sellDateValidated: "Sell date cannot be added before buy date.",
+  invalidStockType: "Invalid stock type ",
+  transactionHistory: "Transaction History retrieved successfully",
+  stockTopGainers: "Top Gainers fetched successfully",
+  stockTopLosers: "Top Losers fetched successfully",
 
   // Miscellaneous Errors
   INTERNAL_SERVER_ERROR: "Something went wrong",
+  invalidCityorState: "Invalid city or state ID format",
   deleteAuth: "You are unauthorized to delete this account",
   expiredToken: "Invalid or expired token",
   tokenNotMatch: "Unauthorized. Token does not match user",
   tokenVerifyFail: "Token verification failed",
+  missingRequirefields: "Missing required fields",
   updateUserError: "An error occurred while updating the profile",
 };

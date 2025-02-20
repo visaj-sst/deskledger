@@ -17,6 +17,7 @@ import {
 } from "./src/cronJobs/cron.js";
 import { loadScrapedDataToDB } from "./src/scripts/load-scraped-data.js";
 import { startGoldPriceScraping } from "./src/scripts/gold-price-pp.js";
+import { updateStockPrices } from "./src/cronJobs/cron.js";
 
 import { fileURLToPath } from "url";
 import { dirname } from "path";
@@ -32,23 +33,9 @@ const HOST = process.env.HOST || "localhost";
 const DB_CONNECTION = process.env.CONNECTION;
 
 const corsOptions = {
-  // origin: (origin, callback) => {
-  //   console.log("CORS request from origin:", origin);
-  //   if (
-  //     origin === "http://148.72.246.221:81" ||
-  //     origin === "http://localhost:3000"
-  //   ) {
-  //     console.log("CORS allowed for origin:", origin);
-  //     callback(null, true);
-  //   } else {
-  //     console.log("CORS not allowed for origin:", origin);
-  //     callback(new Error("CORS not allowed"), false);
-  //   }
-  // },
-
   origin: (origin, callback) => {
     if (
-      !origin || // Allow undefined origins (like Postman)
+      !origin ||
       origin === "http://148.72.246.221:81" ||
       origin === "http://localhost:3000"
     ) {
@@ -59,7 +46,7 @@ const corsOptions = {
   },
 
   credentials: true,
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
   allowedHeaders: ["Content-Type", "Authorization", "ids"],
 };
 
@@ -121,6 +108,7 @@ const runSeeder = async () => {
 const scheduleCronJob = () => {
   const dailyGoldScrapingCron = "0 6 * * *";
   const cronExpression = "30 7 * * *";
+  const updateStockPrices5min = "*/5 * * * *";
 
   logger.info(`Scheduling cron job with expression: ${cronExpression}`);
 
@@ -160,6 +148,15 @@ const scheduleCronJob = () => {
         logger.error(`Error in updateGoldPriceScraping: ${error.message}`);
       }
     });
+
+    // cron.schedule(updateStockPrices5min, async () => {
+    //   logger.info("Cron job running for Stock Prices...");
+    //   try {
+    //     await updateStockPrices();
+    //   } catch (error) {
+    //     logger.error(`Error in updating Stock Prices : ${error.message}`);
+    //   }
+    // });
 
     logger.info("All cron jobs scheduled successfully.");
   } catch (error) {

@@ -30,8 +30,9 @@ export const createRealEstate = async (req, res) => {
       !cityId ||
       !stateId
     ) {
-      return res.status(400).json({
-        message: "Missing required fields",
+      return res.status(statusCode.BAD_REQUEST).json({
+        statusCode: statusCode.BAD_REQUEST,
+        message: message.missingRequirefields,
       });
     }
 
@@ -39,8 +40,9 @@ export const createRealEstate = async (req, res) => {
       !mongoose.Types.ObjectId.isValid(cityId) ||
       !mongoose.Types.ObjectId.isValid(stateId)
     ) {
-      return res.status(400).json({
-        message: "Invalid city or state ID format",
+      return res.status(statusCode.BAD_REQUEST).json({
+        statusCode: statusCode.BAD_REQUEST,
+        message: message.invalidCityorState,
       });
     }
 
@@ -59,8 +61,9 @@ export const createRealEstate = async (req, res) => {
     });
 
     if (existingRealEstate) {
-      return res.status(409).json({
-        message: "Property already exists",
+      return res.status(statusCode.CONFLICT).json({
+        statusCode: statusCode.CONFLICT,
+        message: message.propertyAlreadyExists,
       });
     }
 
@@ -71,8 +74,8 @@ export const createRealEstate = async (req, res) => {
     });
 
     if (!areaPrice) {
-      return res.status(404).json({
-        message: "Area price not found",
+      return res.status(statusCode.NOT_FOUND).json({
+        message: message.areaPriceNotFound,
       });
     }
 
