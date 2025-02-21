@@ -7,8 +7,7 @@ import {
   updateStock,
   getDatafromLiveStockPricesAndUpdate,
   getTransactionHistory,
-  getTopGainers,
-  getTopLosers,
+  getBseTopGainersAndLosers,
 } from "../controller/stockController.js";
 
 const router = express.Router();
@@ -22,7 +21,6 @@ router.delete("/stocks/multiple-delete", deleteMultipleStocks);
 router.get("/stocks/get-live-prices", getDatafromLiveStockPricesAndUpdate);
 router.get("/stocks/transaction-history/:stockSymbol", getTransactionHistory);
 router.get("/stocks/transaction-history", getTransactionHistory);
-router.get("/stocks/top-gainers", getTopGainers);
-router.get("/stocks/top-losers", getTopLosers);
+router.get("/stocks/top-movers", getBseTopGainersAndLosers);
 
 export default router;

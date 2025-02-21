@@ -10,6 +10,7 @@ export const statusCode = {
   NOT_FOUND: 404,
   CONFLICT: 409,
   INTERNAL_SERVER_ERROR: 500,
+  SERVICE_UNAVAILABLE: 503,
 };
 export const message = {
   //Real Estate
@@ -220,6 +221,7 @@ export const message = {
   transactionHistory: "Transaction History retrieved successfully",
   stockTopGainers: "Top Gainers fetched successfully",
   stockTopLosers: "Top Losers fetched successfully",
+  failfetchTopMovers: "Failed to fetch stock data",
 
   // Miscellaneous Errors
   INTERNAL_SERVER_ERROR: "Something went wrong",

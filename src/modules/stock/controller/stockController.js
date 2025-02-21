@@ -3,7 +3,11 @@ import yahooFinance from "yahoo-finance2";
 import { statusCode, message } from "../../../utils/api.response.js";
 import logger from "../../../service/logger.service.js";
 import TransactionModel from "../model/transactionModel.js";
-import { loadStocks, fetchStockPrices } from "../../../helpers/stockPrices.js";
+import {
+  BSE_API_URL,
+  cache,
+  fetchWithTimeout,
+} from "../../../helpers/topMovers.js";
 
 //====================== ADD STOCK ======================//
 
@@ -422,74 +426,75 @@ export const getTransactionHistory = async (req, res) => {
   }
 };
 
-//====================== TOP GAINERS ======================//
+//====================== GET TOP GAINERS AND LOSERS  ======================//
 
-export const getTopGainers = async (req, res) => {
+export const getBseTopGainersAndLosers = async (req, res) => {
+  const cacheKey = "bse_top_movers";
+
+  const cachedData = cache.get(cacheKey);
+  if (cachedData) {
+    return res
+      .status(statusCode.OK)
+      .json({ statusCode: statusCode.OK, cachedData });
+  }
+
   try {
-    const stocks = await loadStocks();
-    if (!stocks.length) throw new Error("No stocks found in JSON file.");
+    const data = await fetchWithTimeout(BSE_API_URL);
 
-    let stockPrices = await fetchStockPrices(stocks);
-    if (!stockPrices.length)
-      throw new Error("No stock data returned from API.");
+    const topGainersRaw = data.topGainers || [];
+    const topLosersRaw = data.topLooser || [];
 
-    stockPrices = stockPrices.filter((stock) => stock.change !== 0);
+    const topGainers = topGainersRaw
+      .filter((item) => item?.price && item?.percentChange)
+      .sort((a, b) => parseFloat(b.percentChange) - parseFloat(a.percentChange))
+      .slice(0, 5)
+      .map((item) => ({
+        symbol: item.ric || "N/A",
+        name: item.displayName || "Unknown",
+        price: parseFloat(item.price) || 0,
+        changePercent: parseFloat(item.percentChange) || 0,
+      }));
 
-    const sortedGainers = stockPrices.sort(
-      (a, b) => b.changePercent - a.changePercent
-    );
+    const topLosers = topLosersRaw
+      .filter((item) => item?.price && item?.percentChange)
+      .sort((a, b) => parseFloat(a.percentChange) - parseFloat(b.percentChange))
+      .slice(0, 5)
+      .map((item) => ({
+        symbol: item.ric || "N/A",
+        name: item.displayName || "Unknown",
+        price: parseFloat(item.price) || 0,
+        changePercent: parseFloat(item.percentChange) || 0,
+      }));
 
-    const topGainers = sortedGainers.slice(0, 5);
+    const responseData = {
+      success: true,
+      data: {
+        topGainers: topGainers.length > 0 ? topGainers : [],
+        topLosers: topLosers.length > 0 ? topLosers : [],
+      },
+      lastUpdated:
+        data.topGainers[0]?.date && data.topGainers[0]?.time
+          ? `${data.topGainers[0].date}T${data.topGainers[0].time}Z`
+          : new Date().toISOString(),
+      source: "BSE via LiveMint",
+      cached: false,
+    };
 
-    return res.status(statusCode.OK).json({
-      statusCode: statusCode.OK,
-      message: message.topGainers,
-      data: topGainers.map((gainer, index) => ({
-        ...gainer,
-        srNo: index + 1,
-      })),
-    });
+    cache.set(cacheKey, { ...responseData, cached: true });
+
+    res.status(statusCode.OK).json({ statusCode: statusCode.OK, responseData });
   } catch (error) {
-    logger.error("Error fetching Top Gainers:", error);
-    return res.status(statusCode.INTERNAL_SERVER_ERROR).json({
-      statusCode: statusCode.INTERNAL_SERVER_ERROR,
-      message: message.INTERNAL_SERVER_ERROR,
+    const staleData = cache.get(cacheKey);
+    if (staleData) {
+      return res.status(statusCode.OK).json({
+        statusCode: statusCode.OK,
+        ...staleData,
+      });
+    }
+
+    res.status(statusCode.SERVICE_UNAVAILABLE).json({
+      statusCode: statusCode.SERVICE_UNAVAILABLE,
+      message: message.failfetchTopMovers,
     });
   }
 };
-
-//====================== TOP LOSERS  ======================//
-
-export const getTopLosers = async (req, res) => {
-  try {
-    const stocks = await loadStocks();
-    if (!stocks.length) throw new Error("No stocks found in JSON file.");
-
-    let stockPrices = await fetchStockPrices(stocks);
-    if (!stockPrices.length)
-      throw new Error("No stock data returned from API.");
-
-    stockPrices = stockPrices.filter((stock) => stock.changePercent !== 0);
-
-    const sortedLosers = stockPrices
-      .sort((a, b) => a.changePercent - b.changePercent)
-      .slice(0, 5);
-
-    return res.status(statusCode.OK).json({
-      statusCode: statusCode.OK,
-      message: message.stockTopLosers,
-      data: sortedLosers.map((loser, index) => ({
-        ...loser,
-        srNo: index + 1,
-      })),
-    });
-  } catch (error) {
-    logger.error("Error fetching Top Losers", error);
-    return res.status(statusCode.INTERNAL_SERVER_ERROR).json({
-      statusCode: statusCode.INTERNAL_SERVER_ERROR,
-      message: message.INTERNAL_SERVER_ERROR,
-    });
-  }
-};
-
-//====================== WORKING 20TH FEB 2025 10 : 54 AM  ======================//
