@@ -30,7 +30,7 @@ const Router = express.Router();
 // User Authentication Routes
 Router.post("/user/login", userLoginValidate, loginUser);
 Router.post("/user/logout", ensureAuthenticated, logoutUser);
-Router.post("/user/register", userRegisterValidate, registerUser);
+Router.post("/user/register", registerUser);
 
 // User Profile Routes
 Router.get("/user-profile/:id", ensureAuthenticated, getUser);

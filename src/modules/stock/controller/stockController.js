@@ -3,11 +3,26 @@ import yahooFinance from "yahoo-finance2";
 import { statusCode, message } from "../../../utils/api.response.js";
 import logger from "../../../service/logger.service.js";
 import TransactionModel from "../model/transactionModel.js";
+import { loadStocks, fetchStockPrices } from "../../../helpers/stockPrices.js";
 import {
   BSE_API_URL,
   cache,
   fetchWithTimeout,
 } from "../../../helpers/topMovers.js";
+import TokenModel from "../../user/model/tokenModel.js";
+
+//====================== DATE FILTERS ======================//
+
+export const getDateFilters = (startDate, endDate) => {
+  const filters = {};
+  if (startDate) {
+    filters["$gte"] = new Date(new Date(startDate).setHours(0, 0, 0, 0));
+  }
+  if (endDate) {
+    filters["$lte"] = new Date(new Date(endDate).setHours(23, 59, 59, 999));
+  }
+  return filters;
+};
 
 //====================== ADD STOCK ======================//
 
@@ -20,10 +35,14 @@ export const createStock = async (req, res) => {
       buyPrice,
       quantity,
       type,
+      userId,
       sellPrice,
+      buyDate,
+      sellDate,
     } = req.body;
 
     let existingStock = await StockModel.findOne({
+      userId,
       stockSymbol,
       firstName,
       lastName,
@@ -33,11 +52,14 @@ export const createStock = async (req, res) => {
       const totalInvestedAmount = buyPrice * quantity;
 
       const transaction = new TransactionModel({
+        firstName,
+        lastName,
         stockSymbol,
         type: "buy",
         price: buyPrice,
         quantity,
         totalAmount: totalInvestedAmount,
+        transactionDate: buyDate,
       });
       await transaction.save();
 
@@ -46,9 +68,10 @@ export const createStock = async (req, res) => {
         const newTotalInvestment =
           existingStock.totalInvestedAmount + totalInvestedAmount;
 
-        existingStock.totalInvestedAmount = newTotalInvestment;
         existingStock.quantity = newTotalQuantity;
+        existingStock.totalInvestedAmount = newTotalInvestment;
         existingStock.buyPrice = newTotalInvestment / newTotalQuantity;
+        existingStock.buyDate = buyDate;
       } else {
         existingStock = new StockModel({
           firstName,
@@ -57,6 +80,10 @@ export const createStock = async (req, res) => {
           quantity,
           totalInvestedAmount,
           buyPrice,
+          userId,
+          buyDate,
+          sellDate: sellDate,
+          realizedProfitLoss: 0,
         });
       }
 
@@ -80,16 +107,22 @@ export const createStock = async (req, res) => {
       const profitLoss = (sellPrice - existingStock.buyPrice) * quantity;
       const soldInvestmentAmount = existingStock.buyPrice * quantity;
 
-      existingStock.realizedProfitLoss += profitLoss;
+      existingStock.realizedProfitLoss =
+        (existingStock.realizedProfitLoss || 0) + profitLoss;
       existingStock.quantity -= quantity;
       existingStock.totalInvestedAmount -= soldInvestmentAmount;
+      existingStock.sellPrice = sellPrice;
+      existingStock.sellDate = sellDate;
 
       const transaction = new TransactionModel({
+        firstName,
+        lastName,
         stockSymbol,
         type: "sell",
         price: sellPrice,
         quantity,
         totalAmount: totalSaleAmount,
+        transactionDate: sellDate,
       });
       await transaction.save();
 
@@ -112,13 +145,12 @@ export const createStock = async (req, res) => {
     }
   } catch (error) {
     logger.error("Error processing stock transaction:", error);
-    res.status(statusCode.INTERNAL_SERVER_ERROR).json({
+    return res.status(statusCode.INTERNAL_SERVER_ERROR).json({
       statusCode: statusCode.INTERNAL_SERVER_ERROR,
       message: message.INTERNAL_SERVER_ERROR,
     });
   }
 };
-
 //====================== UPDATE STOCK  ======================//
 
 export const updateStock = async (req, res) => {
@@ -187,6 +219,13 @@ export const deleteStock = async (req, res) => {
       });
     }
 
+    await TransactionModel.deleteMany({
+      stockSymbol: deletedStock.stockSymbol,
+      firstName: deletedStock.firstName,
+      lastName: deletedStock.lastName,
+      userId,
+    });
+
     res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
       message: message.stockDeleted,
@@ -204,7 +243,7 @@ export const deleteStock = async (req, res) => {
 
 export const getStockData = async (req, res) => {
   try {
-    const { symbol } = req.query;
+    const { symbol, startDate, endDate } = req.query;
 
     if (!symbol) {
       return res.status(statusCode.BAD_REQUEST).json({
@@ -222,6 +261,7 @@ export const getStockData = async (req, res) => {
     }
 
     const now = new Date();
+
     const marketOpenIST = new Date();
     marketOpenIST.setHours(9, 15, 0, 0);
     const marketOpenUTC = new Date(
@@ -237,11 +277,11 @@ export const getStockData = async (req, res) => {
     const marketCloseTimestamp = Math.floor(marketCloseUTC.getTime() / 1000);
 
     const nowTimestamp = Math.floor(now.getTime() / 1000);
-    const period2 = Math.min(nowTimestamp, marketCloseTimestamp);
+    const period2Intraday = Math.min(nowTimestamp, marketCloseTimestamp);
 
     let intradayData = await yahooFinance.chart(symbol, {
       period1: marketOpenTimestamp,
-      period2: period2,
+      period2: period2Intraday,
       interval: "1m",
     });
 
@@ -252,7 +292,7 @@ export const getStockData = async (req, res) => {
     ) {
       intradayData = await yahooFinance.chart(symbol, {
         period1: marketOpenTimestamp,
-        period2: period2,
+        period2: period2Intraday,
         interval: "5m",
       });
     }
@@ -267,9 +307,43 @@ export const getStockData = async (req, res) => {
         volume: point.volume,
       })) || [];
 
+    const isValidDate = (d) => d instanceof Date && !isNaN(d);
+
+    let start, end;
+    if (startDate) {
+      start = new Date(startDate);
+      if (!isValidDate(start)) {
+        return res.status(statusCode.BAD_REQUEST).json({
+          statusCode: statusCode.BAD_REQUEST,
+          message: "Invalid startDate",
+        });
+      }
+    } else {
+      start = new Date("2024-01-01");
+    }
+
+    if (endDate) {
+      end = new Date(endDate);
+      if (!isValidDate(end)) {
+        return res.status(statusCode.BAD_REQUEST).json({
+          statusCode: statusCode.BAD_REQUEST,
+          message: "Invalid endDate",
+        });
+      }
+    } else {
+      end = new Date();
+    }
+
+    if (startDate && endDate && startDate === endDate) {
+      end.setDate(end.getDate() + 1);
+    }
+
+    const period1Historical = start.toISOString().split("T")[0];
+    const period2Historical = end.toISOString().split("T")[0];
+
     const chartData = await yahooFinance.chart(symbol, {
-      period1: "2025-01-01",
-      period2: new Date().toISOString().split("T")[0],
+      period1: period1Historical,
+      period2: period2Historical,
       interval: "1d",
     });
 
@@ -341,7 +415,7 @@ export const getDatafromLiveStockPricesAndUpdate = async (req, res) => {
   try {
     const stocks = await StockModel.find();
 
-    if (stocks.length === 0) {
+    if (!stocks || stocks.length === 0) {
       return res.status(statusCode.OK).json({
         statusCode: statusCode.OK,
         message: "No stocks available for update.",
@@ -349,30 +423,44 @@ export const getDatafromLiveStockPricesAndUpdate = async (req, res) => {
     }
 
     for (let stock of stocks) {
-      const stockData = await yahooFinance.quote(stock.stockSymbol + ".BO");
+      const symbol = stock.stockSymbol.endsWith(".BO")
+        ? stock.stockSymbol
+        : stock.stockSymbol + ".BO";
 
-      if (stockData?.regularMarketPrice) {
-        stock.currentPrice = stockData.regularMarketPrice;
-        stock.totalReturnAmount = stock.quantity * stock.currentPrice;
+      const stockData = await yahooFinance.quote(symbol);
 
+      if (stockData && stockData.regularMarketPrice != null) {
+        const currentPrice = Number(stockData.regularMarketPrice);
+        const quantity = Number(stock.quantity);
+        const totalInvestedAmount = Number(stock.buyPrice) * quantity;
+
+        stock.currentPrice = currentPrice;
+        stock.totalReturnAmount = quantity * currentPrice;
         stock.unrealizedProfitLoss =
-          stock.totalReturnAmount - stock.totalInvestedAmount;
+          stock.totalReturnAmount - totalInvestedAmount;
 
-        if (stock.sellPrice) {
-          let realizedProfitLoss =
-            (stock.sellPrice - stock.buyPrice) * stock.quantity;
-          stock.realizedProfitLoss = realizedProfitLoss;
+        if (typeof stock.realizedProfitLoss !== "number") {
+          stock.realizedProfitLoss = 0;
         }
 
         await stock.save();
+      } else {
+        console.log(`No valid market price for ${stock.stockSymbol}`);
       }
     }
 
-    const updatedStocks = await StockModel.find();
+    const updatedStocks = await StockModel.find({
+      unrealizedProfitLoss: { $gt: 0 },
+    })
+      .sort({ unrealizedProfitLoss: -1 })
+      .limit(10);
 
     return res.status(statusCode.OK).json({
       statusCode: statusCode.OK,
-      message: "Stock prices updated successfully.",
+      message:
+        updatedStocks.length > 0
+          ? "Stock prices updated successfully."
+          : "No profitable stocks available.",
       stocks: updatedStocks.map((stock, index) => ({
         ...stock.toObject(),
         srNo: index + 1,
@@ -392,14 +480,20 @@ export const getDatafromLiveStockPricesAndUpdate = async (req, res) => {
 export const getTransactionHistory = async (req, res) => {
   try {
     const { stockSymbol } = req.params;
+    const { startDate, endDate } = req.query;
 
-    let transactions;
+    const dateFilters = getDateFilters(startDate, endDate);
+    const query = {};
 
     if (stockSymbol) {
-      transactions = await TransactionModel.find({ stockSymbol });
-    } else {
-      transactions = await TransactionModel.find();
+      query.stockSymbol = stockSymbol;
     }
+
+    if (startDate || endDate) {
+      query.transactionDate = dateFilters;
+    }
+
+    const transactions = await TransactionModel.find(query);
 
     if (!transactions || transactions.length === 0) {
       return res.status(statusCode.OK).json({
@@ -495,6 +589,76 @@ export const getBseTopGainersAndLosers = async (req, res) => {
     res.status(statusCode.SERVICE_UNAVAILABLE).json({
       statusCode: statusCode.SERVICE_UNAVAILABLE,
       message: message.failfetchTopMovers,
+    });
+  }
+};
+
+//====================== TOP GAINERS ======================//
+
+export const getTopGainers = async (req, res) => {
+  try {
+    const stocks = await loadStocks();
+    if (!stocks.length) throw new Error("No stocks found in JSON file.");
+
+    let stockPrices = await fetchStockPrices(stocks);
+    if (!stockPrices.length)
+      throw new Error("No stock data returned from API.");
+
+    stockPrices = stockPrices.filter((stock) => stock.change !== 0);
+
+    const sortedGainers = stockPrices.sort(
+      (a, b) => b.changePercent - a.changePercent
+    );
+
+    const topGainers = sortedGainers.slice(0, 5);
+
+    return res.status(statusCode.OK).json({
+      statusCode: statusCode.OK,
+      message: message.topGainers,
+      data: topGainers.map((gainer, index) => ({
+        ...gainer,
+        srNo: index + 1,
+      })),
+    });
+  } catch (error) {
+    logger.error("Error fetching Top Gainers:", error);
+    return res.status(statusCode.INTERNAL_SERVER_ERROR).json({
+      statusCode: statusCode.INTERNAL_SERVER_ERROR,
+      message: message.INTERNAL_SERVER_ERROR,
+    });
+  }
+};
+
+//====================== TOP LOSERS  ======================//
+
+export const getTopLosers = async (req, res) => {
+  try {
+    const stocks = await loadStocks();
+    if (!stocks.length) throw new Error("No stocks found in JSON file.");
+
+    let stockPrices = await fetchStockPrices(stocks);
+    if (!stockPrices.length)
+      throw new Error("No stock data returned from API.");
+
+    stockPrices = stockPrices.filter((stock) => stock.changePercent !== 0);
+
+    const sortedLosers = stockPrices
+      .sort((a, b) => a.changePercent - b.changePercent)
+      .slice(0, 5);
+
+    return res.status(statusCode.OK).json({
+      statusCode: statusCode.OK,
+      message: message.stockTopLosers,
+      data: sortedLosers.map((loser, index) => ({
+        ...loser,
+        srNo: index + 1,
+      })),
+    });
+  } catch (error) {
+    logger.error("Error fetching Top Losers", error);
+    return res.status(statusCode.INTERNAL_SERVER_ERROR).json({
+      statusCode: statusCode.INTERNAL_SERVER_ERROR,
+      message: message.INTERNAL_SERVER_ERROR,
     });
   }
 };

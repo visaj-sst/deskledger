@@ -25,14 +25,6 @@ export const registerUser = async (req, res) => {
       });
     }
 
-    const phoneNoExists = await UserModel.findOne({ phoneNo });
-    if (phoneNoExists) {
-      return res.status(statusCode.BAD_REQUEST).json({
-        statusCode: statusCode.BAD_REQUEST,
-        message: message.phoneNoExists,
-      });
-    }
-
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 
@@ -52,6 +44,7 @@ export const registerUser = async (req, res) => {
       data: { ...savedUser.toObject(), password: undefined },
     });
   } catch (error) {
+    console.log("Error Register User", error);
     logger.error(`Error registering user: ${error.message}`);
     res.status(statusCode.INTERNAL_SERVER_ERROR).json({
       statusCode: statusCode.INTERNAL_SERVER_ERROR,
@@ -63,16 +56,8 @@ export const registerUser = async (req, res) => {
 //====================== LOGIN USER ======================//
 
 export const loginUser = async (req, res) => {
-  const { email, password } = req.body;
-
-  if (mongoose.connection.readyState !== 1) {
-    logger.error("Database connection state:", mongoose.connection.readyState);
-    return res.status(500).json({
-      message: "Database is not connected. Please try again later.",
-    });
-  }
-
   try {
+    const { email, password } = req.body;
     const user = await UserModel.findOne({ email });
     if (!user) {
       return res.status(400).json({

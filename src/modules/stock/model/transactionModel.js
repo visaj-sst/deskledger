@@ -3,12 +3,11 @@ import { Schema } from "mongoose";
 
 const TransactionSchema = new Schema(
   {
-    // userId: {
-    //   type: Schema.Types.ObjectId,
-    //   ref: "UserModel",
-    //   default: null,
-    // },
-
+    userId: {
+      type: Schema.Types.ObjectId,
+      ref: "UserModel",
+      default: null,
+    },
     firstName: {
       type: String,
     },

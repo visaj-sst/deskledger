@@ -53,6 +53,11 @@ const StockSchema = new Schema(
       type: String,
       default: "Stock Market",
     },
+    userId: {
+      type: Schema.Types.ObjectId,
+      ref: "UserModel",
+      default: null,
+    },
   },
   { timestamps: true }
 );

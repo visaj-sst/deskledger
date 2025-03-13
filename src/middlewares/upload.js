@@ -41,7 +41,6 @@ export const upload = multer({
   limits: { fileSize: 5 * 1024 * 1024 },
 });
 
-// Export multerErrorHandling
 export function multerErrorHandling(err, req, res, next) {
   if (err.code === "LIMIT_FILE_SIZE") {
     req.fileSizeLimitError = true;

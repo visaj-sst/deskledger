@@ -4,57 +4,34 @@ import jwt from "jsonwebtoken";
 import TokenModel from "../modules/user/model/tokenModel.js";
 import { statusCode, message } from "../utils/api.response.js";
 import UserModel from "../modules/user/model/userModel.js";
-import mongoose from "mongoose";
 
 export const ensureAuthenticated = async (req, res, next) => {
   try {
-    if (mongoose.connection.readyState !== 1) {
-      console.error("MongoDB connection is not established. Retrying...");
+    const token = req.headers["authorization"]?.split(" ")[1];
+    if (!token)
+      return res
+        .status(statusCode.UNAUTHORIZED)
+        .json({ message: message.expiredToken });
 
-      const dbConnected = await databaseConnection();
-      if (!dbConnected) {
-        return res.status(statusCode.INTERNAL_SERVER_ERROR).json({
-          statusCode: statusCode.INTERNAL_SERVER_ERROR,
-          message: "Database not connected. Please try again later.",
-        });
-      }
-    }
+    const isUser = await TokenModel.findOne({ token });
+    if (!isUser)
+      return res
+        .status(statusCode.UNAUTHORIZED)
+        .json({ message: message.tokenNotFound });
 
-    const bearheader = req.headers["authorization"];
-    if (!bearheader) {
-      return res.status(statusCode.UNAUTHORIZED).json({
-        statusCode: statusCode.UNAUTHORIZED,
-        message: message.expiredToken,
-      });
-    }
-
-    const token = bearheader.split(" ")[1];
-
-    const is_user = await TokenModel.findOne({ token });
-    if (!is_user) {
-      return res.status(statusCode.UNAUTHORIZED).json({
-        statusCode: statusCode.UNAUTHORIZED,
-        message: message.tokenNotFound,
-      });
-    }
-
-    try {
-      const decoded = jwt.verify(token, process.env.SECRET);
+    jwt.verify(token, process.env.SECRET, (err, decoded) => {
+      if (err)
+        return res
+          .status(statusCode.UNAUTHORIZED)
+          .json({ message: message.tokenVerifyFail });
       req.user = { id: decoded.id };
       next();
-    } catch (err) {
-      console.error("Token verification failed:", err);
-      return res.status(statusCode.UNAUTHORIZED).json({
-        statusCode: statusCode.UNAUTHORIZED,
-        message: message.tokenVerifyFail,
-      });
-    }
+    });
   } catch (error) {
     console.error("Error in ensureAuthenticated:", error);
-    return res.status(statusCode.INTERNAL_SERVER_ERROR).json({
-      statusCode: statusCode.INTERNAL_SERVER_ERROR,
-      message: message.errorFetchingUser,
-    });
+    return res
+      .status(statusCode.INTERNAL_SERVER_ERROR)
+      .json({ message: message.INTERNAL_SERVER_ERROR });
   }
 };
 
