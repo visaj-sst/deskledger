@@ -124,7 +124,6 @@ export const getState = async (req, res) => {
     res.status(statusCode.INTERNAL_SERVER_ERROR).json({
       statusCode: statusCode.INTERNAL_SERVER_ERROR,
       message: message.errorFetchingStates || "Error fetching states",
-      error: error.message || error,
     });
   }
 };

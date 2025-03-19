@@ -47,9 +47,9 @@ Router.delete("/user/delete/:id", ensureAuthenticated, deleteUser);
 Router.post("/user/changepassword", ensureAuthenticated, changePassword);
 
 // Password Recovery Routes
-Router.post("/forgot-password", forgotPassword);
-Router.post("/reset-password", resetPassword);
-Router.post("/newpassword", newPassword);
+Router.post("/user/forgot-password", forgotPassword);
+Router.post("/user/reset-password", resetPassword);
+Router.post("/user/newpassword", newPassword);
 
 // Admin Routes
 Router.get("/users", ensureAuthenticated, ensureAdmin, getUsers);

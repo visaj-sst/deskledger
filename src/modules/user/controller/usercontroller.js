@@ -486,7 +486,6 @@ export const getUsers = async (req, res) => {
     res.status(statusCode.INTERNAL_SERVER_ERROR).json({
       statusCode: statusCode.INTERNAL_SERVER_ERROR,
       message: message.errorFetchingUsers,
-      error: error.message || error,
     });
   }
 };

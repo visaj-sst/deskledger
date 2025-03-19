@@ -205,7 +205,6 @@ export const fixedDepositDelete = async (req, res) => {
     res.status(statusCode.INTERNAL_SERVER_ERROR).json({
       statusCode: statusCode.INTERNAL_SERVER_ERROR,
       message: "Error deleting FD",
-      error: error.message || error,
     });
   }
 };
@@ -282,7 +281,6 @@ export const getFdDetails = async (req, res) => {
     res.status(statusCode.INTERNAL_SERVER_ERROR).json({
       statusCode: statusCode.INTERNAL_SERVER_ERROR,
       message: message.errorFetchingFDs,
-      error: error.message || error,
     });
   }
 };
@@ -331,7 +329,6 @@ export const deleteMultipleFDs = async (req, res) => {
     res.status(statusCode.INTERNAL_SERVER_ERROR).json({
       statusCode: statusCode.INTERNAL_SERVER_ERROR,
       message: "Error deleting FDs",
-      error: error.message || error,
     });
   }
 };
