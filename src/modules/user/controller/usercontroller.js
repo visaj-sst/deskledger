@@ -232,7 +232,7 @@ export const changePassword = async (req, res) => {
       });
     }
 
-    const isMatch = await bcrypt.compare(oldPassword, user.password);
+    const isMatch = bcrypt.compare(oldPassword, user.password);
     if (!isMatch) {
       return res.status(statusCode.BAD_REQUEST).json({
         statusCode: statusCode.BAD_REQUEST,

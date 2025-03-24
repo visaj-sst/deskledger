@@ -17,7 +17,6 @@ import {
 } from "./src/cronJobs/cron.js";
 import { loadScrapedDataToDB } from "./src/scripts/load-scraped-data.js";
 import { startGoldPriceScraping } from "./src/scripts/gold-price-pp.js";
-import { updateStockPrices } from "./src/cronJobs/cron.js";
 
 import { fileURLToPath } from "url";
 import { dirname } from "path";
