@@ -18,10 +18,7 @@ import {
   resetPassword,
   updateUser,
 } from "../controller/usercontroller.js";
-import {
-  userLoginValidate,
-  userRegisterValidate,
-} from "../validation/userValidator.js";
+import { userLoginValidate } from "../validation/userValidator.js";
 
 import { upload, multerErrorHandling } from "../../../middlewares/upload.js";
 

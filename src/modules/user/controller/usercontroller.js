@@ -25,8 +25,7 @@ export const registerUser = async (req, res) => {
       });
     }
 
-    const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(password, salt);
+    const hashedPassword = await bcrypt.hash(password, 10);
 
     const newUser = new UserModel({
       firstName,
@@ -65,7 +64,7 @@ export const loginUser = async (req, res) => {
       });
     }
 
-    const isMatch = await user.comparePassword(password);
+    const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
       return res.status(400).json({
         message: "Incorrect password.",
@@ -247,8 +246,7 @@ export const changePassword = async (req, res) => {
       });
     }
 
-    const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(newPassword, salt);
+    const hashedPassword = await bcrypt.hash(newPassword, 10);
 
     user.password = hashedPassword;
     await user.save();
@@ -305,7 +303,120 @@ export const forgotPassword = async (req, res) => {
       to: email,
       from: process.env.EMAIL_USER,
       subject: "Password Reset Request",
-      html: `<p>Here is your OTP: <b>${otp}</b></p>`,
+      html: `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Reset Request</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .email-header {
+            background-color: #1a73e8;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+        .email-body {
+            background-color: white;
+            padding: 30px;
+            border-left: 1px solid #e0e0e0;
+            border-right: 1px solid #e0e0e0;
+        }
+        .email-footer {
+            background-color: #f5f5f5;
+            padding: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #757575;
+            border-radius: 0 0 8px 8px;
+            border: 1px solid #e0e0e0;
+            border-top: none;
+        }
+        .otp-container {
+            background-color: #f0f7ff;
+            border: 1px solid #d0e3ff;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .otp-code {
+            font-size: 32px;
+            letter-spacing: 5px;
+            font-weight: 600;
+            color: #1a73e8;
+            margin: 10px 0;
+        }
+        .button {
+            background-color: #1a73e8;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            display: inline-block;
+            margin: 20px 0;
+        }
+        .info-text {
+            color: #757575;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+        h1 {
+            margin: 0;
+            font-weight: 400;
+            font-size: 24px;
+        }
+        p {
+            margin: 15px 0;
+        }
+        .logo {
+            height: 40px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="email-header">
+            <img src="src/images/appLogo.png" alt="Company Logo" class="logo" />
+            <h1>Password Reset Request</h1>
+        </div>
+        <div class="email-body">
+            <p>Hello ${user.firstName},</p>
+            <p>We received a request to reset your password. Please use the verification code below to complete the password reset process:</p>
+            
+            <div class="otp-container">
+                <p>Your One-Time Password</p>
+                <div class="otp-code">${otp}</div>
+                <p>This code will expire in 15 minutes</p>
+            </div>
+            
+            <p>If you didn't request a password reset, please ignore this email or contact our support team if you have concerns.</p>
+            
+            <p class="info-text">For security reasons, this OTP is valid for a limited time only. Please do not share this code with anyone.</p>
+        </div>
+        <div class="email-footer">
+            <p>&copy; 2025 Your Company Name. All rights reserved.</p>
+            <p>123 Business Street, Suite 100, City, Country</p>
+        </div>
+    </div>
+</body>
+</html>`,
     };
 
     await transporter.sendMail(mailOptions);

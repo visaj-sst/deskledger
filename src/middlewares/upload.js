@@ -1,52 +1,35 @@
 import multer from "multer";
 import path from "path";
-import { statusCode, message } from "../utils/api.response.js";
 
-export const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "uploads/profile_images");
-  },
-
-  filename: function (req, file, cb) {
-    const firstName = req.body.firstName;
-    if (firstName) {
-      cb(null, `${firstName}_${Date.now()}${path.extname(file.originalname)}`);
-    } else {
-      cb(null, `${Date.now()}_${file.originalname}`);
-    }
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => cb(null, "uploads/profile_images"),
+  filename: (req, file, cb) => {
+    const name = req.body.firstName ? `${req.body.firstName}_` : "";
+    cb(null, `${name}${Date.now()}${path.extname(file.originalname)}`);
   },
 });
 
-export const upload = multer({
-  storage: storage,
+const upload = multer({
+  storage,
+  fileFilter: (req, file, cb) => {
+    const isValidType =
+      /jpeg|jpg|png/.test(file.mimetype) &&
+      /\.(jpeg|jpg|png)$/i.test(file.originalname);
 
-  fileFilter: function (req, file, cb) {
-    const filetypes = /jpeg|jpg|png/;
-    const mimetype = filetypes.test(file.mimetype);
-    const extname = filetypes.test(
-      path.extname(file.originalname).toLowerCase()
-    );
+    if (isValidType) return cb(null, true);
 
-    if (mimetype && extname) {
-      return cb(null, true);
-    } else {
-      req.fileValidationError = "Only .jpeg, .jpg, and .png files are allowed!";
-      return cb(
-        null,
-        false,
-        new Error("Only .jpeg, .jpg, and .png files are allowed!")
-      );
-    }
+    req.fileValidationError = "Only .jpeg, .jpg, and .png files are allowed!";
+    cb(null, false, new Error("Only .jpeg, .jpg, and .png files are allowed!"));
   },
   limits: { fileSize: 5 * 1024 * 1024 },
 });
 
-export function multerErrorHandling(err, req, res, next) {
+function multerErrorHandling(err, req, res, next) {
   if (err.code === "LIMIT_FILE_SIZE") {
     req.fileSizeLimitError = true;
-    return res
-      .status(statusCode.BAD_REQUEST)
-      .json({ message: message.validImageError });
+    return res.status(400).json({ message: "File size exceeds 5MB limit" });
   }
   next(err);
 }
+
+export { upload, multerErrorHandling };
